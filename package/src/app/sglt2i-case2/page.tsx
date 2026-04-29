@@ -15,7 +15,7 @@ export default function SGLT2iCase2Page() {
         quote="Recently, I was hospitalized again due to severe dyspnea. Can you help me feel better, doctor?"
         backgroundImage="/backgrounds/01C.jpg"
         currentStepImage="/next-steps/linda/final/step10.png"
-        sglt2iAccordionTitle="Initiate SGLT2i"
+        sglt2iAccordionTitle="Don't miss the moment"
         showClinicalReasoning={false}
       />
     </ClientWrapper>

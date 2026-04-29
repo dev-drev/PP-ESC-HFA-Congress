@@ -100,7 +100,7 @@ export default function GuidelinesAccordion({
                 2023 Focused Update of the 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure<sup>4</sup>
               </p>
               <p className="text-gray-700">
-                The guidelines recommend SGLT2is as Class I, Level A therapy for patients with HFmrEF (LVEF 41-49%) and HFpEF (LVEF ≥50%) to reduce the risk of HHF or CV death, which makes SGLT2is the only class with Class I, Level A recommendation.<sup>4</sup>
+                The guidelines recommend SGLT2is as Class I, Level A therapy for patients with HFmrEF (LVEF 41-49%) and HFpEF (LVEF ≥50%) to reduce the risk of HHF or CV death, which makes <b>SGLT2is the only class with Class I, Level A recommendation.</b> <sup>4</sup>
               </p>
               <div className="space-y-3">
                 <Image src="/icons/sglti.png" alt="Guidelines Image HFpEF" title="Guidelines Image HFpEF" width={420} height={300} className="rounded-lg w-full h-auto" />
@@ -183,13 +183,16 @@ export default function GuidelinesAccordion({
           id: "joana-slide-2",
           content: (
             <div className="space-y-4">
-              <p className="text-gray-700 font-bold">2023 ESC Guidelines for the management of cardiovascular disease in patients with diabetes<sup>1</sup></p>
+              <p className="text-gray-700 font-bold">2023 ESC Guidelines for the management of cardiovascular disease in patients with diabetes<sup>3</sup></p>
               <p className="text-gray-700">
                 The guidelines recommend SGLT2is as Class I, Level A therapy for patients with <b>ASCVD and T2D</b> to reduce cardiovascular risk, for patients with <b>T2D and HF</b> (HFpEF, HFmrEF, HFrEF) to reduce the risk of HHF and CV death, and for patients with <b>T2D and CKD</b> to reduce the CV and kidney failure risk - independent of glucose control and in addition to standard of care.<sup>3</sup>
               </p>
               <div className="space-y-3">
                 <Image src="/icons/sglti.png" alt="Guidelines Image T2D" title="Guidelines Image T2D" width={420} height={300} className="rounded-lg w-full h-auto" />
               </div>
+              <p className="text-gray-700 font-bold text-xl py-6">
+                Don&apos;t miss the moment.
+              </p>
             </div>
           ),
         },
