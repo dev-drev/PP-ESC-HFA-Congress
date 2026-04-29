@@ -317,7 +317,7 @@ export default function MedicalRecordContent({
         egfr: 56,
         uacr: '286',
         echocardiography:
-          'No significant pulmonary hypertension',
+          'Stable pulmonary hypertension',
       };
     }
 

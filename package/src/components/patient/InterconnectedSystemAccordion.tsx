@@ -25,9 +25,9 @@ export default function InterconnectedSystemAccordion({
     // Linda (HFpEF)
     if (name === 'linda' || patientId === '1') {
       return {
-        title: "The interconnected system",
-        subtitle: "Cardiovascular, renal and metabolic connections are powerful - but so is your ability to address them holistically.",
-        intro: "Did you know?",
+        title: "KDIGO Digital Heatmap",
+        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
+        intro: "Scan and Learn more",
         facts: [
           {
             color: "text-teal-500",
@@ -51,9 +51,9 @@ export default function InterconnectedSystemAccordion({
     // Robert (HFrEF)
     if (name === 'robert' || patientId === '2') {
       return {
-        title: "The interconnected system",
-        subtitle: "Cardiovascular, renal and metabolic connections are powerful - but so is your ability to address them holistically.",
-        intro: "Did you know?",
+        title: "KDIGO Digital Heatmap",
+        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
+        intro: "Scan and Learn more",
         facts: [
           {
             color: "text-teal-500",
@@ -77,9 +77,9 @@ export default function InterconnectedSystemAccordion({
     // Joana (T2D+CAD)
     if (name === 'joana' || patientId === '3') {
       return {
-        title: "The interconnected system",
-        subtitle: "Cardiovascular, renal and metabolic connections are powerful - but so is your ability to address them holistically.",
-        intro: "Did you know?",
+        title: "KDIGO Digital Heatmap",
+        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
+        intro: "Scan and Learn more",
         facts: [
           {
             color: "text-neutral-500",
@@ -107,9 +107,9 @@ export default function InterconnectedSystemAccordion({
     
     // Default content
     return {
-      title: "The interconnected system",
-      subtitle: "Cardiovascular, renal and metabolic connections are powerful - but so is your ability to address them holistically.",
-      intro: "Did you know?",
+      title: "KDIGO Digital Heatmap",
+      subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
+      intro: "Scan and Learn more",
       facts: [
         {
           color: "text-teal-500",
@@ -156,14 +156,14 @@ export default function InterconnectedSystemAccordion({
             className="overflow-hidden"
             style={{ willChange: 'height, opacity' }}
           >
-            <div className="px-5 py-6">
+            <div className="px-5  py-6 lg:text-center ">
               <p className="text-gray-700 mb-4 font-bold text-lg">
                 {content.subtitle}
               </p>
 
               <h3 className="text-gray-700 mb-4">{content.intro}</h3>
 
-              <div className="space-y-12 px-10 py-3">
+              <div className="space-y-12 px-10 py-3 pb-12">
                 {content.facts.map((fact, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className={`w-7 h-7 flex-shrink-0 rounded-sm ${fact.color} flex items-center justify-center`}>
@@ -237,6 +237,7 @@ export default function InterconnectedSystemAccordion({
                   </div>
                 ))}
               </div>
+              <p className="text-gray-700 text-sm lg:px-10">This interactive risk calculator - developed in collaboration with Boehringer Ingelheim and KDIGO - is intended for informational purposes only and does not constitute medical advice or recommendations. It is not a substitute for professional medical advice, diagnosis, or treatment and is not a treatment decision tool. Practitioners should use their own clinical judgment when diagnosing and treating patients.</p>
             </div>
           </motion.div>
         )}

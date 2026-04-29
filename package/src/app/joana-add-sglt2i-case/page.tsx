@@ -16,7 +16,7 @@ export default function JoanaAddSGLT2iCasePage() {
         quote="It's reassuring to know that the steps my doctor and I took years ago are still helping me stay stable today."
         backgroundImage="/backgrounds/03A.jpg"
         currentStepImage="/next-steps/joana/final/step8.png"
-        sglt2iAccordionTitle="Sound clinical reasoning!"
+        sglt2iAccordionTitle="Commit to standing against CV risk."
         showClinicalReasoning={true}
         endActions={[
           { id: 'go-back', text: 'Go back' },

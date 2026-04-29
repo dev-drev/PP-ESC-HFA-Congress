@@ -51,7 +51,7 @@ export default function DynamicSglt2iAccordion({
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                  By prescribing James an SGLT2i, such as JARDIANCE<sup>®</sup>, soon after his diagnosis, you helped protect him by reducing his kidney disease progression or risk of CV death.<sup>*6</sup>
+                  By prescribing James an SGLT2i, such as JARDIANCE<sup>®</sup> (empagliflozin), soon after his diagnosis, you helped protect him by reducing his kidney disease progression or risk of CV death.<sup>*9</sup>
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
@@ -440,7 +440,7 @@ progression regardless of diabetes status?<sup>‡7</sup>
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                  By prescribing Erik an SGLT2i, such as JARDIANCE<sup>®</sup>, soon after his diagnosis, you helped protect him by reducing his kidney disease progression or risk of CV death.<sup>*6</sup>
+                  By prescribing Erik an SGLT2i, such as JARDIANCE<sup>®</sup> (empagliflozin), soon after his diagnosis, you helped protect him by reducing his kidney disease progression or risk of CV death.<sup>*9</sup>
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
@@ -604,21 +604,31 @@ Continue delivering the best care by implementing the guideline-recommended foun
           {
             id: 'joana-five-years-slide-3',
             content: (
-              <div className="flex flex-col h-full">
-                <p className="text-lg mb-6 text-gray-700">
-                  Would you like to continue with your next patient? <br />
-                  Select the next patient you would like to see!
+              <div className="flex flex-col h-full p-4 rounded-md">
+                <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                  Did you know?
                 </p>
-                <div className="flex justify-center mt-6 mb-6">
-                  <a
-                    href="/"
-                    rel="noopener"
-                    title="Choose patient"
-                    data-it-button="choose-patient-joana-five-years-slide-3"
-                    className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
-                  >
-                    Choose patient
-                  </a>
+
+                <p className="text-lg text-center text-gray-700 mb-6">
+                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+                </p>
+
+                <p className="text-lg text-center text-gray-700 mb-6">
+                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+                </p>
+
+                <p className="text-lg text-center text-gray-700 mb-8">
+                  <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                </p>
+
+                <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                  <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                  <span className="text-sm text-gray-700 text-center leading-tight">
+                    Increasing risk of
+                    <br />
+                    CV mortality
+                  </span>
+                  <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
                 </div>
               </div>
             ),
@@ -634,7 +644,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                 By prescribing Joana an SGLT2i such as JARDIANCE<sup>®</sup> soon after her diagnosis, you helped protect her by reducing her risk of CV death.<sup>*†5</sup>
+                 By prescribing Joana an SGLT2i such as JARDIANCE<sup>®</sup> (empagliflozin), soon after her diagnosis, you helped protect her by reducing her risk of CV death.<sup>*†5</sup>
 
                 </p>
                 <div className="flex items-center justify-between mt-4">
@@ -658,7 +668,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                  You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup>, are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk.<sup>1</sup>
+                  You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk.<sup>1</sup>
                 </p>
                 <div className="mb-6">
                   <Image
@@ -679,21 +689,31 @@ Continue delivering the best care by implementing the guideline-recommended foun
           {
             id: 'joana-add-sglt2i-slide-3',
             content: (
-              <div className="flex flex-col h-full">
-                <p className="text-lg mb-6 text-gray-700">
-                  Would you like to continue with your next patient? <br />
-                  Select the next patient you would like to see!
+              <div className="flex flex-col h-full p-4 rounded-md">
+                <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                  Did you know?
                 </p>
-                <div className="flex justify-center mt-6 mb-6">
-                  <a
-                    href="/"
-                    rel="noopener"
-                    title="Choose patient"
-                    data-it-button="choose-patient-joana-add-sglt2i-slide-3"
-                    className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
-                  >
-                    Choose patient
-                  </a>
+
+                <p className="text-lg text-center text-gray-700 mb-6">
+                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+                </p>
+
+                <p className="text-lg text-center text-gray-700 mb-6">
+                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+                </p>
+
+                <p className="text-lg text-center text-gray-700 mb-8">
+                  <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                </p>
+
+                <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                  <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                  <span className="text-sm text-gray-700 text-center leading-tight">
+                    Increasing risk of
+                    <br />
+                    CV mortality
+                  </span>
+                  <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
                 </div>
               </div>
             ),
@@ -754,21 +774,31 @@ Continue delivering the best care by implementing the guideline-recommended foun
           {
             id: 'joana-optimize-slide-3',
             content: (
-              <div className="flex flex-col h-full">
-                <p className="text-lg mb-6 text-gray-700">
-                  Would you like to continue with your next patient? <br />
-                  Select the next patient you would like to see!
+              <div className="flex flex-col h-full p-4 rounded-md">
+                <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                  Did you know?
                 </p>
-                <div className="flex justify-center mt-6 mb-6">
-                  <a
-                    href="/"
-                    rel="noopener"
-                    title="Choose patient"
-                    data-it-button="choose-patient-joana-optimize-slide-3"
-                    className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
-                  >
-                    Choose patient
-                  </a>
+
+                <p className="text-lg text-center text-gray-700 mb-6">
+                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+                </p>
+
+                <p className="text-lg text-center text-gray-700 mb-6">
+                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+                </p>
+
+                <p className="text-lg text-center text-gray-700 mb-8">
+                  <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                </p>
+
+                <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                  <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                  <span className="text-sm text-gray-700 text-center leading-tight">
+                    Increasing risk of
+                    <br />
+                    CV mortality
+                  </span>
+                  <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
                 </div>
               </div>
             ),
@@ -785,7 +815,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 Sound clinical reasoning!
               </p>
               <p className="text-base mb-4 text-gray-700">
-                By prescribing Joana an SGLT2i such as JARDIANCE<sup>®</sup>{" "}
+                By prescribing Joana an SGLT2i such as JARDIANCE<sup>®</sup> (empagliflozin),
                 soon after her diagnosis, you helped protect her by reducing her
                 risk of CV death.<sup>*†5</sup>
               </p>
@@ -840,22 +870,31 @@ Continue delivering the best care by implementing the guideline-recommended foun
         {
           id: "joana-slide-3",
           content: (
-            <div className="flex flex-col h-full">
-              <p className="text-lg mb-6 text-gray-700">
-                Would you like to continue with your next patient? <br />
-                Select the next patient you would like to see!
+            <div className="flex flex-col h-full p-4 rounded-md">
+              <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                Did you know?
               </p>
 
-              <div className="flex justify-center mt-6 mb-6">
-                <a
-                  href="/"
-                  rel="noopener"
-                  title="Choose patient"
-                  data-it-button="choose-patient-joana-slide-3"
-                  className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
-                >
-                  Choose patient
-                </a>
+              <p className="text-lg text-center text-gray-700 mb-6">
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-6">
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-8">
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+              </p>
+
+              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                <span className="text-sm text-gray-700 text-center leading-tight">
+                  Increasing risk of
+                  <br />
+                  CV mortality
+                </span>
+                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
               </div>
             </div>
           ),
@@ -948,24 +987,31 @@ Continue delivering the best care by implementing the guideline-recommended foun
         {
           id: 'linda-slide-3',
           content: (
-               <div className="flex flex-col h-full">
-              <p className="text-lg mb-6 text-gray-700">
-                Would you like to continue with your next patient? <br />
-
-Select the next patient you would like to see!
+               <div className="flex flex-col h-full p-4 rounded-md">
+              <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                Did you know?
               </p>
 
-              
-              <div className="flex justify-center mt-6 mb-6">
-                <a
-                  href="/"
-                  rel="noopener"
-                  title="Choose patient"
-                  data-it-button="choose-patient-linda-beta-blocker-slide-3"
-                  className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
-                >
-                  Choose patient
-                </a>
+              <p className="text-lg text-center text-gray-700 mb-6">
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-6">
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-8">
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+              </p>
+
+              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                <span className="text-sm text-gray-700 text-center leading-tight">
+                  Increasing risk of
+                  <br />
+                  CV mortality
+                </span>
+                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
               </div>
             </div>
           ),
@@ -1031,24 +1077,31 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
         {
           id: 'linda-slide-3',
           content: (
-               <div className="flex flex-col h-full">
-              <p className="text-lg mb-6 text-gray-700">
-                Would you like to continue with your next patient? <br />
-
-Select the next patient you would like to see!
+               <div className="flex flex-col h-full p-4 rounded-md">
+              <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                Did you know?
               </p>
 
-              
-              <div className="flex justify-center mt-6 mb-6">
-                <a
-                  href="/"
-                  rel="noopener"
-                  title="Choose patient"
-                  data-it-button="choose-patient-linda-sglt2i-case2-slide-3"
-                  className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
-                >
-                  Choose patient
-                </a>
+              <p className="text-lg text-center text-gray-700 mb-6">
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-6">
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-8">
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+              </p>
+
+              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                <span className="text-sm text-gray-700 text-center leading-tight">
+                  Increasing risk of
+                  <br />
+                  CV mortality
+                </span>
+                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
               </div>
             </div>
           ),
@@ -1062,7 +1115,7 @@ Select the next patient you would like to see!
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-4 font-medium text-gray-700">
-               By prescribing Linda an SGLT2i such as JARDIANCE<sup>®</sup> soon after her diagnosis, you helped protect her by reducing her risk of CV death or HHF.<sup>*5</sup>
+               By prescribing Linda an SGLT2i such as JARDIANCE<sup>®</sup> (empagliflozin), soon after her diagnosis, you helped protect her by reducing her risk of CV death or HHF.<sup>*5</sup>
 
               </p>
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
@@ -1078,8 +1131,8 @@ Select the next patient you would like to see!
                 </div>
               </div>
               <p className="text-base mt-6 text-gray-700">
-                And did you know that JARDIANCE<sup>®</sup> helped patients with HF across the LVEF spectrum feel better, both physically and emotionally, so they can enjoy life more?
-                <sup>†6.7</sup>
+                And did you know that, in addition to improving CV outcomes, JARDIANCE<sup>®</sup> (empagliflozin) improved quality of life regardless of LVEF?
+                <sup>†12,13</sup>
               </p>
             </div>
           ),
@@ -1114,24 +1167,31 @@ Select the next patient you would like to see!
         {
           id: 'linda-slide-3',
           content: (
-               <div className="flex flex-col h-full">
-              <p className="text-lg mb-6 text-gray-700">
-                Would you like to continue with your next patient? <br />
-
-Select the next patient you would like to see!
+               <div className="flex flex-col h-full p-4 rounded-md">
+              <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                Did you know?
               </p>
 
-              
-              <div className="flex justify-center mt-6 mb-6">
-                <a
-                  href="/"
-                  rel="noopener"
-                  title="Choose patient"
-                  data-it-button="choose-patient-linda-default-slide-3"
-                  className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
-                >
-                  Choose patient
-                </a>
+              <p className="text-lg text-center text-gray-700 mb-6">
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-6">
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-8">
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+              </p>
+
+              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                <span className="text-sm text-gray-700 text-center leading-tight">
+                  Increasing risk of
+                  <br />
+                  CV mortality
+                </span>
+                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
               </div>
             </div>
           ),
@@ -1146,7 +1206,7 @@ Select the next patient you would like to see!
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-4 font-medium text-gray-700">
-            By prescribing Robert an SGLT2i, such as JARDIANCE<sup>®</sup>, soon after his diagnosis, you helped protect him by reducing his risk of CV death or HHF.<sup>*6</sup>
+            By prescribing Robert an SGLT2i, such as JARDIANCE<sup>®</sup> (empagliflozin), soon after his diagnosis, you helped protect him by reducing his risk of CV death or HHF.<sup>*9</sup>
 
               </p>
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
@@ -1162,7 +1222,8 @@ Select the next patient you would like to see!
                 </div>
               </div>
               <p className="text-lg mt-6 text-gray-700">
-            And did you know that JARDIANCE<sup>®</sup> helped patients with HF across the LVEF spectrum feel better, both physically and emotionally, so they can enjoy life more?<sup>†7,8</sup>
+              And did you know that, in addition to improving CV outcomes, JARDIANCE<sup>®</sup> (empagliflozin) improved quality of life regardless of LVEF?
+              <sup>†12,13</sup>
               </p>
             </div>
           ),
@@ -1173,7 +1234,7 @@ Select the next patient you would like to see!
             <div className="flex flex-col h-full">
               <p className="text-lg mb-6 text-gray-700">
              
-               You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup>, are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.
+               You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert<sup>5</sup>.
 
               </p>
 
@@ -1181,7 +1242,6 @@ Select the next patient you would like to see!
                 <Image 
                   src="/guidelines.png"
                   alt="SGLT2i"
-                    title="SGLT2i"
                   title="SGLT2i guidelines"
                   width={400}
                   height={150}
@@ -1196,6 +1256,38 @@ Select the next patient you would like to see!
         },
         {
           id: 'robert-slide-3',
+          content: (
+            <div className="flex flex-col h-full p-4 rounded-md">
+              <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                Did you know?
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-6">
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-6">
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-8">
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+              </p>
+
+              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                <span className="text-sm text-gray-700 text-center leading-tight">
+                  Increasing risk of
+                  <br />
+                  CV mortality
+                </span>
+                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
+              </div>
+            </div>
+          ),
+        },
+        {
+          id: 'robert-slide-4',
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-6 text-gray-700">
@@ -1255,7 +1347,7 @@ Select the next patient you would like to see!
             <div className="flex flex-col h-full">
               <p className="text-lg mb-6 text-gray-700">
              
-               SGLT2is, such as JARDIANCE<sup>®</sup>, are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.<sup>1</sup>
+               SGLT2is, such as JARDIANCE<sup>®</sup>, are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.<sup>5</sup>
 
               </p>
 
@@ -1263,7 +1355,6 @@ Select the next patient you would like to see!
                 <Image 
                   src="/guidelines.png"
                   alt="SGLT2i"
-                    title="SGLT2i"
                   title="SGLT2i guidelines"
                   width={400}
                   height={150}
@@ -1271,7 +1362,7 @@ Select the next patient you would like to see!
               </div>
 
               <p className="text-base text-gray-700">
-               Major guidelines recommend rapid initiation and up-titration of all four foundational treatments for all patients with HFrEF.<sup>1</sup>
+               Major guidelines recommend rapid initiation and up-titration of all four foundational treatments for all patients with HFrEF.<sup>5</sup>
               </p>
             </div>
           ),
@@ -1279,24 +1370,31 @@ Select the next patient you would like to see!
         {
           id: 'robert-slide-3',
           content: (
-            <div className="flex flex-col h-full">
-              <p className="text-lg mb-6 text-gray-700">
-                Would you like to continue with your next patient? <br />
-
-Select the next patient you would like to see!
+            <div className="flex flex-col h-full p-4 rounded-md">
+              <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                Did you know?
               </p>
 
-              
-              <div className="flex justify-center mt-6 mb-6">
-                <a
-                  href="/"
-                  rel="noopener"
-                  title="Choose patient"
-                  data-it-button="choose-patient-robert-default-slide-3"
-                  className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
-                >
-                  Choose patient
-                </a>
+              <p className="text-lg text-center text-gray-700 mb-6">
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-6">
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+              </p>
+
+              <p className="text-lg text-center text-gray-700 mb-8">
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+              </p>
+
+              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
+                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
+                <span className="text-sm text-gray-700 text-center leading-tight">
+                  Increasing risk of
+                  <br />
+                  CV mortality
+                </span>
+                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
               </div>
             </div>
           ),

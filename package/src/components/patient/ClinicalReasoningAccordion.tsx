@@ -134,7 +134,7 @@ export default function ClinicalReasoningAccordion({
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-4 font-medium text-gray-700">
-                By prescribing Robert an SGLT2i such as JARDIANCE<sup>®</sup> as
+                By prescribing Robert an SGLT2i such as JARDIANCE<sup>®</sup> (empagliflozin) as
                 part of his treatment plan, you've significantly improved his
                 HFrEF prognosis and enhanced his quality of life.<sup>*1</sup>
               </p>

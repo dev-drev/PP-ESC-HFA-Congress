@@ -17,7 +17,7 @@ export default function ErikFlow1Age52Page() {
         quote="My kidney function has declined over the years, but it could be worse. I have swollen legs and feel weaker, but it’s not holding me back too much."
         backgroundImage="/backgrounds/erik/02A.jpg"
         currentStepImage="/next-steps/erik/step2.png"
-        sglt2iAccordionTitle="Sound clinical reasoning!"
+        sglt2iAccordionTitle="Commit to standing against CV risk."
         showClinicalReasoning={true}
         endActions={[
           { id: 'go-back', text: 'Travel back in time' },

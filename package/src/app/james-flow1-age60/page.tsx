@@ -16,7 +16,7 @@ export default function JamesFlow1Age60Page() {
         quote="So far, my CKD hasn't really affected my day-to-day life – and my blood pressure seems under control too."
         backgroundImage="/backgrounds/james/02C.jpg"
         currentStepImage="/next-steps/james/step2.png"
-        sglt2iAccordionTitle="Sound clinical reasoning!"
+        sglt2iAccordionTitle="Commit to standing against CV risk."
         showClinicalReasoning={true}
         endActions={[
           { id: 'proceed', text: 'Proceed' },

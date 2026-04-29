@@ -16,7 +16,8 @@ export default function End2Page() {
         currentStepImage="/next-steps/robert/final/step9.png"
         quote="I'm grateful that I can still enjoy the time with my wife and that my heart failure is well managed."
         backgroundImage="/backgrounds/02A.jpg"
-        sglt2iAccordionTitle="Sound clinical reasoning!"
+        sglt2iAccordionTitle="Commit to standing against CV risk."
+
         showClinicalReasoning={true}
       />
     </ClientWrapper>
