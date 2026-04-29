@@ -1,0 +1,336 @@
+'use client'
+
+import { useState, useEffect, useCallback } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
+import AnimatedPatientCircle from '@/components/AnimatedPatientCircle'
+import useEmblaCarousel from 'embla-carousel-react'
+
+interface Patient {
+  id: string
+  name: string
+  age: number
+  condition: string
+  image: string
+  link: string
+}
+
+const patients: Patient[] = [
+  {
+    id: 'robert',
+    name: 'Robert',
+    age: 62,
+    condition: 'HFrEF',
+    link: '/patient/2/',
+    image: '/Card-Man_A_20241028.png'
+  },
+  {
+    id: 'linda',
+    name: 'Linda',
+    age: 67,
+    condition: 'HFpEF',
+    link: '/patient/1/',
+    image: '/linda.png'
+  },
+  {
+    id: 'joana',
+    name: 'Joana',
+    age: 57,
+    link: '/patient/3/',
+    condition: 'eCVD + T2D',
+    image: '/characters/03B.png'
+  },
+  {
+    id: 'james',
+    name: 'James',
+    age: 55,
+    link: '/patient/4/',
+    condition: 'Uncontrolled hypertension',
+    image: '/characters/04.png'
+  },  
+  {
+    id: 'erik',
+    name: 'Erik',
+    age: 55,
+    link: '/patient/5/',
+    condition: 'CKD Stage 3a (G3aA3)',
+    image: '/characters/05.png'
+  }
+]
+
+export default function PatientSelection() {
+  const router = useRouter()
+  const [selectedPatient, setSelectedPatient] = useState<string | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(1)
+  const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>({})
+  const [desktopIndex, setDesktopIndex] = useState(0)
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    startIndex: 1,
+    align: 'center'
+  })
+
+  // Group patients into chunks of 3 for desktop
+  const patientsPerPage = 3
+  const totalPages = Math.ceil(patients.length / patientsPerPage)
+  const currentPatients = patients.slice(
+    desktopIndex * patientsPerPage,
+    (desktopIndex + 1) * patientsPerPage
+  )
+
+  const handlePrevDesktop = () => {
+    setDesktopIndex(prev => Math.max(0, prev - 1))
+  }
+
+  const handleNextDesktop = () => {
+    setDesktopIndex(prev => Math.min(totalPages - 1, prev + 1))
+  }
+
+  const handleImageLoad = (patientId: string) => {
+    setLoadedImages(prev => ({ ...prev, [patientId]: true }))
+  }
+
+  const handlePatientSelect = async (patientId: string) => {
+    setSelectedPatient(patientId)
+  }
+
+  const scrollTo = useCallback((index: number) => {
+    if (emblaApi) emblaApi.scrollTo(index)
+  }, [emblaApi])
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setCurrentIndex(emblaApi.selectedScrollSnap())
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
+    return () => {
+      emblaApi.off('select', onSelect)
+      emblaApi.off('reInit', onSelect)
+    }
+  }, [emblaApi, onSelect])
+
+  useEffect(() => {
+    if (selectedPatient) {
+      const timer = setTimeout(() => {
+        const patient = patients.find(p => p.id === selectedPatient)
+        router.push(patient?.link || '/patient/2/')
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+  }, [selectedPatient, router])
+
+  return (
+    <>
+      <div className="relative bg-patients">
+
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 opacity-10">
+          <div className="w-full h-screen lg:h-full" style={{
+            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 35px, rgba(255,255,255,0.05) 35px, rgba(255,255,255,0.05) 70px)',
+          }} />
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center w-full mx-auto pt-[32px] lg:pt-[150px] h-screen lg:h-[100%]">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-6 lg:mb-16 2xl:mb-32"
+        >
+          <AnimatePresence mode="wait">
+            {selectedPatient ? (
+              <motion.div
+                key="selected"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h1 className="text-[32px] 2xl:text-[53px] font-[400] text-white tracking-wide !m-0">
+                  You chose  <span className="relative"><span className="left-0 right-0 top-0 absolute flex block w-full h-full blur-xl z-10 bg-[#FFBF01] bg-clip-text text-[48px] 2xl:text-[53px] font-[900] text-transparent min-w-[790px] opacity-90">
+                    {patients.find(p => p.id === selectedPatient)?.name}!
+                  </span><span className="text-[#FFBF00] font-[700] uppercase">{patients.find(p => p.id === selectedPatient)?.name}!</span></span>
+                </h1>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="select"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h1 className="text-[16px] 2xl:text-[53px] font-[400] text-white tracking-wide !m-0">
+                  Select your patient and
+                </h1>
+                <div className="relative">
+                  <span className="hidden 2xl:block left-0 right-0 top-0 absolute flex block w-full h-full blur-xl z-10 bg-[#FFBF01] bg-clip-text text-[73px] font-[900] text-transparent min-w-[790px] opacity-90">
+                    TRAVEL IN TIME NOW!
+                  </span>
+                  <h2 className="text-[32px] lg:text-[73px] font-[900] text-[#FFBF00] tracking-tight italic !m-0 text-center z-20">
+                    TRAVEL IN TIME NOW!
+                  </h2>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+
+        <div className="hidden 2xl:flex flex-row justify-center items-center h-fit min-h-max gap-2 w-full max-w-[1700px] mx-auto relative">
+          {/* Left Arrow */}
+          <button
+            onClick={handlePrevDesktop}
+            disabled={desktopIndex === 0}
+            className={`absolute left-0 z-20 p-4 rounded-full bg-white/10 backdrop-blur-sm transition-all ${
+              desktopIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'opacity-100 hover:bg-white/20'
+            }`}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+
+          {/* Patients */}
+          <div className="flex flex-row justify-center items-center gap-2">
+            {currentPatients.map((patient, index) => (
+            <motion.div
+              key={patient.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.3 }}
+              onClick={() => handlePatientSelect(patient.id)}
+              className="relative cursor-pointer"
+            >
+
+              <div className="text-center flex gap-0 flex-col lg:flex-row">
+              <div className="flex flex-col items-start justify-start mb-4">
+  <h3 className={`text-xl lg:text-4xl font-bold mb-1 ${selectedPatient === patient.id ? 'text-white' : selectedPatient ? 'text-[#363636]' : 'text-white'}`}>
+                  {patient.name}, {patient.age}
+                </h3>
+                <p className={`text-lg lg:text-2xl mb-8 ${selectedPatient === patient.id ? 'text-white/90' : selectedPatient ? 'text-[#363636]' : 'text-white/90'}`}>{patient.condition}</p>
+              </div>
+                <div className="relative mx-auto flex justify-center items-center lg:w-[280px] lg:h-[450px]">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: loadedImages[patient.id] ? 1 : 0, scale: loadedImages[patient.id] ? 1 : 0.9 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image
+                      src={patient.image}
+                      alt={patient.name}
+                      width={200}
+                      height={220}
+                      className={`relative z-10 object-cover transition-all duration-300 max-w-[150px] lg:max-w-[350px] ${selectedPatient && selectedPatient !== patient.id ? 'brightness-[0.2]' : ''}`}
+                      priority
+                      onLoad={() => handleImageLoad(patient.id)}
+                    />
+                  </motion.div>
+                  {selectedPatient === patient.id ? (
+                    <AnimatedPatientCircle />
+                  ) : (
+                    <Image
+                      src="/patient-circle.svg"
+                      alt="Patient circle"
+                      title="Patient circle"
+                      width={220}
+                      height={80}
+                      className="absolute bottom-[-30px] transform z-0 hidden lg:block"
+                    />
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={handleNextDesktop}
+            disabled={desktopIndex === totalPages - 1}
+            className={`absolute right-0 z-20 p-4 rounded-full bg-white/10 backdrop-blur-sm transition-all ${
+              desktopIndex === totalPages - 1 ? 'opacity-30 cursor-not-allowed' : 'opacity-100 hover:bg-white/20'
+            }`}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="2xl:hidden w-full overflow-hidden relative"
+        >
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container flex">
+              {patients.map((patient, index) => (
+                <div
+                  key={patient.id}
+                  className="embla__slide flex-[0_0_100%] min-w-0 px-8"
+                  onClick={() => handlePatientSelect(patient.id)}
+                >
+                  <div className="text-center flex gap-0 flex-col items-center">
+                    <div className="flex flex-col items-center justify-start mb-4">
+                      <h3 className={`text-[24px] font-bold mt-3 mb-1 ${selectedPatient === patient.id ? 'text-white' : selectedPatient ? 'text-[#363636]' : 'text-white'}`}>
+                        {patient.name}, {patient.age}
+                      </h3>
+                      <p className={`text-lg mb-8 ${selectedPatient === patient.id ? 'text-white/90' : selectedPatient ? 'text-[#363636]' : 'text-white/90'}`}>{patient.condition}</p>
+                    </div>
+                    <div className="relative mx-auto flex justify-center items-center">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: loadedImages[patient.id] ? 1 : 0, scale: loadedImages[patient.id] ? 1 : 0.9 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Image
+                          src={patient.image}
+                          alt={patient.name}
+                          title={patient.name}
+                          width={200}
+                          height={220}
+                          className={`relative z-10 object-cover transition-all duration-300 max-w-[120px] xl:max-w-[150px] 2xl:max-w-[200px] ${selectedPatient && selectedPatient !== patient.id ? 'brightness-[0.2]' : ''}`}
+                          priority
+                          onLoad={() => handleImageLoad(patient.id)}
+                        />
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex justify-center gap-2 mt-5 xl:mt-8">
+            {patients.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollTo(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  currentIndex === index ? 'bg-white w-6' : 'bg-white/30'
+                }`}
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Disclaimer */}
+        <div className="text-center mt-[70px] mb-[70px] px-4">
+          <p className="text-white/60 text-sm">
+            Not an actual patient. Visuals created with the help of AI.
+          </p>
+        </div>
+      </div>
+    </div>
+    </>
+  )
+}

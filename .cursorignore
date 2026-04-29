@@ -1,0 +1,15 @@
+.next/
+**/.next/
+out/
+**/out/
+node_modules/
+**/node_modules/
+.vercel/
+**/.vercel/
+.cache/
+**/.cache/
+
+*.map
+*.meta
+*.sst
+*.tsbuildinfo

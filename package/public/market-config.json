@@ -1,0 +1,14 @@
+{
+  "numerical": {
+    "patientAges": {},
+    "patientMetrics": {},
+    "timeline": { "baseYear": 2025, "endYear": 2040 }
+  },
+  "design": {
+    "primary": "#095960",
+    "accent": "#FFBF00",
+    "secondary": "#056368",
+    "border": "#044449"
+  },
+  "characterEthnicity": {}
+}

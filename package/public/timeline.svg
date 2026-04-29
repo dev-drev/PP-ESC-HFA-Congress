@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1826" height="145.627" viewBox="0 0 1826 145.627">
+  <defs>
+    <filter id="Pfad_27252" x="187" y="0" width="66" height="103" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#ffbf00"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="_2025" x="154" y="49.627" width="132" height="96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-2"/>
+      <feFlood flood-color="#ffbf00"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Gruppe_23878" data-name="Gruppe 23878" transform="translate(-47 16)">
+    <path id="Pfad_27301" data-name="Pfad 27301" d="M0,0H43" transform="translate(961 57) rotate(-90)" fill="none" stroke="#fff" stroke-width="3"/>
+    <path id="Pfad_29956" data-name="Pfad 29956" d="M0,0H43" transform="translate(1654 57) rotate(-90)" fill="none" stroke="#fff" stroke-width="3"/>
+    <g transform="matrix(1, 0, 0, 1, 47, -16)" filter="url(#Pfad_27252)">
+      <path id="Pfad_27252-2" data-name="Pfad 27252" d="M0,0H43" transform="translate(220 73) rotate(-90)" fill="none" stroke="#ffbf00" stroke-width="6"/>
+    </g>
+    <path id="Pfad_27241" data-name="Pfad 27241" d="M0,0H16.794" transform="translate(311 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30017" data-name="Pfad 30017" d="M0,0H16.794" transform="translate(1005 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29987" data-name="Pfad 29987" d="M0,0H16.794" transform="translate(289.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30018" data-name="Pfad 30018" d="M0,0H16.794" transform="translate(983.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29972" data-name="Pfad 29972" d="M0,0H16.794" transform="translate(332.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30016" data-name="Pfad 30016" d="M0,0H16.794" transform="translate(1026.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27244" data-name="Pfad 27244" d="M0,0H16.794" transform="translate(441 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30011" data-name="Pfad 30011" d="M0,0H16.794" transform="translate(1135 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29973" data-name="Pfad 29973" d="M0,0H16.794" transform="translate(462.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30010" data-name="Pfad 30010" d="M0,0H16.794" transform="translate(1156.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27247" data-name="Pfad 27247" d="M0,0H16.794" transform="translate(571 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29996" data-name="Pfad 29996" d="M0,0H16.794" transform="translate(1265 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29974" data-name="Pfad 29974" d="M0,0H16.794" transform="translate(592.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29997" data-name="Pfad 29997" d="M0,0H16.794" transform="translate(1286.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27242" data-name="Pfad 27242" d="M0,0H16.794" transform="translate(354 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30015" data-name="Pfad 30015" d="M0,0H16.794" transform="translate(1048 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29975" data-name="Pfad 29975" d="M0,0H16.794" transform="translate(375.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30014" data-name="Pfad 30014" d="M0,0H16.794" transform="translate(1069.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27245" data-name="Pfad 27245" d="M0,0H16.794" transform="translate(484 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30009" data-name="Pfad 30009" d="M0,0H16.794" transform="translate(1178 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29976" data-name="Pfad 29976" d="M0,0H16.794" transform="translate(505.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30008" data-name="Pfad 30008" d="M0,0H16.794" transform="translate(1199.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27248" data-name="Pfad 27248" d="M0,0H16.794" transform="translate(614 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29998" data-name="Pfad 29998" d="M0,0H16.794" transform="translate(1308 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29977" data-name="Pfad 29977" d="M0,0H16.794" transform="translate(635.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29999" data-name="Pfad 29999" d="M0,0H16.794" transform="translate(1329.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27243" data-name="Pfad 27243" d="M0,0H16.794" transform="translate(397 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30013" data-name="Pfad 30013" d="M0,0H16.794" transform="translate(1091 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29978" data-name="Pfad 29978" d="M0,0H16.794" transform="translate(418.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30012" data-name="Pfad 30012" d="M0,0H16.794" transform="translate(1112.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27246" data-name="Pfad 27246" d="M0,0H16.794" transform="translate(527 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30007" data-name="Pfad 30007" d="M0,0H16.794" transform="translate(1221 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29979" data-name="Pfad 29979" d="M0,0H16.794" transform="translate(548.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30000" data-name="Pfad 30000" d="M0,0H16.794" transform="translate(1242.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27249" data-name="Pfad 27249" d="M0,0H16.794" transform="translate(657 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30001" data-name="Pfad 30001" d="M0,0H16.794" transform="translate(1351 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29980" data-name="Pfad 29980" d="M0,0H16.794" transform="translate(678.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30002" data-name="Pfad 30002" d="M0,0H16.794" transform="translate(1372.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27250" data-name="Pfad 27250" d="M0,0H16.794" transform="translate(701 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30003" data-name="Pfad 30003" d="M0,0H16.794" transform="translate(1395 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29981" data-name="Pfad 29981" d="M0,0H16.794" transform="translate(722.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30004" data-name="Pfad 30004" d="M0,0H16.794" transform="translate(1416.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27251" data-name="Pfad 27251" d="M0,0H16.794" transform="translate(744 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30005" data-name="Pfad 30005" d="M0,0H16.794" transform="translate(1438 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29982" data-name="Pfad 29982" d="M0,0H16.794" transform="translate(765.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_30006" data-name="Pfad 30006" d="M0,0H16.794" transform="translate(1459.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27252-3" data-name="Pfad 27252" d="M0,0H16.794" transform="translate(787 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29988" data-name="Pfad 29988" d="M0,0H16.794" transform="translate(1481 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29983" data-name="Pfad 29983" d="M0,0H16.794" transform="translate(808.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29989" data-name="Pfad 29989" d="M0,0H16.794" transform="translate(1502.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27241-2" data-name="Pfad 27241" d="M0,0H16.794" transform="translate(831 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29990" data-name="Pfad 29990" d="M0,0H16.794" transform="translate(1525 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29984" data-name="Pfad 29984" d="M0,0H16.794" transform="translate(852.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29991" data-name="Pfad 29991" d="M0,0H16.794" transform="translate(1546.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27242-2" data-name="Pfad 27242" d="M0,0H16.794" transform="translate(874 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29992" data-name="Pfad 29992" d="M0,0H16.794" transform="translate(1568 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29985" data-name="Pfad 29985" d="M0,0H16.794" transform="translate(895.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29993" data-name="Pfad 29993" d="M0,0H16.794" transform="translate(1589.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29986" data-name="Pfad 29986" d="M0,0H16.794" transform="translate(938.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29994" data-name="Pfad 29994" d="M0,0H16.794" transform="translate(1632.5 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_27243-2" data-name="Pfad 27243" d="M0,0H16.794" transform="translate(917 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Pfad_29995" data-name="Pfad 29995" d="M0,0H16.794" transform="translate(1611 44.229) rotate(-90)" fill="none" stroke="#fff" stroke-width="2"/>
+    <g id="Gruppe_23789" data-name="Gruppe 23789" transform="translate(1675.5 27.435)">
+      <path id="Pfad_29967" data-name="Pfad 29967" d="M0,0H16.794" transform="translate(21.5) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+      <path id="Pfad_30019" data-name="Pfad 30019" d="M0,0H16.794" transform="rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
+      <path id="Pfad_29968" data-name="Pfad 29968" d="M0,0H16.794" transform="translate(65.5) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+      <path id="Pfad_30020" data-name="Pfad 30020" d="M0,0H16.794" transform="translate(43) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+      <path id="Pfad_29969" data-name="Pfad 29969" d="M0,0H16.794" transform="translate(109.5) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+      <path id="Pfad_30021" data-name="Pfad 30021" d="M0,0H16.794" transform="translate(88) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+      <path id="Pfad_29970" data-name="Pfad 29970" d="M0,0H16.794" transform="translate(153.5) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.15"/>
+      <path id="Pfad_30022" data-name="Pfad 30022" d="M0,0H16.794" transform="translate(132) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.15"/>
+      <path id="Pfad_29971" data-name="Pfad 29971" d="M0,0H16.794" transform="translate(196.5) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.1"/>
+      <path id="Pfad_30023" data-name="Pfad 30023" d="M0,0H16.794" transform="translate(175) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.1"/>
+    </g>
+    <g id="Gruppe_23790" data-name="Gruppe 23790" transform="translate(244.5 44.229) rotate(180)">
+      <path id="Pfad_29967-2" data-name="Pfad 29967" d="M0,0H16.794" transform="translate(21.5 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
+      <path id="Pfad_30019-2" data-name="Pfad 30019" d="M0,0H16.794" transform="translate(0 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.75"/>
+      <path id="Pfad_29968-2" data-name="Pfad 29968" d="M0,0H16.794" transform="translate(65.5 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+      <path id="Pfad_30020-2" data-name="Pfad 30020" d="M0,0H16.794" transform="translate(43 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+      <path id="Pfad_29969-2" data-name="Pfad 29969" d="M0,0H16.794" transform="translate(109.5 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+      <path id="Pfad_30021-2" data-name="Pfad 30021" d="M0,0H16.794" transform="translate(88 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+      <path id="Pfad_29970-2" data-name="Pfad 29970" d="M0,0H16.794" transform="translate(153.5 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.15"/>
+      <path id="Pfad_30022-2" data-name="Pfad 30022" d="M0,0H16.794" transform="translate(132 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.15"/>
+      <path id="Pfad_29971-2" data-name="Pfad 29971" d="M0,0H16.794" transform="translate(196.5 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.1"/>
+      <path id="Pfad_30023-2" data-name="Pfad 30023" d="M0,0H16.794" transform="translate(175 0) rotate(90)" fill="none" stroke="#fff" stroke-width="2" opacity="0.1"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 47, -16)" filter="url(#_2025)">
+      <text id="_2025-2" data-name="2025" transform="translate(220 109.63)" fill="#ffbf00" font-size="30" font-family="Lato-Heavy, Lato" font-weight="800" letter-spacing="0.02em"><tspan x="-35.7" y="0">2025</tspan></text>
+    </g>
+    <text id="_2030" data-name="2030" transform="translate(961 93.628)" fill="#fff" font-size="30" font-family="Lato-Regular, Lato" letter-spacing="0.02em"><tspan x="-35.7" y="0">2030</tspan></text>
+    <text id="_2035" data-name="2035" transform="translate(1654 93.628)" fill="#fff" font-size="30" font-family="Lato-Regular, Lato" letter-spacing="0.02em" opacity="0.998"><tspan x="-35.7" y="0">2035</tspan></text>
+  </g>
+</svg>
