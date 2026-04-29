@@ -649,6 +649,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                     <GuidelinesAccordion
                       patientId={patient.id}
                       patientName={patient.name}
+                      hideSlide4={selectedAction === actions[0]?.id}
                       isOpen={openAccordion === 'guidelines'}
                       onToggle={(isOpen) => {
                         setOpenAccordion(isOpen ? 'guidelines' : null);

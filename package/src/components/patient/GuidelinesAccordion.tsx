@@ -3,12 +3,14 @@
 import PatientAccordion from './PatientAccordion';
 import ClinicalReasoningSlides from './ClinicalReasoningSlides';
 import Image from 'next/image';
+import type { ReactNode } from 'react';
 
 interface GuidelinesAccordionProps {
   patientId?: string;
   patientName?: string;
   isOpen?: boolean;
   onToggle?: (isOpen: boolean) => void;
+  hideSlide4?: boolean;
 }
 
 export default function GuidelinesAccordion({
@@ -16,10 +18,11 @@ export default function GuidelinesAccordion({
   patientName,
   isOpen,
   onToggle,
+  hideSlide4 = false,
 }: GuidelinesAccordionProps) {
   const guidelineSlide1 = (
-    <div className="space-y-4 text-center">
-      <p className="text-gray-900 font-bold text-xl">
+    <div className="space-y-4 ">
+      <p className="text-gray-900 font-bold text-md">
         Heart failure is a progressive condition that needs urgent, optimal intervention<sup>1-4</sup>
       </p>
       <p className="text-gray-700">In patients living with HFrEF (LVEF ≤40%):</p>
@@ -35,7 +38,7 @@ export default function GuidelinesAccordion({
   );
 
   const guidelineSlide3 = (
-    <div className="space-y-4 text-center">
+    <div className="space-y-4">
       <p className="text-gray-700">However, in practice:</p>
       <Image
         src="/guidelines.png"
@@ -49,34 +52,17 @@ export default function GuidelinesAccordion({
         Patients with HFrEF require urgent and appropriate intervention with foundational treatments like SGLT2is,
         such as JARDIANCE<sup>®</sup> (empagliflozin).<sup>5,8</sup>
       </p>
-      <p className="text-gray-900 font-bold text-2xl">Don&apos;t miss the moment.</p>
+      <p className="text-gray-900 font-bold text-xl py-2">Don&apos;t miss the moment.</p>
     </div>
   );
 
-  const guidelineSlide4 = (
-    <div className="space-y-4 text-center">
-      <p className="text-gray-900 font-bold text-2xl">KDIGO Digital Heatmap</p>
-      <p className="text-gray-700">
-        Do you want to visualize your patients&apos; risk for adverse CV and kidney outcomes by entering their uACR and eGFR values?
-      </p>
-      <p className="text-gray-900 font-bold text-2xl">Scan and Learn More</p>
-      <Image
-        src="/guidelines.png"
-        alt="KDIGO heatmap placeholder"
-        title="KDIGO heatmap placeholder"
-        width={420}
-        height={300}
-        className="rounded-lg w-full h-auto"
-      />
-      <p className="text-gray-700 text-sm">
-        This interactive risk calculator - developed in collaboration with Boehringer Ingelheim and KDIGO - is intended for informational purposes only and does not constitute medical advice or recommendations. It is not a substitute for professional medical advice, diagnosis, or treatment and is not a treatment decision tool. Practitioners should use their own clinical judgment when diagnosing and treating patients.
-      </p>
-    </div>
-  );
+  
 
   // Patient-specific content
   const getGuidelinesContent = () => {
     const name = patientName?.toLowerCase();
+    const withOptionalSlide4 = (slides: { id: string; content: ReactNode }[]) =>
+      hideSlide4 ? slides.filter((slide) => !slide.id.endsWith('-slide-4')) : slides;
     
     // Linda (HFpEF)
     if (name === 'linda' || patientId === '1') {
@@ -102,10 +88,9 @@ export default function GuidelinesAccordion({
           ),
         },
         { id: "linda-slide-3", content: guidelineSlide3 },
-        { id: "linda-slide-4", content: guidelineSlide4 },
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '1'} slides={lindaSlides} slideKey="linda-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '1'} slides={withOptionalSlide4(lindaSlides)} slideKey="linda-guidelines" />;
     }
     
     // Robert (HFrEF)
@@ -125,10 +110,9 @@ export default function GuidelinesAccordion({
           </div>
         </div> },
         { id: "robert-slide-3", content: guidelineSlide3 },
-        { id: "robert-slide-4", content: guidelineSlide4 },
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '2'} slides={robertSlides} slideKey="robert-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '2'} slides={withOptionalSlide4(robertSlides)} slideKey="robert-guidelines" />;
     }
     
     // Joana (T2D+CAD)
@@ -156,7 +140,7 @@ export default function GuidelinesAccordion({
         { id: "joana-slide-4", content: guidelineSlide4 },
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '3'} slides={joanaSlides} slideKey="joana-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '3'} slides={withOptionalSlide4(joanaSlides)} slideKey="joana-guidelines" />;
     }
 
     // James (CKD)
@@ -199,13 +183,10 @@ export default function GuidelinesAccordion({
           id: "james-slide-3",
           content: guidelineSlide3,
         },
-        {
-          id: "james-slide-4",
-          content: guidelineSlide4,
-        },
+       
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '4'} slides={jamesSlides} slideKey="james-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '4'} slides={withOptionalSlide4(jamesSlides)} slideKey="james-guidelines" />;
     }
 
     // Erik (HFrEF)
@@ -248,13 +229,10 @@ export default function GuidelinesAccordion({
           id: "erik-slide-3",
           content: guidelineSlide3,
         },
-        {
-          id: "erik-slide-4",
-          content: guidelineSlide4,
-        },
+      
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '5'} slides={erikSlides} slideKey="erik-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '5'} slides={withOptionalSlide4(erikSlides)} slideKey="erik-guidelines" />;
     }
 
     // Default fallback
