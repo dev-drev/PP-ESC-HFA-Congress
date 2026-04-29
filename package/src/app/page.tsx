@@ -40,22 +40,6 @@ const patients: Patient[] = [
     link: '/patient/3/',
     condition: 'eCVD + T2D',
     image: '/characters/03B.png'
-  },
-  {
-    id: 'james',
-    name: 'James',
-    age: 55,
-    link: '/patient/4/',
-    condition: 'Uncontrolled hypertension',
-    image: '/characters/04.png'
-  },  
-  {
-    id: 'erik',
-    name: 'Erik',
-    age: 55,
-    link: '/patient/5/',
-    condition: 'CKD Stage 3a (G3aA3)',
-    image: '/characters/05.png'
   }
 ]
 
@@ -64,29 +48,12 @@ export default function PatientSelection() {
   const [selectedPatient, setSelectedPatient] = useState<string | null>(null)
   const [currentIndex, setCurrentIndex] = useState(1)
   const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>({})
-  const [desktopIndex, setDesktopIndex] = useState(0)
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     startIndex: 1,
     align: 'center'
   })
-
-  // Group patients into chunks of 3 for desktop
-  const patientsPerPage = 3
-  const totalPages = Math.ceil(patients.length / patientsPerPage)
-  const currentPatients = patients.slice(
-    desktopIndex * patientsPerPage,
-    (desktopIndex + 1) * patientsPerPage
-  )
-
-  const handlePrevDesktop = () => {
-    setDesktopIndex(prev => Math.max(0, prev - 1))
-  }
-
-  const handleNextDesktop = () => {
-    setDesktopIndex(prev => Math.min(totalPages - 1, prev + 1))
-  }
 
   const handleImageLoad = (patientId: string) => {
     setLoadedImages(prev => ({ ...prev, [patientId]: true }))
@@ -185,22 +152,9 @@ export default function PatientSelection() {
         </motion.div>
 
         <div className="hidden 2xl:flex flex-row justify-center items-center h-fit min-h-max gap-2 w-full max-w-[1700px] mx-auto relative">
-          {/* Left Arrow */}
-          <button
-            onClick={handlePrevDesktop}
-            disabled={desktopIndex === 0}
-            className={`absolute left-0 z-20 p-4 rounded-full bg-white/10 backdrop-blur-sm transition-all ${
-              desktopIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'opacity-100 hover:bg-white/20'
-            }`}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-
           {/* Patients */}
           <div className="flex flex-row justify-center items-center gap-2">
-            {currentPatients.map((patient, index) => (
+            {patients.map((patient, index) => (
             <motion.div
               key={patient.id}
               initial={{ opacity: 0, y: 50 }}
@@ -250,19 +204,6 @@ export default function PatientSelection() {
             </motion.div>
           ))}
           </div>
-
-          {/* Right Arrow */}
-          <button
-            onClick={handleNextDesktop}
-            disabled={desktopIndex === totalPages - 1}
-            className={`absolute right-0 z-20 p-4 rounded-full bg-white/10 backdrop-blur-sm transition-all ${
-              desktopIndex === totalPages - 1 ? 'opacity-30 cursor-not-allowed' : 'opacity-100 hover:bg-white/20'
-            }`}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
         </div>
 
         <motion.div
