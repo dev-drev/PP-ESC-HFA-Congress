@@ -560,7 +560,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                Did you know that SGLT2is, such as JARDIANCE<sup>®</sup>, provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*5</sup>
+                Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*5</sup>
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
@@ -622,6 +622,28 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 </p>
 
                  <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
+              </div>
+            ),
+          },
+          {
+            id: 'joana-five-years-slide-4',
+            content: (
+              <div className="flex flex-col h-full">
+                <p className="text-lg mb-6 text-gray-700">
+                  Would you like to continue with your next patient? <br />
+                  Select the next patient you would like to see!
+                </p>
+                <div className="flex justify-center mt-6 mb-6">
+                  <a
+                    href="/"
+                    rel="noopener"
+                    title="Choose patient"
+                    data-it-button="choose-patient-joana-five-years-slide-4"
+                    className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
+                  >
+                    Choose patient
+                  </a>
+                </div>
               </div>
             ),
           },
@@ -702,6 +724,28 @@ Continue delivering the best care by implementing the guideline-recommended foun
               </div>
             ),
           },
+          {
+            id: 'joana-add-sglt2i-slide-4',
+            content: (
+              <div className="flex flex-col h-full">
+                <p className="text-lg mb-6 text-gray-700">
+                  Would you like to continue with your next patient? <br />
+                  Select the next patient you would like to see!
+                </p>
+                <div className="flex justify-center mt-6 mb-6">
+                  <a
+                    href="/"
+                    rel="noopener"
+                    title="Choose patient"
+                    data-it-button="choose-patient-joana-add-sglt2i-slide-4"
+                    className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
+                  >
+                    Choose patient
+                  </a>
+                </div>
+              </div>
+            ),
+          },
         ];
       }
       // Check if we're in the optimize case
@@ -714,7 +758,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
               <div className="flex flex-col h-full">
                
                 <p className="text-base mb-4 text-gray-700">
-                  Did you know that SGLT2is, such as JARDIANCE<sup>®</sup>, provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*†5</sup>
+                  Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*†5</sup>
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
@@ -776,6 +820,28 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 </p>
 
                 <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
+              </div>
+            ),
+          },
+          {
+            id: 'joana-optimize-slide-4',
+            content: (
+              <div className="flex flex-col h-full">
+                <p className="text-lg mb-6 text-gray-700">
+                  Would you like to continue with your next patient? <br />
+                  Select the next patient you would like to see!
+                </p>
+                <div className="flex justify-center mt-6 mb-6">
+                  <a
+                    href="/"
+                    rel="noopener"
+                    title="Choose patient"
+                    data-it-button="choose-patient-joana-optimize-slide-4"
+                    className="bg-[#095960] text-white px-8 py-3 rounded-md font-semibold text-xl transition-colors"
+                  >
+                    Choose patient
+                  </a>
+                </div>
               </div>
             ),
           },
@@ -904,7 +970,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-4 font-medium text-gray-700">
-              Did you know that SGLT2is, such as JARDIANCE<sup>®</sup>, provide protection by significantly reducing the risk of CV death or HHF for patients with HFpEF?<sup>*5</sup>
+              Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death or HHF for patients with HFpEF?<sup>*5</sup>
               </p>
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
                 <div className="relative">
@@ -985,7 +1051,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-4 font-medium text-gray-700">
-              Did you know that SGLT2is, such as JARDIANCE<sup>®</sup>, provide protection by significantly reducing the risk of CV death or HHF for patients with HFpEF?<sup>*5</sup>
+              Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death or HHF for patients with HFpEF?<sup>*5</sup>
               </p>
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
                 <div className="relative">
@@ -1143,7 +1209,11 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
       ];
     } else if (patientId === '2') {
       // Use the 4-slide closing variant on Robert final-stage routes
-      if (pathname.includes('/end2') || pathname.includes('/continue-acei-case')) {
+      if (
+        pathname.includes('/end2') ||
+        pathname.includes('/continue-acei-case') ||
+        pathname.includes('/sglt2i-arni-case')
+      ) {
             return [
         {
           id: 'robert-slide-1',
@@ -1166,8 +1236,7 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
                 </div>
               </div>
               <p className="text-lg mt-6 text-gray-700">
-              And did you know that, in addition to improving CV outcomes, JARDIANCE<sup>®</sup> (empagliflozin) improved quality of life regardless of LVEF?
-              <sup>†12,13</sup>
+              The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.<sup>*‡9,16 </sup>
               </p>
             </div>
           ),
@@ -1178,7 +1247,7 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
             <div className="flex flex-col h-full">
               <p className="text-lg mb-6 text-gray-700">
              
-               You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert<sup>5</sup>.
+               You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.<sup>5</sup>
 
               </p>
 
@@ -1193,7 +1262,9 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
               </div>
 
               <p className="text-lg text-gray-700">
-            Continue delivering the best care by implementing GDMT for HF across the LVEF spectrum and help drive meaningful change for your patients.
+         
+
+            Major guidelines recommend <b>rapid initiation and <br /> up-titration</b>  of all four foundational treatments for all patients with HFrEF.<sup>5</sup>
               </p>
             </div>
           ),
@@ -1207,15 +1278,15 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-6">
-              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>14</sup>
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-6">
-               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<b><sup>15</sup></b> 
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-8">
-                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>15</sup>
               </p>
 
                 <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
@@ -1256,7 +1327,7 @@ Select the next patient you would like to see!
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-4 font-medium text-gray-700">
-             Did you know that SGLT2is, such as JARDIANCE<sup>®</sup>, provide protection by significantly reducing the risk of CV death or HHF for patients with HFrEF?<sup>*6</sup>
+             Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death or HHF for patients with HFrEF?<sup>*6</sup>
 
               </p>
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
@@ -1283,7 +1354,7 @@ Select the next patient you would like to see!
             <div className="flex flex-col h-full">
               <p className="text-lg mb-6 text-gray-700">
              
-               SGLT2is, such as JARDIANCE<sup>®</sup>, are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.<sup>5</sup>
+               SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.<sup>5</sup>
 
               </p>
 
@@ -1312,15 +1383,15 @@ Select the next patient you would like to see!
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-6">
-              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>14</sup>
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-6">
-               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<b><sup>15</sup></b> 
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-8">
-                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>15</sup>
               </p>
 
               <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />

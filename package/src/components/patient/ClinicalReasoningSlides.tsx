@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, PanInfo } from 'framer-motion';
 
 interface ClinicalReasoningSlide {
@@ -20,6 +20,17 @@ export default function ClinicalReasoningSlides({
   slideKey = 'default',
 }: ClinicalReasoningSlidesProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [patientId, slideKey]);
+
+  useEffect(() => {
+    setCurrentSlide((prev) => {
+      if (slides.length === 0) return 0;
+      return Math.min(prev, slides.length - 1);
+    });
+  }, [slides.length]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -59,7 +70,7 @@ export default function ClinicalReasoningSlides({
           dragElastic={0.5}
           onDragEnd={handleDragEnd}
         >
-          {slides[currentSlide].content}
+          {slides[currentSlide]?.content}
         </motion.div>
       </div>
 

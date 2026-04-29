@@ -11,6 +11,7 @@ interface GuidelinesAccordionProps {
   isOpen?: boolean;
   onToggle?: (isOpen: boolean) => void;
   hideSlide4?: boolean;
+  hideSlide3?: boolean;
 }
 
 export default function GuidelinesAccordion({
@@ -19,6 +20,7 @@ export default function GuidelinesAccordion({
   isOpen,
   onToggle,
   hideSlide4 = false,
+  hideSlide3 = false,
 }: GuidelinesAccordionProps) {
   const guidelineSlide1 = (
     <div className="space-y-8 pb-4 ">
@@ -61,8 +63,12 @@ export default function GuidelinesAccordion({
   // Patient-specific content
   const getGuidelinesContent = () => {
     const name = patientName?.toLowerCase();
-    const withOptionalSlide4 = (slides: { id: string; content: ReactNode }[]) =>
-      hideSlide4 ? slides.filter((slide) => !slide.id.endsWith('-slide-4')) : slides;
+    const withOptionalSlides = (slides: { id: string; content: ReactNode }[]) =>
+      slides.filter((slide) => {
+        if (hideSlide4 && slide.id.endsWith('-slide-4')) return false;
+        if (hideSlide3 && slide.id.endsWith('-slide-3')) return false;
+        return true;
+      });
     
     // Linda (HFpEF)
     if (name === 'linda' || patientId === '1') {
@@ -124,7 +130,7 @@ export default function GuidelinesAccordion({
         },
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '1'} slides={withOptionalSlide4(lindaSlides)} slideKey="linda-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '1'} slides={withOptionalSlides(lindaSlides)} slideKey="linda-guidelines" />;
     }
     
     // Robert (HFrEF)
@@ -146,7 +152,7 @@ export default function GuidelinesAccordion({
         { id: "robert-slide-3", content: guidelineSlide3 },
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '2'} slides={withOptionalSlide4(robertSlides)} slideKey="robert-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '2'} slides={withOptionalSlides(robertSlides)} slideKey="robert-guidelines" />;
     }
     
     // Joana (T2D+CAD)
@@ -188,9 +194,28 @@ export default function GuidelinesAccordion({
           ),
         },
         { id: "joana-slide-3", content: guidelineSlide3 },
+        {
+          id: "joana-slide-4",
+          content: (
+            <div className="space-y-6 pb-4">
+              <p className="text-gray-700 font-bold">
+                Early intervention can help reduce cardio-renal risk progression in patients with T2D and established CVD.<sup>1,3-5</sup>
+              </p>
+              <Image
+                src="/PP-new/guidelines-vcf.png"
+                alt="Early intervention for cardio-renal risk"
+                title="Early intervention for cardio-renal risk"
+                width={420}
+                height={300}
+                className="rounded-lg w-full h-auto"
+              />
+              <p className="text-gray-900 font-bold text-xl">Don&apos;t miss the moment.</p>
+            </div>
+          ),
+        },
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '3'} slides={withOptionalSlide4(joanaSlides)} slideKey="joana-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '3'} slides={withOptionalSlides(joanaSlides)} slideKey="joana-guidelines" />;
     }
 
     // James (CKD)
@@ -236,7 +261,7 @@ export default function GuidelinesAccordion({
        
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '4'} slides={withOptionalSlide4(jamesSlides)} slideKey="james-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '4'} slides={withOptionalSlides(jamesSlides)} slideKey="james-guidelines" />;
     }
 
     // Erik (HFrEF)
@@ -282,7 +307,7 @@ export default function GuidelinesAccordion({
       
       ];
 
-      return <ClinicalReasoningSlides patientId={patientId || '5'} slides={withOptionalSlide4(erikSlides)} slideKey="erik-guidelines" />;
+      return <ClinicalReasoningSlides patientId={patientId || '5'} slides={withOptionalSlides(erikSlides)} slideKey="erik-guidelines" />;
     }
 
     // Default fallback
