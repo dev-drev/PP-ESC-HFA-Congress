@@ -542,7 +542,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                           }}
                         >
                           <Image
-                            src={showHeartView && currentPatientData.overlaySrc ? currentPatientData.overlaySrc : currentPatientData.imageSrc}
+                            src={currentPatientData.imageSrc}
                             alt={currentPatientData.name}
                             title={currentPatientData.name}
                             width={400}
