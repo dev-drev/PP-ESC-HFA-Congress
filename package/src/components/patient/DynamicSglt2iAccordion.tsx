@@ -621,15 +621,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
                 </p>
 
-                <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                  <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                  <span className="text-sm text-gray-700 text-center leading-tight">
-                    Increasing risk of
-                    <br />
-                    CV mortality
-                  </span>
-                  <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-                </div>
+                 <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
               </div>
             ),
           },
@@ -706,15 +698,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
                 </p>
 
-                <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                  <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                  <span className="text-sm text-gray-700 text-center leading-tight">
-                    Increasing risk of
-                    <br />
-                    CV mortality
-                  </span>
-                  <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-                </div>
+                <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
               </div>
             ),
           },
@@ -791,15 +775,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
                 </p>
 
-                <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                  <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                  <span className="text-sm text-gray-700 text-center leading-tight">
-                    Increasing risk of
-                    <br />
-                    CV mortality
-                  </span>
-                  <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-                </div>
+                <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
               </div>
             ),
           },
@@ -887,15 +863,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
               </p>
 
-              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                <span className="text-sm text-gray-700 text-center leading-tight">
-                  Increasing risk of
-                  <br />
-                  CV mortality
-                </span>
-                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-              </div>
+              <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
             </div>
           ),
         },
@@ -1004,15 +972,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
               </p>
 
-              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                <span className="text-sm text-gray-700 text-center leading-tight">
-                  Increasing risk of
-                  <br />
-                  CV mortality
-                </span>
-                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-              </div>
+              <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
             </div>
           ),
         },
@@ -1094,15 +1054,7 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
                 <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
               </p>
 
-              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                <span className="text-sm text-gray-700 text-center leading-tight">
-                  Increasing risk of
-                  <br />
-                  CV mortality
-                </span>
-                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-              </div>
+              <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
             </div>
           ),
         },
@@ -1184,22 +1136,14 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
                 <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
               </p>
 
-              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                <span className="text-sm text-gray-700 text-center leading-tight">
-                  Increasing risk of
-                  <br />
-                  CV mortality
-                </span>
-                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-              </div>
+              <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
             </div>
           ),
         },
       ];
     } else if (patientId === '2') {
-      // Check for /end2 path first
-      if (pathname.includes('/end2')) {
+      // Use the 4-slide closing variant on Robert final-stage routes
+      if (pathname.includes('/end2') || pathname.includes('/continue-acei-case')) {
             return [
         {
           id: 'robert-slide-1',
@@ -1274,15 +1218,7 @@ Initiate JARDIANCE<sup>®</sup> early so that your patients with HFpEF like Lind
                 <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
               </p>
 
-              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                <span className="text-sm text-gray-700 text-center leading-tight">
-                  Increasing risk of
-                  <br />
-                  CV mortality
-                </span>
-                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-              </div>
+                <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
             </div>
           ),
         },
@@ -1387,15 +1323,7 @@ Select the next patient you would like to see!
                 <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
               </p>
 
-              <div className="mt-auto bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center justify-center gap-6">
-                <span className="text-3xl font-bold text-[#d2385b]">uACR &uarr;</span>
-                <span className="text-sm text-gray-700 text-center leading-tight">
-                  Increasing risk of
-                  <br />
-                  CV mortality
-                </span>
-                <span className="text-3xl font-bold text-[#d2385b]">eGFR &darr;</span>
-              </div>
+              <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
             </div>
           ),
         },

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 interface InterconnectedSystemAccordionProps {
   isOpen: boolean;
@@ -28,23 +29,6 @@ export default function InterconnectedSystemAccordion({
         title: "KDIGO Digital Heatmap",
         subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
         intro: "Scan and Learn more",
-        facts: [
-          {
-            color: "text-teal-500",
-            text: "More than 50% of patients with HF have CKD",
-            ref: "2"
-          },
-          {
-            color: "text-amber-300",
-            text: "1 in 2 patients with T2D die from CVD",
-            ref: "3"
-          },
-          {
-            color: "text-[#4B3232]",
-            text: "16% of patients with HF have comorbid DM and CKD",
-            ref: "4"
-          }
-        ]
       };
     }
     
@@ -54,23 +38,6 @@ export default function InterconnectedSystemAccordion({
         title: "KDIGO Digital Heatmap",
         subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
         intro: "Scan and Learn more",
-        facts: [
-          {
-            color: "text-teal-500",
-            text: "More than 50% of patients with HF have CKD",
-            ref: "3"
-          },
-          {
-            color: "text-amber-300",
-            text: "1 in 2 patients with T2D die from CVD",
-            ref: "4"
-          },
-          {
-            color: "text-[#4B3232]",
-            text: "16% of patients with HF have comorbid DM and CKD",
-            ref: "5"
-          }
-        ]
       };
     }
     
@@ -80,28 +47,6 @@ export default function InterconnectedSystemAccordion({
         title: "KDIGO Digital Heatmap",
         subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
         intro: "Scan and Learn more",
-        facts: [
-          {
-            color: "text-neutral-500",
-            text: "Patients with T2D are at 2x-4x higher risk of developing CVDs.",
-            ref: "1"
-          },
-          {
-            color: "text-amber-300",
-            text: "1 in 2 patients with T2D die from CVD",
-            ref: "2"
-          },
-          {
-            color: "text-teal-500",
-            text: "5 out of 10 patients with T2D develop CKD",
-            ref: "3"
-          },
-          {
-            color: "text-[#4B3232]",
-            text: "16% of patients with HF have comorbid DM and CKD",
-            ref: "4"
-          }
-        ]
       };
     }
     
@@ -110,23 +55,6 @@ export default function InterconnectedSystemAccordion({
       title: "KDIGO Digital Heatmap",
       subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
       intro: "Scan and Learn more",
-      facts: [
-        {
-          color: "text-teal-500",
-          text: "More than 50% of patients with HF have CKD",
-          ref: "3"
-        },
-        {
-          color: "text-amber-300",
-          text: "1 in 2 patients with T2D die from CVD",
-          ref: "4"
-        },
-        {
-          color: "text-[#4B3232]",
-          text: "16% of patients with HF have comorbid DM and CKD",
-          ref: "5"
-        }
-      ]
     };
   };
 
@@ -163,79 +91,18 @@ export default function InterconnectedSystemAccordion({
 
               <h3 className="text-gray-700 mb-4">{content.intro}</h3>
 
-              <div className="space-y-12 px-10 py-3 pb-12">
-                {content.facts.map((fact, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className={`w-7 h-7 flex-shrink-0 rounded-sm ${fact.color} flex items-center justify-center`}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="31.777"
-                      height="43.219"
-                      viewBox="0 0 31.777 43.219"
-                    >
-                      <g
-                        id="Group_23643"
-                        data-name="Group 23643"
-                        transform="translate(-162.363 -1563)"
-                      >
-                        <rect
-                          id="Rectangle_11259"
-                          width="43.219"
-                          height="31.777"
-                          fill="currentColor"
-                          data-name="Rectangle 11259"
-                          rx="5"
-                          transform="rotate(-90 884.291 721.928)"
-                        ></rect>
-                        <path
-                          id="Line_64"
-                          fill="none"
-                          stroke="#fff"
-                          strokeLinecap="round"
-                          strokeWidth="1"
-                          d="M0 0h17.727"
-                          data-name="Line 64"
-                          transform="translate(169.388 1571.292)"
-                        ></path>
-                        <path
-                          id="Line_65"
-                          fill="none"
-                          stroke="#fff"
-                          strokeLinecap="round"
-                          strokeWidth="1"
-                          d="M0 0h17.727"
-                          data-name="Line 65"
-                          transform="translate(169.388 1576.438)"
-                        ></path>
-                        <path
-                          id="Line_66"
-                          fill="none"
-                          stroke="#fff"
-                          strokeLinecap="round"
-                          strokeWidth="1"
-                          d="M0 0h17.727"
-                          data-name="Line 66"
-                          transform="translate(169.388 1581.585)"
-                        ></path>
-                        <path
-                          id="Line_67"
-                          fill="none"
-                          stroke="#fff"
-                          strokeLinecap="round"
-                          strokeWidth="1"
-                          d="M0 0h9.065"
-                          data-name="Line 67"
-                          transform="translate(169.388 1586.731)"
-                        ></path>
-                      </g>
-                      </svg>
-                    </div>
-                    <p className="text-gray-700 text-xl">
-                      {fact.text}
-                      <sup className="text-xs">{fact.ref}</sup>
-                    </p>
-                  </div>
-                ))}
+              <div className="px-6 py-3 pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
+                
+                  <Image
+                    src="/PP-new/guidelines-vcf.png"
+                    alt="Placeholder image 2"
+                    title="Placeholder image 2"
+                    width={420}
+                    height={260}
+                    className="w-full h-full rounded-lg object-contain"
+                  />
+                </div>
               </div>
               <p className="text-gray-700 text-sm lg:px-10">This interactive risk calculator - developed in collaboration with Boehringer Ingelheim and KDIGO - is intended for informational purposes only and does not constitute medical advice or recommendations. It is not a substitute for professional medical advice, diagnosis, or treatment and is not a treatment decision tool. Practitioners should use their own clinical judgment when diagnosing and treating patients.</p>
             </div>

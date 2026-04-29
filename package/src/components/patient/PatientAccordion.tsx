@@ -42,7 +42,7 @@ export default function PatientAccordion({
           titleColor.includes('bg-white') ? 'text-[#585858]' : 'text-white'
         } backdrop-blur-lg hover:opacity-90 transition-opacity`}
       >
-        <h2 className="text-[20px] lg:text-[32px] font-bold">{title}</h2>
+        <h2 className="text-[20px] lg:text-[32px] font-bold text-left">{title}</h2>
         <motion.svg
           animate={{ rotate: expanded ? 180 : 0 }}
           transition={{ duration: 0.3 }}

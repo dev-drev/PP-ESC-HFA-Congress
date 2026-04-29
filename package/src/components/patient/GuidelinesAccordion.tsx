@@ -21,13 +21,13 @@ export default function GuidelinesAccordion({
   hideSlide4 = false,
 }: GuidelinesAccordionProps) {
   const guidelineSlide1 = (
-    <div className="space-y-4 ">
+    <div className="space-y-8 pb-4 ">
       <p className="text-gray-900 font-bold text-md">
         Heart failure is a progressive condition that needs urgent, optimal intervention<sup>1-4</sup>
       </p>
       <p className="text-gray-700">In patients living with HFrEF (LVEF ≤40%):</p>
       <Image
-        src="/guidelines.png"
+        src="/PP-new/5year37.png"
         alt="Guidelines placeholder"
         title="Guidelines placeholder"
         width={420}
@@ -38,10 +38,10 @@ export default function GuidelinesAccordion({
   );
 
   const guidelineSlide3 = (
-    <div className="space-y-4">
+    <div className="space-y-8 pb-4">
       <p className="text-gray-700">However, in practice:</p>
       <Image
-        src="/guidelines.png"
+        src="/PP-new/1in20.png"
         alt="Guidelines placeholder"
         title="Guidelines placeholder"
         width={420}
@@ -52,7 +52,7 @@ export default function GuidelinesAccordion({
         Patients with HFrEF require urgent and appropriate intervention with foundational treatments like SGLT2is,
         such as JARDIANCE<sup>®</sup> (empagliflozin).<sup>5,8</sup>
       </p>
-      <p className="text-gray-900 font-bold text-xl py-2">Don&apos;t miss the moment.</p>
+      <p className="text-gray-900 font-bold text-xl ">Don&apos;t miss the moment.</p>
     </div>
   );
 
@@ -69,7 +69,22 @@ export default function GuidelinesAccordion({
       const lindaSlides = [
         {
           id: "linda-slide-1",
-          content: guidelineSlide1,
+          content: (
+            <div className="space-y-8 pb-4 ">
+              <p className="text-gray-900 font-bold text-md">
+                Heart failure is a progressive condition that needs urgent, optimal intervention<sup>1-3</sup>
+              </p>
+              <p className="text-gray-700">In patients living with HFpEF:</p>
+              <Image
+                src="/PP-new/5year45.png"
+                alt="HFpEF 5-year outcomes"
+                title="HFpEF 5-year outcomes"
+                width={420}
+                height={300}
+                className="rounded-lg w-full h-auto"
+              />
+            </div>
+          ),
         },
         {
           id: "linda-slide-2",
@@ -87,7 +102,26 @@ export default function GuidelinesAccordion({
             </div>
           ),
         },
-        { id: "linda-slide-3", content: guidelineSlide3 },
+        {
+          id: "linda-slide-3",
+          content: (
+            <div className="space-y-8 pb-4">
+              <p className="text-gray-700">However, in practice:</p>
+              <Image
+                src="/PP-new/1in14.png"
+                alt="HFpEF treatment gap"
+                title="HFpEF treatment gap"
+                width={420}
+                height={300}
+                className="rounded-lg w-full h-auto"
+              />
+              <p className="text-gray-800">
+                Patients with HFpEF require urgent and appropriate intervention with foundational treatments like SGLT2is.<sup>4</sup>
+              </p>
+              <p className="text-gray-900 font-bold text-xl ">Don&apos;t miss the moment.</p>
+            </div>
+          ),
+        },
       ];
 
       return <ClinicalReasoningSlides patientId={patientId || '1'} slides={withOptionalSlide4(lindaSlides)} slideKey="linda-guidelines" />;
@@ -105,7 +139,7 @@ export default function GuidelinesAccordion({
           <p className="text-gray-700">
             … provide recommendations for the management of HFrEF (LVEF≤40%). The following four disease-modifying drugs should be administered to all patients with HFrEF and up-titrated to optimal doses without significant delay.<sup>5,6</sup>
           </p>
-          <div className="space-y-3">
+          <div className="space-y-3 py-4">
             <Image src="/guidelines.png" alt="Guidelines Image HFrEF" title="Guidelines Image HFrEF" width={420} height={300} className="rounded-lg w-full h-auto" />
           </div>
         </div> },
@@ -120,7 +154,24 @@ export default function GuidelinesAccordion({
       const joanaSlides = [
         {
           id: "joana-slide-1",
-          content: guidelineSlide1,
+          content: (
+            <div className="space-y-8 pb-4 ">
+              <p className="text-gray-900 font-bold text-md">
+                CVD is the #1 cause of death in patients with T2D<sup>1</sup>
+              </p>
+              <Image
+                src="/PP-new/organism-heart.png"
+                alt="CVD risk in patients with T2D"
+                title="CVD risk in patients with T2D"
+                width={420}
+                height={300}
+                className="rounded-lg w-full h-auto"
+              />
+              <p className="text-gray-700">
+                Early intervention is needed before CVD occurs.<sup>1,2</sup> For patients already living with established CVD and T2D, early intervention is key to reducing the risk of cardio-renal complications.<sup>3-5</sup>
+              </p>
+            </div>
+          ),
         },
         {
           id: "joana-slide-2",
@@ -128,7 +179,7 @@ export default function GuidelinesAccordion({
             <div className="space-y-4">
               <p className="text-gray-700 font-bold">2023 ESC Guidelines for the management of cardiovascular disease in patients with diabetes<sup>1</sup></p>
               <p className="text-gray-700">
-                The guidelines recommend SGLT2is as Class I, Level A therapy for patients with ASCVD and T2D to reduce cardiovascular risk, for patients with T2D and HF (HFpEF, HFmrEF, HFrEF) to reduce the risk of HHF and CV death, and for patients with T2D and CKD to reduce the CV and kidney failure risk - independent of glucose control and in addition to standard of care.<sup>1</sup>
+                The guidelines recommend SGLT2is as Class I, Level A therapy for patients with <b>ASCVD and T2D</b> to reduce cardiovascular risk, for patients with <b>T2D and HF</b> (HFpEF, HFmrEF, HFrEF) to reduce the risk of HHF and CV death, and for patients with <b>T2D and CKD</b> to reduce the CV and kidney failure risk - independent of glucose control and in addition to standard of care.<sup>3</sup>
               </p>
               <div className="space-y-3">
                 <Image src="/icons/sglti.png" alt="Guidelines Image T2D" title="Guidelines Image T2D" width={420} height={300} className="rounded-lg w-full h-auto" />
@@ -137,7 +188,6 @@ export default function GuidelinesAccordion({
           ),
         },
         { id: "joana-slide-3", content: guidelineSlide3 },
-        { id: "joana-slide-4", content: guidelineSlide4 },
       ];
 
       return <ClinicalReasoningSlides patientId={patientId || '3'} slides={withOptionalSlide4(joanaSlides)} slideKey="joana-guidelines" />;
