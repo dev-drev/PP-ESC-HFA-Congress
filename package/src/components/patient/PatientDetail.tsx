@@ -649,7 +649,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                     <GuidelinesAccordion
                       patientId={patient.id}
                       patientName={patient.name}
-                      hideSlide4={patient.name === 'Joana' && (!selectedAction || selectedAction === 'add-sglt2i')}
+                      hideSlide4={patient.name === 'Joana' && (!selectedAction || selectedAction === 'add-sglt2i' || selectedAction === 'optimize-antihypertensive')}
                       hideSlide3={patient.name === 'Joana' && !selectedAction}
                       isOpen={openAccordion === 'guidelines'}
                       onToggle={(isOpen) => {

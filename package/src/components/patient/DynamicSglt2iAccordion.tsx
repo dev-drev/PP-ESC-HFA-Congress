@@ -560,11 +560,11 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*5</sup>
+                Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*8</sup>
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
-                    src="/icons/38c.png"
+                    src="/PP-new/38.png"
                     alt="Heart"
                     title="Heart"
                     width={500}
@@ -573,7 +573,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   />
                 </div>
                 <p className="text-base mt-6 text-gray-700">
-                The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.<sup>*5,6</sup>  
+                The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.<sup>*5,9</sup>  
                 </p>
               </div>
             ),
@@ -583,7 +583,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                 SGLT2is, such as JARDIANCE<sup>®</sup>, are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk, heart failure hospitalizations, and CV and kidney failure risk.<sup>1</sup>
+                 SGLT2is, such as JARDIANCE<sup>®</sup>, are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk, heart failure hospitalizations, and CV and kidney failure risk.<sup>3</sup>
                 </p>
                 <div className="mb-6">
                   <Image
@@ -596,7 +596,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   />
                 </div>
                 <p className="text-base text-gray-700">
-                 Initiate JARDIANCE<sup>®</sup> (empagliflozin) early so that your patients with eCVD and T2D like Joana can benefit from significant risk reduction – as early as Day 59!<sup>*5,6</sup>
+                 Initiate JARDIANCE<sup>®</sup> (empagliflozin) <b>right from the start</b> so that your patients with eCVD and T2D like Joana can benefit from significant risk reduction – as early as Day 59!<sup>*5,9</sup>
                 </p>
               </div>
             ),
@@ -610,15 +610,15 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-6">
-                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>6</sup>
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-6">
-                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>7</sup>
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-8">
-                  <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                  <b>But, uACR</b> identifies CV risk <b>much earlier</b> than eGFR decline.<sup>7</sup>
                 </p>
 
                  <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
@@ -658,12 +658,12 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                 By prescribing Joana an SGLT2i such as JARDIANCE<sup>®</sup> (empagliflozin), soon after her diagnosis, you helped protect her by reducing her risk of CV death.<sup>*†5</sup>
+                 By prescribing Joana an SGLT2i such as JARDIANCE<sup>®</sup> (empagliflozin), soon after her diagnosis, you helped protect her by reducing her risk of CV death.<sup>*8</sup>
 
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
-                    src="/icons/38c.png"
+                    src="/PP-new/38.png"
                     alt="Heart"
                     title="Heart"
                     width={500}
@@ -672,7 +672,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   />
                 </div>
                 <p className="text-base mt-6 text-gray-700">
-                 And did you know that JARDIANCE<sup>®</sup> is the only SGLT2i proven to reduce the risk of CV death in patients with eCVD and T2D<sup>*†‡5</sup>
+                 And did you know that JARDIANCE<sup>®</sup> (empagliflozin) is the <b>first and only</b> SGLT2i proven to reduce the risk of CV death in patients with eCVD and T2D<sup>*†‡8</sup>
                 </p>
               </div>
             ),
@@ -682,7 +682,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                  You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk.<sup>1</sup>
+                  You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk.<sup>3</sup>
                 </p>
                 <div className="mb-6">
                   <Image
@@ -709,15 +709,15 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-6">
-                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>6</sup>
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-6">
-                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>7</sup>
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-8">
-                  <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                  <b>But, uACR</b> identifies CV risk <b>much earlier</b> than eGFR decline.<sup>7</sup>
                 </p>
 
                 <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
@@ -758,11 +758,11 @@ Continue delivering the best care by implementing the guideline-recommended foun
               <div className="flex flex-col h-full">
                
                 <p className="text-base mb-4 text-gray-700">
-                  Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*†5</sup>
+                  Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*†8</sup>
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
-                    src="/icons/38c.png"
+                    src="/PP-new/38.png"
                     alt="Heart"
                     title="Heart"
                     width={500}
@@ -771,7 +771,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   />
                 </div>
                 <p className="text-base mt-6 text-gray-700">
-                  The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.<sup>*5,6</sup>  
+                  The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.<sup>*5,9</sup>  
                 </p>
               </div>
             ),
@@ -781,7 +781,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                 SGLT2is, such as JARDIANCE<sup>®</sup>, are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk, heart failure hospitalizations, and CV and kidney falure risk.<sup>1</sup>
+                 SGLT2is, such as JARDIANCE<sup>®</sup>, are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk, heart failure hospitalizations, and CV and kidney falure risk.<sup>3</sup>
                 </p>
                 <div className="mb-6">
                   <Image
@@ -794,7 +794,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   />
                 </div>
                 <p className="text-base text-gray-700">
-                  Initiate JARDIANCE<sup>®</sup>early so that your patients with eCVD and T2D like Joana can benefit from significant risk reduction – as early as Day 59!<sup>*5,6</sup>
+                  Initiate JARDIANCE<sup>®</sup> (empagliflozin) <b>right from the start</b> so that your patients with eCVD and T2D like Joana can benefit from significant risk reduction – as early as Day 59!<sup>*5,9</sup>
                 </p>
               </div>
             ),
@@ -808,15 +808,15 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-6">
-                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>6</sup>
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-6">
-                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+                 <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>7</sup>
                 </p>
 
                 <p className="text-lg text-center text-gray-700 mb-8">
-                  <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                  <b>But, uACR</b> identifies CV risk <b>much earlier</b> than eGFR decline.<sup>7</sup>
                 </p>
 
                 <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
@@ -863,7 +863,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
               </p>
               <div className="flex items-center justify-between mt-4">
                 <Image
-                  src="/icons/38c.png"
+                  src="/PP-new/38.png"
                   alt="Heart"
                     title="Heart"
                   width={500}

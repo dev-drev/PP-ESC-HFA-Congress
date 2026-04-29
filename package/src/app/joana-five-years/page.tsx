@@ -14,7 +14,7 @@ export default function JoanaFiveYearsPage() {
       backgroundImage="/backgrounds/03C.jpg"
       currentStepImage="/next-steps/joana/final/step10.png"
       showClinicalReasoning={false}
-       sglt2iAccordionTitle="Initiate SGLT2i"
+       sglt2iAccordionTitle="Don't miss the moment"
       endActions={[
         { id: 'go-back', text: 'Go back' },
         { id: 'restart', text: 'Restart' },

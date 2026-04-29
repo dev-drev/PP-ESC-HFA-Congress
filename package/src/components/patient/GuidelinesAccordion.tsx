@@ -196,7 +196,33 @@ export default function GuidelinesAccordion({
             </div>
           ),
         },
-        { id: "joana-slide-3", content: guidelineSlide3 },
+        {
+          id: "joana-slide-3",
+          content: (
+            <div className="space-y-8 pb-4">
+              <p className="text-2xl font-semibold text-center text-gray-800 mb-6">
+                Did you know?
+              </p>
+              <p className="text-gray-800">
+                <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>6</sup>
+              </p>
+              <p className="text-gray-800">
+                <b>Elevated uACR or reduced eGFR</b> is associated with an increased risk of CV mortality, independently of each other.<sup>7</sup>
+              </p>
+              <p className="text-gray-800">
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>7</sup>
+              </p>
+              <Image
+                src="/PP-new/uACR-symbols.png"
+                alt="uACR and eGFR"
+                title="uACR and eGFR"
+                width={420}
+                height={300}
+                className="rounded-lg w-full h-auto"
+              />
+            </div>
+          ),
+        },
         {
           id: "joana-slide-4",
           content: (
