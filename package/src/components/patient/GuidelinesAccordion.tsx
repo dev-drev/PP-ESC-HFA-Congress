@@ -85,7 +85,22 @@ export default function GuidelinesAccordion({
           id: "linda-slide-1",
           content: guidelineSlide1,
         },
-        { id: "linda-slide-2", content: <div className="space-y-4"><p className="text-gray-700 font-bold">Slide 2</p><p className="text-gray-700">Placeholder content for Linda guidelines.</p></div> },
+        {
+          id: "linda-slide-2",
+          content: (
+            <div className="space-y-4">
+              <p className="text-gray-700 font-bold">
+                2023 Focused Update of the 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure<sup>4</sup>
+              </p>
+              <p className="text-gray-700">
+                The guidelines recommend SGLT2is as Class I, Level A therapy for patients with HFmrEF (LVEF 41-49%) and HFpEF (LVEF ≥50%) to reduce the risk of HHF or CV death, which makes SGLT2is the only class with Class I, Level A recommendation.<sup>4</sup>
+              </p>
+              <div className="space-y-3">
+                <Image src="/icons/sglti.png" alt="Guidelines Image HFpEF" title="Guidelines Image HFpEF" width={420} height={300} className="rounded-lg w-full h-auto" />
+              </div>
+            </div>
+          ),
+        },
         { id: "linda-slide-3", content: guidelineSlide3 },
         { id: "linda-slide-4", content: guidelineSlide4 },
       ];
@@ -123,7 +138,20 @@ export default function GuidelinesAccordion({
           id: "joana-slide-1",
           content: guidelineSlide1,
         },
-        { id: "joana-slide-2", content: <div className="space-y-4"><p className="text-gray-700 font-bold">Slide 2</p><p className="text-gray-700">Placeholder content for Joana guidelines.</p></div> },
+        {
+          id: "joana-slide-2",
+          content: (
+            <div className="space-y-4">
+              <p className="text-gray-700 font-bold">2023 ESC Guidelines for the management of cardiovascular disease in patients with diabetes<sup>1</sup></p>
+              <p className="text-gray-700">
+                The guidelines recommend SGLT2is as Class I, Level A therapy for patients with ASCVD and T2D to reduce cardiovascular risk, for patients with T2D and HF (HFpEF, HFmrEF, HFrEF) to reduce the risk of HHF and CV death, and for patients with T2D and CKD to reduce the CV and kidney failure risk - independent of glucose control and in addition to standard of care.<sup>1</sup>
+              </p>
+              <div className="space-y-3">
+                <Image src="/icons/sglti.png" alt="Guidelines Image T2D" title="Guidelines Image T2D" width={420} height={300} className="rounded-lg w-full h-auto" />
+              </div>
+            </div>
+          ),
+        },
         { id: "joana-slide-3", content: guidelineSlide3 },
         { id: "joana-slide-4", content: guidelineSlide4 },
       ];
