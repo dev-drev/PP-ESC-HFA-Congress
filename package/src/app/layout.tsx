@@ -53,27 +53,28 @@ export default function RootLayout({
           alt="Logo"
           className="fixed top-8 right-10 w-34 h-auto z-40 pointer-events-none select-none opacity-80"
         />
-         <p className="fixed bottom-20 right-10 z-40 text-white text-base font-bold opacity-80">
-            PC-ES-118210-032026
-          </p>
-        <div className="fixed left-4 bottom-16 z-40 max-w-[200px] pointer-events-none select-none">
-         
-          <div className="p-2 flex flex-col text-justify items-start gap-3">
-            <img
-              src="/spanish-qr.png"
-              alt="Spanish QR"
-              className="w-20 h-20 object-contain shrink-0"
-            />
-            <div className="text-white opacity-80 tracking-normal">
-              <p className="text-[10px] ">
-                Scan the QR code to access the Jardiance Summary of Product Characteristics.
-              </p>
-              <p className="text-[10px]  mt-1">
-                <b>PRESENTATION &amp; PRICE:</b> Jardiance 10 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 49.31. Jardiance 25 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 51.52.
-              </p>
-              <p className="text-[10px]  mt-1">
-                <b>CONDITIONS OF PRESCRIPTION AND DISPENSING:</b> Medication subject to medical prescription. Reimbursable by the Spanish National Health System. Reduced contribution.
-              </p>
+        <div className="w-full px-4 pb-6 mt-6 border-t border-white/20  flex justify-center xl:fixed xl:bottom-10 xl:left-4 xl:w-auto xl:px-0 xl:pb-0 xl:mt-0 xl:border-0 xl:z-40">
+          <div className="max-w-[220px] pt-3 text-center border border-white/20 xl:border-none rounded-2xl p-4">
+            <p className="text-white text-xs font-bold opacity-80 mb-2">
+              PC-ES-118210-032026
+            </p>
+            <div className="flex flex-col items-center gap-2 space-y-2">
+              <img
+                src="/spanish-qr.png"
+                alt="Spanish QR"
+                className="w-16 h-16 object-contain shrink-0"
+              />
+              <div className="text-white opacity-80 tracking-normal text-center">
+                <p className="text-[9px] leading-tight">
+                  Scan the QR code to access the Jardiance Summary of Product Characteristics.
+                </p>
+                <p className="text-[9px] leading-tight mt-1">
+                  <b>PRESENTATION &amp; PRICE:</b> Jardiance 10 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 49.31. Jardiance 25 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 51.52.
+                </p>
+                <p className="text-[9px] leading-tight mt-1">
+                  <b>CONDITIONS OF PRESCRIPTION AND DISPENSING:</b> Medication subject to medical prescription. Reimbursable by the Spanish National Health System. Reduced contribution.
+                </p>
+              </div>
             </div>
           </div>
         </div>
