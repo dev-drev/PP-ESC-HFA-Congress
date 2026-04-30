@@ -9,7 +9,7 @@ export default function ReferencesButtonPatient5() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="z-50 px-10 py-4 text-white bg-[#066368] w-full relative text-center"
+        className="z-50 px-10 py-4 pb-5 text-white bg-[#066368] w-full relative text-center border-b border-white/30"
       >
         References
       </button>

@@ -51,10 +51,10 @@ export default function RootLayout({
         <img
           src="/logo-white.svg"
           alt="Logo"
-          className="fixed top-8 right-10 w-34 h-auto z-40 pointer-events-none select-none opacity-80"
+          className="fixed top-7 right-6 w-30 h-auto z-40 pointer-events-none select-none opacity-80"
         />
-        <div className="w-full px-4 pb-6 mt-6 border-t border-white/20  flex justify-center xl:fixed xl:bottom-10 xl:left-4 xl:w-auto xl:px-0 xl:pb-0 xl:mt-0 xl:border-0 xl:z-40">
-          <div className="max-w-[220px] pt-3 text-center border border-white/20 xl:border-none rounded-2xl p-4">
+        <div className="w-full border-t  px-4 pb-6 mt-6 border-t border-white/20  flex justify-center xl:bottom-10 xl:left-4 xl:w-auto xl:px-0 xl:pb-0 xl:mt-0 xl:border-0 xl:z-40">
+          <div className="max-w-[220px] pt-10 text-center  rounded-2xl p-4">
             <p className="text-white text-xs font-bold opacity-80 mb-2">
               PC-ES-118210-032026
             </p>
