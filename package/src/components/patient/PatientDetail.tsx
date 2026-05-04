@@ -782,7 +782,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               title="Joana AP1 background"
               width={1200}
               height={1600}
-              className="h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom"
+              className="h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom xl:object-[56%_100%] 2xl:object-left-bottom"
               priority
             />
             {/* Tablet: full-bleed photo, no fade; desktop lg+: blend into content */}
