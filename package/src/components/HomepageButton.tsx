@@ -15,7 +15,7 @@ export default function HomepageButton() {
     <button
       type="button"
       onClick={() => router.push("/")}
-      className="fixed top-4 left-6 z-[9999] p-3 bg-[#066368D8] cursor-pointer rounded-lg shadow-lg hover:bg-[#055155] focus:outline-none focus:ring-2 focus:ring-white/50 transition-colors"
+      className="fixed xl:top-4 top-[0.85rem] left-6 z-[9999] cursor-pointer rounded-lg border border-white/25 bg-white/10 p-2.5 shadow-lg backdrop-blur-md transition-colors hover:bg-white/18 focus:outline-none focus:ring-2 focus:ring-white/40"
       aria-label="Return to Homepage"
     >
       <Image
@@ -24,7 +24,7 @@ export default function HomepageButton() {
         title="Return to Homepage"
         width={24}
         height={24}
-        className="w-6 h-6 invert"
+        className="w-4 h-4 xl:w-6 xl:h-6 brightness-0 invert"
         aria-hidden
       />
     </button>

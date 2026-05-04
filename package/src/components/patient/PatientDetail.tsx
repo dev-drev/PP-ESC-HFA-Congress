@@ -21,6 +21,28 @@ interface PatientDetailProps {
 
 type PatientView = 'overview' | 'monitoring_ecg' | 'prescribe_sglt2i' | 'optimize_antihypertensive';
 
+type SplitHeroPatient = 'Joana' | 'Linda';
+
+const SPLIT_HERO_BY_PATIENT: Record<
+  SplitHeroPatient,
+  { views: readonly PatientView[]; overview: string; step: string }
+> = {
+  Joana: {
+    views: ['overview', 'optimize_antihypertensive', 'prescribe_sglt2i'],
+    overview: '/charactersNew/joana-ap1.png',
+    step: '/charactersNew/joana-ap2.png',
+  },
+  Linda: {
+    views: ['overview', 'monitoring_ecg', 'prescribe_sglt2i'],
+    overview: '/charactersNew/linda-ap1.png',
+    step: '/charactersNew/linda-ap22.png',
+  },
+};
+
+function splitHeroPatientKey(name: string): SplitHeroPatient | null {
+  return name === 'Joana' || name === 'Linda' ? name : null;
+}
+
 export default function PatientDetail({ patient }: PatientDetailProps) {
   const pathname = usePathname();
   const [selectedAction, setSelectedAction] = useState<string | null>(null);
@@ -39,15 +61,22 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   const [imageOpacity, setImageOpacity] = useState(1);
   const [isSmartphone, setIsSmartphone] = useState(false);
   const [isBelowDesktopLg, setIsBelowDesktopLg] = useState(false);
-  const isJoanaAp1 = patient.name === 'Joana' && currentView === 'overview';
-  /** Joana overview: split hero only on lg+; mobile/tablet = same column stack as Linda */
-  const isJoanaAp1Stacked = isJoanaAp1 && isBelowDesktopLg;
-  const isJoanaAp1Desktop = isJoanaAp1 && !isBelowDesktopLg;
-  /** Joana overview su tablet (768–1023): disclaimer sotto l’hero, sopra “What would you like…” */
-  const isTabletJoanaOverview = isJoanaAp1Stacked && !isSmartphone;
-  /** Linda-style inline photo; Joana overview on narrow uses full-bleed hero instead of this block */
+  const splitHeroKey = splitHeroPatientKey(patient.name);
+  const splitHeroCfg = splitHeroKey ? SPLIT_HERO_BY_PATIENT[splitHeroKey] : null;
+  const isSplitHero = !!splitHeroCfg && splitHeroCfg.views.includes(currentView);
+  const splitHeroImageSrc: string | null = !splitHeroCfg
+    ? null
+    : currentView === 'overview'
+      ? splitHeroCfg.overview
+      : splitHeroCfg.step;
+  /** Split hero (Joana / Linda): desktop lg+ = striscia fissa; sotto lg = stack full-bleed */
+  const isSplitHeroStacked = isSplitHero && isBelowDesktopLg;
+  const isSplitHeroDesktop = isSplitHero && !isBelowDesktopLg;
+  /** Split hero su tablet (768–1023): disclaimer sotto l’hero */
+  const isTabletSplitHero = isSplitHeroStacked && !isSmartphone;
+  /** Foto inline tipo Linda classica; con split hero su narrow si usa full-bleed, non questo blocco */
   const showInlinePatientPhoto =
-    (!isJoanaAp1 || isJoanaAp1Stacked) && !(isJoanaAp1Stacked && patient.name === 'Joana');
+    (!isSplitHero || isSplitHeroStacked) && !(isSplitHeroStacked && isSplitHero);
 
   const handleHeartToggle = (active: boolean) => {
     setShowHeartView(active);
@@ -461,14 +490,14 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   const renderPatientHeader = () => {
     return (
       <div
-        className={`flex items-start ${
-          isJoanaAp1Desktop ? 'w-full justify-start' : 'justify-center 2xl:justify-between'
+        className={`flex m-4 xl:m-0 items-start ${
+          isSplitHeroDesktop ? 'w-full justify-start' : 'justify-center 2xl:justify-between'
         }`}
       >
         <div className="flex gap-6 items-center">
        
           <div className="pl-[0px] relative">
-            <h1 className={`text-[32px] font-semibold text-white lg:text-5xl mb-3 ${isJoanaAp1Desktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]' : ''}`}>
+            <h1 className={`text-[32px] font-semibold text-white lg:text-5xl mb-3 ${isSplitHeroDesktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]' : ''}`}>
               {currentPatientData.name}, {currentPatientData.age}
             </h1>
             <AnimatePresence mode="wait">
@@ -478,7 +507,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 transition={{ duration: 0.3 }}
               >
                 {currentPatientData.quote && (
-                  <div className={`text-white text-md 2xl:text-lg relative max-w-md mt-1 text-balance ${isJoanaAp1Desktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]' : ''}`}>
+                  <div className={`text-white text-md 2xl:text-lg relative max-w-md mt-1 text-balance ${isSplitHeroDesktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]' : ''}`}>
                     "{currentPatientData.quote}"
                   </div>
                 )}
@@ -519,15 +548,14 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       <div className={`relative pb-0 ${
         showSglt2iReasoning ? 'entry-screen-bg' : 'entry-screen'
     }`}>
-        {isJoanaAp1Stacked && (
+        {isSplitHeroStacked && (
           <div
             className="pointer-events-none absolute left-1/2 top-0 z-0 h-[min(92vh,56rem)] w-screen max-w-none -translate-x-1/2 overflow-hidden transition-opacity duration-300"
             style={{ opacity: imageOpacity }}
-            aria-hidden
           >
-            <div className="relative h-full w-full">
+            <div className="relative h-full w-full" aria-hidden>
               <Image
-                src="/charactersNew/joana-ap1.png"
+                src={splitHeroImageSrc!}
                 alt=""
                 fill
                 className="object-cover object-top"
@@ -535,12 +563,24 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 priority
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/15 to-[#056368]" />
+            {/* Leggero fade in basso sulla foto (step 1 / 2) */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[34%] bg-gradient-to-t from-[#056368]/55 via-[#056368]/14 to-transparent"
+            />
+            <div className="absolute inset-0 z-[2] bg-gradient-to-b from-black/50 via-black/15 to-[#056368]" aria-hidden />
+            {isSmartphone && (
+              <div className="absolute inset-x-0 bottom-36 z-20 bg-gradient-to-t from-[#056368]/55 to-transparent px-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-8">
+                <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)]">
+                  Not an actual patient. Visuals created with the help of AI.
+                </p>
+              </div>
+            )}
           </div>
         )}
 
         <div
-          className={`relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8 patient-shell-fullwidth ${isJoanaAp1Stacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
+          className={`relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8 patient-shell-fullwidth ${isSplitHeroStacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
         >
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
@@ -554,10 +594,10 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             <div className="mb-0">
               <div
                 className={`relative z-30 w-full ${
-                  isJoanaAp1Desktop
+                  isSplitHeroDesktop
                     ? 'flex justify-start lg:-translate-x-2 xl:-translate-x-2 2xl:-translate-x-0'
                     : 'flex justify-center 2xl:justify-start'
-                } ${isJoanaAp1Stacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}
+                } ${isSplitHeroStacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}
               >
                 {renderPatientHeader()}
               </div>
@@ -586,16 +626,16 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                           }}
                         >
                           <Image
-                            src={isJoanaAp1Stacked ? '/charactersNew/joana-ap1.png' : currentPatientData.imageSrc}
+                            src={isSplitHeroStacked ? splitHeroImageSrc! : currentPatientData.imageSrc}
                             alt={currentPatientData.name}
                             title={currentPatientData.name}
-                            width={isJoanaAp1Stacked ? 760 : 400}
-                            height={isJoanaAp1Stacked ? 900 : 200}
+                            width={isSplitHeroStacked ? 760 : 400}
+                            height={isSplitHeroStacked ? 900 : 200}
                             className="z-20 relative 2xl:block w-auto h-auto"
                             priority
                           />
                           {/* Desktop (lg+): disclaimer in basso alla foto; su mobile resta il blocco sotto */}
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 hidden pb-2 pl-0 pr-2 pt-10 bg-gradient-to-t from-black/75 via-black/35 to-transparent lg:block">
+                          <div className="pointer-events-none absolute inset-x-0 bottom-3 z-30 hidden pb-2 pl-0 pr-2 pt-10 lg:block">
                             <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]">
                               Not an actual patient. Visuals created with the help of AI.
                             </p>
@@ -604,8 +644,8 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                       </div>
                   </div>}
 
-                  {/* Disclaimer — desktop Linda: overlay sul fondo foto (lg+); Joana desktop: striscia fissa; tablet Joana: riga full width sotto */}
-                  {!isTabletJoanaOverview && !isJoanaAp1Desktop && (
+                  {/* Disclaimer — split hero mobile: overlay in basso sull’hero; tablet: riga full width; desktop: striscia fissa / overlay inline */}
+                  {!isTabletSplitHero && !isSplitHeroDesktop && !(isSplitHeroStacked && isSmartphone) && (
                   <div
                     className={`text-left mt-4 mb-4 ${showInlinePatientPhoto ? 'lg:hidden' : ''}`}
                   >
@@ -641,19 +681,19 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             )}
           </div>
 
-          {isTabletJoanaOverview && (
-            <div className="col-span-full relative z-30 mb-4 mt-[min(40vh,24rem)] max-lg:px-1 text-center">
+          {isTabletSplitHero && (
+            <div className="col-span-full relative z-30 mb-4 mt-[min(30vh,18rem)] max-lg:px-1 text-center">
               <p className="text-white/60 text-xs text-balance max-w-prose mx-auto">
                 Not an actual patient. Visuals created with the help of AI.
               </p>
             </div>
           )}
 
-          {/* Right Column - Guidelines — Joana narrow: start cards well below the hero */}
+          {/* Right Column — split hero narrow: cards sotto l’hero */}
           <div
             className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row relative z-20 ${
-              isJoanaAp1Stacked
-                ? isTabletJoanaOverview
+              isSplitHeroStacked
+                ? isTabletSplitHero
                   ? 'mt-6 pt-2'
                   : 'mt-[min(48vh,28rem)] pt-4'
                 : ''
@@ -771,27 +811,32 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             />
           </div>
         )}
-        {isJoanaAp1Desktop && (
+        {isSplitHeroDesktop && (
           <div
             className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[min(calc(100dvh-var(--joana-ap1-bg-bottom-reserve)),var(--joana-ap1-strip-max-height))] w-[min(40vw,var(--joana-ap1-strip-max-width))] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: imageOpacity }}
           >
             <Image
-              src="/charactersNew/joana-ap1.png"
-              alt="Joana AP1 background"
-              title="Joana AP1 background"
+              src={splitHeroImageSrc!}
+              alt={`${patient.name} — hero`}
+              title={`${patient.name} — hero`}
               width={1200}
               height={1600}
-              className="h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom xl:object-[56%_100%] 2xl:object-left-bottom"
+              className="relative z-0 h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom xl:object-[56%_100%] 2xl:object-left-bottom"
               priority
+            />
+            {/* Leggero fade in basso sulla foto (step 1 / 2, desktop) */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[38%] bg-gradient-to-t from-[#056368]/48 via-[#056368]/10 to-transparent"
             />
             {/* Tablet: full-bleed photo, no fade; desktop lg+: blend into content */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-y-0 right-0 hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/70 to-transparent md:via-[#056368]/60 lg:block"
+              className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 lg:block"
             />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-3 pb-3 pt-12 bg-gradient-to-t from-[#056368] via-[#056368]/85 to-transparent">
-              <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+            <div className="pointer-events-none absolute inset-x-0 bottom-5 z-10 bg-gradient-to-t from-[#056368] via-[#056368]/55 to-transparent px-3 pb-2 pt-10">
+              <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_3px_rgba(0,0,0,0.65)]">
                 Not an actual patient. Visuals created with the help of AI.
               </p>
             </div>
