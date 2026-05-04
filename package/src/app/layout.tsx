@@ -46,15 +46,11 @@ export default function RootLayout({
             {children}
           </SessionSyncProvider>
         </Suspense>
-        <ConditionalReferencesButton />
-        <HomepageButton />
-        <img
-          src="/logo-white.svg"
-          alt="Logo"
-          className="fixed top-7 right-6 w-30 h-auto z-40 pointer-events-none select-none opacity-80"
-        />
-        <div className="w-full border-t  px-4 pb-6 mt-6 border-t border-white/20  flex justify-center xl:bottom-10 xl:left-4 xl:w-auto xl:px-0 xl:pb-0 xl:mt-0 xl:border-0 xl:z-40">
-          <div className="max-w-[220px] pt-10 text-center  rounded-2xl p-4">
+        {/* z-50: same stacking as References buttons (they use z-50); must sit above patient layout (z-10/z-20). */}
+        <div className="relative z-50 w-full bg-[#056368]">
+          <ConditionalReferencesButton />
+          <div className="w-full border-t px-4 pb-6 mt-6 border-t border-white/20 flex justify-center xl:bottom-10 xl:left-4 xl:w-auto xl:px-0 xl:pb-0 xl:mt-0 xl:border-0">
+            <div className="max-w-[220px] w-full pt-10 text-center rounded-2xl p-4 bg-[#066368] border border-white/15 shadow-lg">
             <p className="text-white text-xs font-bold opacity-80 mb-2">
               PC-ES-118210-032026
             </p>
@@ -77,7 +73,14 @@ export default function RootLayout({
               </div>
             </div>
           </div>
+          </div>
         </div>
+        <HomepageButton />
+        <img
+          src="/logo-white.svg"
+          alt="Logo"
+          className="fixed top-7 right-6 w-30 h-auto z-40 pointer-events-none select-none opacity-80"
+        />
       </body>
     </html>
   )

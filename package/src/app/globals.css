@@ -4,6 +4,14 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  /* Joana AP1 fixed photo: height stops above References + QR block (layout.tsx) */
+  --joana-ap1-bg-bottom-reserve: 400px;
+}
+
+@media (max-width: 1279px) {
+  :root {
+    --joana-ap1-bg-bottom-reserve: 440px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,7 +65,6 @@ body {
 }
 
 .entry-screen {
-     background: url('/background-1.jpg');
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;

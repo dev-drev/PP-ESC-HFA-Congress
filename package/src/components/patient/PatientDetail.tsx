@@ -38,6 +38,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   const [openAccordion, setOpenAccordion] = useState<'medical' | 'guidelines' | 'sglt2i' | null>('medical');
   const [imageOpacity, setImageOpacity] = useState(1);
   const [isSmartphone, setIsSmartphone] = useState(false);
+  const isJoanaAp1 = patient.name === 'Joana' && currentView === 'overview';
 
   const handleHeartToggle = (active: boolean) => {
     setShowHeartView(active);
@@ -451,7 +452,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         <div className="flex gap-6 items-center">
        
           <div className="pl-[0px] relative">
-            <h1 className="text-[32px] font-semibold text-white lg:text-5xl mb-3">
+            <h1 className={`text-[32px] font-semibold text-white lg:text-5xl mb-3 ${isJoanaAp1 ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]' : ''}`}>
               {currentPatientData.name}, {currentPatientData.age}
             </h1>
             <AnimatePresence mode="wait">
@@ -461,7 +462,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 transition={{ duration: 0.3 }}
               >
                 {currentPatientData.quote && (
-                  <div className="text-white text-md 2xl:text-lg relative max-w-md mt-1 text-balance">
+                  <div className={`text-white text-md 2xl:text-lg relative max-w-md mt-1 text-balance ${isJoanaAp1 ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]' : ''}`}>
                     "{currentPatientData.quote}"
                   </div>
                 )}
@@ -509,15 +510,15 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
       
 
-      <div className="mx-auto px-4 2xl:px-8 max-w-[1700px]">
+      <div className="mx-auto px-4 2xl:px-8 max-w-[1700px] relative z-10">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 relative z-20">
           {/* Left Column - Patient Info, Image and Action Selection */}
           <div className="2xl:col-span-1">
             {/* Patient Header and Quote */}
             <div className="mb-0">
-              <div className="flex justify-center 2xl:justify-start">{renderPatientHeader()}</div>
-                <div
+              <div className="flex justify-center 2xl:justify-start relative z-30">{renderPatientHeader()}</div>
+                {!isJoanaAp1 && <div
                   className={currentPatientData.name === 'Linda' ? '' : currentPatientData.name === 'Joana' ? '' : '2xl:w-[448px]'}
                   style={{
                     transition: 'opacity 0.3s ease',
@@ -531,28 +532,34 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                         <div
                           className="relative inline-block"
                           style={{
-                            maxHeight: isSmartphone ? '550px' : '700px',
+                            maxHeight: isJoanaAp1 ? (isSmartphone ? '520px' : '700px') : (isSmartphone ? '550px' : '700px'),
                             overflow: 'hidden',
-                            maskImage: isSmartphone
-                              ? 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
-                              : 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-                            WebkitMaskImage: isSmartphone
-                              ? 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
-                              : 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
+                            maskImage: isJoanaAp1
+                              ? 'linear-gradient(to right, black 0%, black 72%, transparent 100%)'
+                              : (isSmartphone
+                                ? 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
+                                : 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'),
+                            WebkitMaskImage: isJoanaAp1
+                              ? 'linear-gradient(to right, black 0%, black 72%, transparent 100%)'
+                              : (isSmartphone
+                                ? 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
+                                : 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)')
                           }}
                         >
                           <Image
-                            src={currentPatientData.imageSrc}
+                            src={isJoanaAp1 ? '/charactersNew/joana-ap1.png' : currentPatientData.imageSrc}
                             alt={currentPatientData.name}
                             title={currentPatientData.name}
-                            width={400}
-                            height={200}
-                            className="z-20 relative 2xl:block w-auto h-auto"
+                            width={isJoanaAp1 ? 760 : 400}
+                            height={isJoanaAp1 ? 900 : 200}
+                            className={isJoanaAp1
+                              ? "z-20 relative 2xl:block w-auto h-[70vh] max-w-none object-cover object-left"
+                              : "z-20 relative 2xl:block w-auto h-auto"}
                             priority
                           />
                         </div>
                       </div>
-                  </div>
+                  </div>}
 
                   {/* Disclaimer */}
                   <div className="text-left mt-4 mb-4">
@@ -588,7 +595,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           </div>
 
           {/* Right Column - Guidelines */}
-          <div className="2xl:col-span-2 flex gap-8 flex-col 2xl:flex-row">
+          <div className="lg:col-span-2 flex gap-8 flex-col lg:flex-row relative z-20">
              {/* What would you like to do next? - Visual placeholder */}
 
 <div className="2xl:ml-[12px] flex justify-center flex-col 2xl:block 2xl:mx-auto">
@@ -693,7 +700,23 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             />
           </div>
         )}
-
+        {isJoanaAp1 && (
+          <div
+            className="fixed left-0 top-0 z-0 h-[calc(100dvh-var(--joana-ap1-bg-bottom-reserve))] max-h-[calc(100dvh-var(--joana-ap1-bg-bottom-reserve))] w-[40vw] max-w-[980px] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            style={{ opacity: imageOpacity }}
+          >
+            <Image
+              src="/charactersNew/joana-ap1.png"
+              alt="Joana AP1 background"
+              title="Joana AP1 background"
+              width={1200}
+              height={1600}
+              className="object-cover object-center h-full w-full"
+              priority
+            />
+            <div className="absolute inset-y-0 right-0 w-[52%] bg-gradient-to-t 2xl:bg-gradient-to-l from-[#056368] via-[#056368]/75 to-transparent" />
+          </div>
+        )}
       </div>
 
     
