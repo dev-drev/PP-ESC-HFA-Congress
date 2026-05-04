@@ -43,6 +43,8 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   /** Joana overview: split hero only on lg+; mobile/tablet = same column stack as Linda */
   const isJoanaAp1Stacked = isJoanaAp1 && isBelowDesktopLg;
   const isJoanaAp1Desktop = isJoanaAp1 && !isBelowDesktopLg;
+  /** Joana overview su tablet (768–1023): disclaimer sotto l’hero, sopra “What would you like…” */
+  const isTabletJoanaOverview = isJoanaAp1Stacked && !isSmartphone;
   /** Linda-style inline photo; Joana overview on narrow uses full-bleed hero instead of this block */
   const showInlinePatientPhoto =
     (!isJoanaAp1 || isJoanaAp1Stacked) && !(isJoanaAp1Stacked && patient.name === 'Joana');
@@ -534,12 +536,12 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
 
         <div
-          className={`relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8 tablet-content-fullwidth ${isJoanaAp1Stacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
+          className={`relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8 patient-shell-fullwidth ${isJoanaAp1Stacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
         >
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
 
-      <div className="mx-auto px-4 2xl:px-8 max-w-[1700px] relative z-10 tablet-content-fullwidth">
+      <div className="mx-auto px-4 2xl:px-8 max-w-[1700px] relative z-10 patient-shell-fullwidth">
 
         <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 relative z-20">
           {/* Left Column - Patient Info, Image and Action Selection */}
@@ -582,16 +584,26 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                             className="z-20 relative 2xl:block w-auto h-auto"
                             priority
                           />
+                          {/* Desktop (lg+): disclaimer in basso alla foto; su mobile resta il blocco sotto */}
+                          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 hidden pb-2 pl-0 pr-2 pt-10 bg-gradient-to-t from-black/75 via-black/35 to-transparent lg:block">
+                            <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]">
+                              Not an actual patient. Visuals created with the help of AI.
+                            </p>
+                          </div>
                         </div>
                       </div>
                   </div>}
 
-                  {/* Disclaimer */}
-                  <div className="text-left mt-4 mb-4">
+                  {/* Disclaimer — desktop Linda: overlay sul fondo foto (lg+); Joana desktop: striscia fissa; tablet Joana: riga full width sotto */}
+                  {!isTabletJoanaOverview && !isJoanaAp1Desktop && (
+                  <div
+                    className={`text-left mt-4 mb-4 ${showInlinePatientPhoto ? 'lg:hidden' : ''}`}
+                  >
                     <p className="text-white/60 text-xs">
                       Not an actual patient. Visuals created with the help of AI.
                     </p>
                   </div>
+                  )}
             </div>
 
 
@@ -619,9 +631,23 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             )}
           </div>
 
+          {isTabletJoanaOverview && (
+            <div className="col-span-full relative z-30 mb-4 mt-[min(40vh,24rem)] max-lg:px-1 text-center">
+              <p className="text-white/60 text-xs text-balance max-w-prose mx-auto">
+                Not an actual patient. Visuals created with the help of AI.
+              </p>
+            </div>
+          )}
+
           {/* Right Column - Guidelines — Joana narrow: start cards well below the hero */}
           <div
-            className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row relative z-20 ${isJoanaAp1Stacked ? 'mt-[min(48vh,28rem)] pt-4' : ''}`}
+            className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row relative z-20 ${
+              isJoanaAp1Stacked
+                ? isTabletJoanaOverview
+                  ? 'mt-6 pt-2'
+                  : 'mt-[min(48vh,28rem)] pt-4'
+                : ''
+            }`}
           >
              {/* What would you like to do next? - Visual placeholder */}
 
@@ -635,7 +661,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 width={500}
                 height={200}
                 sizes="(max-width: 1023px) 92vw, (max-width: 1700px) min(40vw, 500px), 500px"
-                className="mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-auto lg:mx-0 tablet-step-fullwidth"
+                className="mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-auto lg:mx-0 patient-panel-full"
               />
             </div>
             )}
@@ -653,7 +679,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       />
     </div>
 
-<div className="flex flex-col min-w-0 flex-1 basis-0 2xl:ml-auto 2xl:mr-0 justify-center 2xl:justify-start mx-auto w-full 2xl:w-auto max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] tablet-step-fullwidth">
+<div className="flex flex-col min-w-0 flex-1 basis-0 2xl:ml-auto 2xl:mr-0 justify-center 2xl:justify-start mx-auto w-full 2xl:w-auto max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] patient-panel-full">
     {/* Medical Record */}
             <motion.div
               key={`medical-${animationKey}`}
@@ -674,7 +700,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               showInterconnectedSystem ? (
                 <motion.div
                   key={`interconnected-${animationKey}`}
-                  className="w-full tablet-step-fullwidth 2xl:w-[500px] bg-white/70 backdrop-blur-lg rounded-4xl h-fit pb-10"
+                  className="w-full patient-panel-full 2xl:w-[500px] bg-white/70 backdrop-blur-lg rounded-4xl h-fit pb-10"
                 >
                   <InterconnectedSystemAccordion 
                     isOpen={true} 
@@ -754,6 +780,11 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               aria-hidden
               className="pointer-events-none absolute inset-y-0 right-0 hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/70 to-transparent md:via-[#056368]/60 lg:block"
             />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-3 pb-3 pt-12 bg-gradient-to-t from-[#056368] via-[#056368]/85 to-transparent">
+              <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+                Not an actual patient. Visuals created with the help of AI.
+              </p>
+            </div>
           </div>
         )}
       </div>

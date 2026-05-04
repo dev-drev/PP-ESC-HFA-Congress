@@ -84,7 +84,7 @@ export default function RootLayout({
         <img
           src="/logo-white.svg"
           alt="Logo"
-          className="fixed top-7 right-6 w-30 h-auto z-40 pointer-events-none select-none opacity-80"
+          className="fixed z-40 h-auto w-14 top-4 right-3 pointer-events-none select-none opacity-80 md:top-7 md:right-6 md:w-30"
         />
       </body>
     </html>

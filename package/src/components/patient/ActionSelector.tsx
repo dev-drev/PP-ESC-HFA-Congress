@@ -353,7 +353,7 @@ export default function ActionSelector({
         : 'Proceed';
 
   return (
-    <div className="space-y-4 max-w-[500px] z-10">
+    <div className="space-y-4 max-w-[500px] z-10 w-full patient-panel-full">
       {/* Show Go Back and Proceed buttons if action is selected */}
       {showProceedButtons && (
         <motion.div

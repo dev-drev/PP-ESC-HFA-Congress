@@ -30,9 +30,9 @@ body {
   min-height: 100dvh;
 }
 
-/* Tablet only (768px–1023px): full-width content + Joana full-bleed — see PatientDetail */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .tablet-content-fullwidth {
+/* Sotto desktop (mobile + tablet): shell e pannelli a tutta larghezza — PatientDetail, ActionSelector */
+@media (max-width: 1023px) {
+  .patient-shell-fullwidth {
     max-width: none !important;
     width: 100% !important;
     margin-left: 0 !important;
@@ -41,14 +41,17 @@ body {
     padding-right: 0.75rem !important;
   }
 
+  .patient-panel-full {
+    max-width: none !important;
+    width: 100% !important;
+  }
+}
+
+/* Tablet only (768px–1023px): Joana AP1 fixed layer — PatientDetail */
+@media (min-width: 768px) and (max-width: 1023px) {
   .tablet-joana-fullbleed {
     width: 100% !important;
     max-width: none !important;
-  }
-
-  .tablet-step-fullwidth {
-    max-width: none !important;
-    width: 100% !important;
   }
 
   .tablet-joana-image-cover {
