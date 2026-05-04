@@ -833,7 +833,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
         {isSplitHeroDesktop && (
           <div
-            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[min(calc(100dvh-var(--joana-ap1-bg-bottom-reserve)),var(--joana-ap1-strip-max-height))] w-[min(40vw,var(--joana-ap1-strip-max-width))] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[min(calc(100dvh-var(--joana-ap1-bg-bottom-reserve)),var(--joana-ap1-strip-max-height))] w-[min(50vw,var(--joana-ap1-strip-max-width))] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: imageOpacity }}
           >
             <Image
