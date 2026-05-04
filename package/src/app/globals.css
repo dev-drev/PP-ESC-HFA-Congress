@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -12,9 +13,11 @@
   */
   --joana-ap1-bg-below-references: 0px;
   --joana-ap1-bg-bottom-reserve: var(--joana-ap1-bg-below-references);
-  /* Desktop Joana fixed strip: evita che foto + object-cover crescano troppo su schermi molto grandi */
+  /* Desktop fixed strip: larghezza max; altezza = tutta la viewport (niente cap a 56rem) */
   --joana-ap1-strip-max-width: 52rem; /* ~832px; prima max-w 980px */
-  --joana-ap1-strip-max-height: 56rem; /* ~896px; altezza ≤100dvh ma non oltre questo su monitor alti */
+  /* Altezza hero/striscia: tutta la viewport (niente più cap 56rem sulla striscia desktop) */
+  --joana-ap1-hero-height: calc(100dvh - var(--joana-ap1-bg-bottom-reserve));
+  --joana-ap1-strip-max-height: 100dvh; /* legacy: non usare come cap altezza striscia */
   /* (Opzionale) Se il footer References torna fixed in layout, ripristina pb su body e usa questa altezza. */
   --app-site-footer-total: var(--layout-references-bar-height);
 }
@@ -31,12 +34,15 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: #056368;
   min-height: 100dvh;
+ 
 }
 
 /* Sotto desktop (mobile + tablet): shell e pannelli a tutta larghezza — PatientDetail, ActionSelector */
 @media (max-width: 1023px) {
+
   .patient-shell-fullwidth {
     max-width: none !important;
+    
     width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;

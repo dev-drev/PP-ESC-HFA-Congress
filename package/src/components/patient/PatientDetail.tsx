@@ -127,6 +127,12 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         return;
       }
 
+      /* Joana / Linda / Robert split-hero: niente fade allo scroll — foto resta full-height come negli altri step */
+      if (splitHeroPatientKey(patient.name)) {
+        setImageOpacity(1);
+        return;
+      }
+
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const fadeStart = 0;
@@ -149,7 +155,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
-  }, []);
+  }, [patient.name]);
 
   // Determine if we should show the SGLT2i accordion based on current route
   const shouldShowSglt2iAccordion = pathname.includes('sglt2i-case') || 
@@ -570,7 +576,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
     }`}>
         {isSplitHeroStacked && (
           <div
-            className="pointer-events-none absolute left-1/2 top-0 z-0 h-[min(92vh,56rem)] w-screen max-w-none -translate-x-1/2 overflow-hidden transition-opacity duration-300"
+            className="pointer-events-none absolute left-1/2 top-0 z-0 h-[var(--joana-ap1-hero-height)] min-h-[var(--joana-ap1-hero-height)] max-h-[100dvh] w-screen max-w-none -translate-x-1/2 overflow-hidden transition-opacity duration-300"
             style={{ opacity: imageOpacity }}
           >
             <div className="relative h-full w-full" aria-hidden>
@@ -607,7 +613,11 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
 
       <div className="mx-auto px-4 2xl:px-8 max-w-[1700px] relative z-10 patient-shell-fullwidth">
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 relative z-20">
+        <div
+          className={`grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 relative z-20 ${
+            isSplitHeroDesktop ? 'lg:min-h-[var(--joana-ap1-hero-height)]' : ''
+          }`}
+        >
           {/* Left Column - Patient Info, Image and Action Selection */}
           <div className="2xl:col-span-1">
             {/* Patient Header and Quote */}
@@ -702,7 +712,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           </div>
 
           {isTabletSplitHero && (
-            <div className="col-span-full relative z-30 mb-4 mt-[min(30vh,18rem)] max-lg:px-1 text-center">
+            <div className="col-span-full relative z-30 mb-4 mt-[min(28vh,16rem)] max-lg:px-1 text-center">
               <p className="text-white/60 text-xs text-balance max-w-prose mx-auto">
                 Not an actual patient. Visuals created with the help of AI.
               </p>
@@ -713,9 +723,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           <div
             className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row lg:items-start relative z-20 ${
               isSplitHeroStacked
-                ? isTabletSplitHero
-                  ? 'mt-6 pt-2'
-                  : 'mt-[min(48vh,28rem)] pt-4'
+                ? 'mt-[min(48vh,28rem)] pt-4'
                 : ''
             }`}
           >
@@ -833,7 +841,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
         {isSplitHeroDesktop && (
           <div
-            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[min(calc(100dvh-var(--joana-ap1-bg-bottom-reserve)),var(--joana-ap1-strip-max-height))] w-[min(50vw,var(--joana-ap1-strip-max-width))] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[min(50vw,var(--joana-ap1-strip-max-width))] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: imageOpacity }}
           >
             <Image
