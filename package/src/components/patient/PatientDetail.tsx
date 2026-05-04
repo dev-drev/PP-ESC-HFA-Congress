@@ -570,7 +570,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             />
             <div className="absolute inset-0 z-[2] bg-gradient-to-b from-black/50 via-black/15 to-[#056368]" aria-hidden />
             {isSmartphone && (
-              <div className="absolute inset-x-0 bottom-36 z-20 bg-gradient-to-t from-[#056368]/55 to-transparent px-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-8">
+              <div className="absolute inset-x-0 bottom-36 z-20 px-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-8">
                 <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)]">
                   Not an actual patient. Visuals created with the help of AI.
                 </p>
@@ -691,7 +691,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
 
           {/* Right Column — split hero narrow: cards sotto l’hero */}
           <div
-            className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row relative z-20 ${
+            className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row lg:items-start relative z-20 ${
               isSplitHeroStacked
                 ? isTabletSplitHero
                   ? 'mt-6 pt-2'
@@ -701,7 +701,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           >
              {/* What would you like to do next? - Visual placeholder */}
 
-<div className="w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex justify-start flex-col 2xl:block 2xl:mx-auto">
+<div className="w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex flex-col items-stretch justify-start 2xl:block 2xl:mx-0 self-start">
             {!showSglt2iReasoning && (
               <div className="w-full min-w-0">
               <Image
@@ -711,7 +711,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 width={500}
                 height={200}
                 sizes="(max-width: 1023px) 92vw, (max-width: 1700px) min(40vw, 500px), 500px"
-                className="mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-auto lg:mx-0 patient-panel-full"
+                className="mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-0 patient-panel-full"
               />
             </div>
             )}
@@ -729,7 +729,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       />
     </div>
 
-<div className="flex flex-col min-w-0 flex-1 basis-0 2xl:ml-auto 2xl:mr-0 justify-center 2xl:justify-start mx-auto w-full 2xl:w-auto max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] patient-panel-full">
+<div className="flex min-w-0 w-full max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] flex-1 basis-0 flex-col items-stretch justify-start 2xl:mx-0 patient-panel-full self-start">
     {/* Medical Record */}
             <motion.div
               key={`medical-${animationKey}`}
@@ -835,7 +835,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               aria-hidden
               className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 lg:block"
             />
-            <div className="pointer-events-none absolute inset-x-0 bottom-5 z-10 bg-gradient-to-t from-[#056368] via-[#056368]/55 to-transparent px-3 pb-2 pt-10">
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#056368] via-[#056368]/55 to-transparent px-3 pb-2 pt-10">
               <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_3px_rgba(0,0,0,0.65)]">
                 Not an actual patient. Visuals created with the help of AI.
               </p>
