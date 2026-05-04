@@ -12,6 +12,9 @@
   */
   --joana-ap1-bg-below-references: 0px;
   --joana-ap1-bg-bottom-reserve: var(--joana-ap1-bg-below-references);
+  /* Desktop Joana fixed strip: evita che foto + object-cover crescano troppo su schermi molto grandi */
+  --joana-ap1-strip-max-width: 52rem; /* ~832px; prima max-w 980px */
+  --joana-ap1-strip-max-height: 56rem; /* ~896px; altezza ≤100dvh ma non oltre questo su monitor alti */
   /* Body padding: altezza footer fissato in basso (solo barra References se QR è nascosto) */
   --app-site-footer-total: var(--layout-references-bar-height);
 }

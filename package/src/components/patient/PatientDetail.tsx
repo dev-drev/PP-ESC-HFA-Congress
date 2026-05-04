@@ -460,7 +460,11 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
 
   const renderPatientHeader = () => {
     return (
-      <div className="flex justify-center 2xl:justify-between items-start">
+      <div
+        className={`flex items-start ${
+          isJoanaAp1Desktop ? 'w-full justify-start' : 'justify-center 2xl:justify-between'
+        }`}
+      >
         <div className="flex gap-6 items-center">
        
           <div className="pl-[0px] relative">
@@ -548,7 +552,13 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           <div className="2xl:col-span-1">
             {/* Patient Header and Quote */}
             <div className="mb-0">
-              <div className={`flex justify-center 2xl:justify-start relative z-30 ${isJoanaAp1Stacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}>
+              <div
+                className={`relative z-30 w-full ${
+                  isJoanaAp1Desktop
+                    ? 'flex justify-start lg:-translate-x-2 xl:-translate-x-2 2xl:-translate-x-0'
+                    : 'flex justify-center 2xl:justify-start'
+                } ${isJoanaAp1Stacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}
+              >
                 {renderPatientHeader()}
               </div>
                 {showInlinePatientPhoto && <div
@@ -763,7 +773,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
         {isJoanaAp1Desktop && (
           <div
-            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[calc(100dvh-var(--joana-ap1-bg-bottom-reserve))] max-h-[calc(100dvh-var(--joana-ap1-bg-bottom-reserve))] w-[40vw] max-w-[980px] overflow-hidden transition-opacity duration-300 pointer-events-none lg:w-[40vw] lg:max-w-[980px]"
+            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[min(calc(100dvh-var(--joana-ap1-bg-bottom-reserve)),var(--joana-ap1-strip-max-height))] w-[min(40vw,var(--joana-ap1-strip-max-width))] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: imageOpacity }}
           >
             <Image
