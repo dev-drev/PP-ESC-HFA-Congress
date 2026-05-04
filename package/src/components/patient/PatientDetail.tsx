@@ -507,8 +507,9 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
 
 
 
-        <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
-      
+        <div className="relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8">
+          <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
+        </div>
 
       <div className="mx-auto px-4 2xl:px-8 max-w-[1700px] relative z-10">
 
@@ -598,10 +599,18 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           <div className="lg:col-span-2 flex gap-8 flex-col lg:flex-row relative z-20">
              {/* What would you like to do next? - Visual placeholder */}
 
-<div className="2xl:ml-[12px] flex justify-center flex-col 2xl:block 2xl:mx-auto">
+<div className="w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex justify-start flex-col 2xl:block 2xl:mx-auto">
             {!showSglt2iReasoning && (
-              <div className="flex-1">
-              <Image src={currentStepImage} alt="What would you like to do next?" title="What would you like to do next?" width={500} height={200} className="mb-6" />
+              <div className="w-full min-w-0">
+              <Image
+                src={currentStepImage}
+                alt="What would you like to do next?"
+                title="What would you like to do next?"
+                width={500}
+                height={200}
+                sizes="(max-width: 1023px) 92vw, (max-width: 1700px) min(40vw, 500px), 500px"
+                className="mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-auto lg:mx-0"
+              />
             </div>
             )}
 
@@ -618,7 +627,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       />
     </div>
 
-<div className="flex flex-col 2xl:ml-auto 2xl:mr-0 justify-center  2xl:justify-start mx-auto w-full 2xl:w-auto 2xl:max-w-[500px]">
+<div className="flex flex-col min-w-0 flex-1 basis-0 2xl:ml-auto 2xl:mr-0 justify-center 2xl:justify-start mx-auto w-full 2xl:w-auto max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px]">
     {/* Medical Record */}
             <motion.div
               key={`medical-${animationKey}`}

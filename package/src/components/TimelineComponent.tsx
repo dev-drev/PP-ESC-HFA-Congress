@@ -12,8 +12,8 @@ export default function TimelineComponent({ activeYear = 2025, patientName }: Ti
     : [2025, 2030, 2035]  // Default years for other patients
 
   return (
-    <div className="flex justify-center pt-4 pb-4 lg:pb-16 lg:pt-4 px-2 lg:px-4 w-full">
-      <div className="2xl:min-w-[500px] inline-flex items-center gap-1 2xl:gap-3 justify-center px-3 py-2 2xl:px-6 2xl:py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 max-w-full">
+    <div className="relative z-30 flex w-full justify-center pt-4 pb-4 lg:pb-16 lg:pt-4 px-2 lg:px-4">
+      <div className="2xl:min-w-[500px] mx-auto inline-flex items-center gap-1 2xl:gap-3 justify-center px-3 py-2 2xl:px-6 2xl:py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 max-w-full">
         {years.map((year, index) => (
           <div key={year} className="flex items-center gap-1 lg:gap-2">
             {index > 0 && (
