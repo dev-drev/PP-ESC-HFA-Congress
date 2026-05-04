@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description: 'Presentation synchronization app with Supabase',
 }
 
+/** false = nascosto il blocco sotto References (PC code, QR, testi legali). Ripristinare insieme a globals.css. */
+const SHOW_QR_LEGAL_FOOTER = false
+
 export default function RootLayout({
   children,
 }: {
@@ -40,15 +43,16 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${lato.className} ${lato.variable} h-full`}>
+      <body className={`${lato.className} ${lato.variable} h-full pb-[var(--app-site-footer-total)]`}>
         <Suspense fallback={null}>
           <SessionSyncProvider>
             {children}
           </SessionSyncProvider>
         </Suspense>
-        {/* z-50: same stacking as References buttons (they use z-50); must sit above patient layout (z-10/z-20). */}
-        <div className="relative z-50 w-full bg-[#056368]">
+        {/* Fixed to viewport bottom so Joana layer can end exactly at References top; z-50 matches References modals */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 w-full bg-[#056368] shadow-[0_-6px_24px_rgba(0,0,0,0.12)]">
           <ConditionalReferencesButton />
+          {SHOW_QR_LEGAL_FOOTER && (
           <div className="w-full border-t px-4 pb-6 mt-6 border-t border-white/20 flex justify-center xl:bottom-10 xl:left-4 xl:w-auto xl:px-0 xl:pb-0 xl:mt-0 xl:border-0">
             <div className="max-w-[220px] w-full pt-10 text-center rounded-2xl p-4 bg-[#066368] border border-white/15 shadow-lg">
             <p className="text-white text-xs font-bold opacity-80 mb-2">
@@ -74,6 +78,7 @@ export default function RootLayout({
             </div>
           </div>
           </div>
+          )}
         </div>
         <HomepageButton />
         <img

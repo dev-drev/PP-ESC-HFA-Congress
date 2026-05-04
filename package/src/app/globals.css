@@ -4,14 +4,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  /* Joana AP1 fixed photo: height stops above References + QR block (layout.tsx) */
-  --joana-ap1-bg-bottom-reserve: 400px;
-}
-
-@media (max-width: 1279px) {
-  :root {
-    --joana-ap1-bg-bottom-reserve: 440px;
-  }
+  /* References bar (~py-4 pb-5 + line) — keep in sync with ReferencesButton layout */
+  --layout-references-bar-height: 4.75rem;
+  /*
+    Space sotto la barra References (prima: mt-6 + blocco QR). Con QR nascosto in layout.tsx = 0.
+    Quando riattivi il blocco QR, ripristina: clamp(260px, 24vh, 360px) e --app-site-footer-total sotto.
+  */
+  --joana-ap1-bg-below-references: 0px;
+  --joana-ap1-bg-bottom-reserve: var(--joana-ap1-bg-below-references);
+  /* Body padding: altezza footer fissato in basso (solo barra References se QR è nascosto) */
+  --app-site-footer-total: var(--layout-references-bar-height);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +28,33 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: #056368;
   min-height: 100dvh;
+}
+
+/* Tablet only (768px–1023px): full-width content + Joana full-bleed — see PatientDetail */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-content-fullwidth {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .tablet-joana-fullbleed {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .tablet-step-fullwidth {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .tablet-joana-image-cover {
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
 }
 
 

@@ -38,7 +38,14 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   const [openAccordion, setOpenAccordion] = useState<'medical' | 'guidelines' | 'sglt2i' | null>('medical');
   const [imageOpacity, setImageOpacity] = useState(1);
   const [isSmartphone, setIsSmartphone] = useState(false);
+  const [isBelowDesktopLg, setIsBelowDesktopLg] = useState(false);
   const isJoanaAp1 = patient.name === 'Joana' && currentView === 'overview';
+  /** Joana overview: split hero only on lg+; mobile/tablet = same column stack as Linda */
+  const isJoanaAp1Stacked = isJoanaAp1 && isBelowDesktopLg;
+  const isJoanaAp1Desktop = isJoanaAp1 && !isBelowDesktopLg;
+  /** Linda-style inline photo; Joana overview on narrow uses full-bleed hero instead of this block */
+  const showInlinePatientPhoto =
+    (!isJoanaAp1 || isJoanaAp1Stacked) && !(isJoanaAp1Stacked && patient.name === 'Joana');
 
   const handleHeartToggle = (active: boolean) => {
     setShowHeartView(active);
@@ -53,13 +60,16 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   };
 
   useEffect(() => {
-    setIsSmartphone(window.innerWidth < 768);
+    const w = window.innerWidth;
+    setIsSmartphone(w < 768);
+    setIsBelowDesktopLg(w < 1024);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const smartphone = window.innerWidth < 768;
       setIsSmartphone(smartphone);
+      setIsBelowDesktopLg(window.innerWidth < 1024);
 
       if (!smartphone) {
         setImageOpacity(1);
@@ -452,7 +462,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         <div className="flex gap-6 items-center">
        
           <div className="pl-[0px] relative">
-            <h1 className={`text-[32px] font-semibold text-white lg:text-5xl mb-3 ${isJoanaAp1 ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]' : ''}`}>
+            <h1 className={`text-[32px] font-semibold text-white lg:text-5xl mb-3 ${isJoanaAp1Desktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]' : ''}`}>
               {currentPatientData.name}, {currentPatientData.age}
             </h1>
             <AnimatePresence mode="wait">
@@ -462,7 +472,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 transition={{ duration: 0.3 }}
               >
                 {currentPatientData.quote && (
-                  <div className={`text-white text-md 2xl:text-lg relative max-w-md mt-1 text-balance ${isJoanaAp1 ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]' : ''}`}>
+                  <div className={`text-white text-md 2xl:text-lg relative max-w-md mt-1 text-balance ${isJoanaAp1Desktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]' : ''}`}>
                     "{currentPatientData.quote}"
                   </div>
                 )}
@@ -503,23 +513,43 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       <div className={`relative pb-0 ${
         showSglt2iReasoning ? 'entry-screen-bg' : 'entry-screen'
     }`}>
-      {/* Session indicator */}
+        {isJoanaAp1Stacked && (
+          <div
+            className="pointer-events-none absolute left-1/2 top-0 z-0 h-[min(92vh,56rem)] w-screen max-w-none -translate-x-1/2 overflow-hidden transition-opacity duration-300"
+            style={{ opacity: imageOpacity }}
+            aria-hidden
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/charactersNew/joana-ap1.png"
+                alt=""
+                fill
+                className="object-cover object-top"
+                sizes="100vw"
+                priority
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/15 to-[#056368]" />
+          </div>
+        )}
 
-
-
-        <div className="relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8">
+        <div
+          className={`relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8 tablet-content-fullwidth ${isJoanaAp1Stacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
+        >
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
 
-      <div className="mx-auto px-4 2xl:px-8 max-w-[1700px] relative z-10">
+      <div className="mx-auto px-4 2xl:px-8 max-w-[1700px] relative z-10 tablet-content-fullwidth">
 
         <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 relative z-20">
           {/* Left Column - Patient Info, Image and Action Selection */}
           <div className="2xl:col-span-1">
             {/* Patient Header and Quote */}
             <div className="mb-0">
-              <div className="flex justify-center 2xl:justify-start relative z-30">{renderPatientHeader()}</div>
-                {!isJoanaAp1 && <div
+              <div className={`flex justify-center 2xl:justify-start relative z-30 ${isJoanaAp1Stacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}>
+                {renderPatientHeader()}
+              </div>
+                {showInlinePatientPhoto && <div
                   className={currentPatientData.name === 'Linda' ? '' : currentPatientData.name === 'Joana' ? '' : '2xl:w-[448px]'}
                   style={{
                     transition: 'opacity 0.3s ease',
@@ -533,29 +563,23 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                         <div
                           className="relative inline-block"
                           style={{
-                            maxHeight: isJoanaAp1 ? (isSmartphone ? '520px' : '700px') : (isSmartphone ? '550px' : '700px'),
+                            maxHeight: isSmartphone ? '550px' : '700px',
                             overflow: 'hidden',
-                            maskImage: isJoanaAp1
-                              ? 'linear-gradient(to right, black 0%, black 72%, transparent 100%)'
-                              : (isSmartphone
-                                ? 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
-                                : 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'),
-                            WebkitMaskImage: isJoanaAp1
-                              ? 'linear-gradient(to right, black 0%, black 72%, transparent 100%)'
-                              : (isSmartphone
-                                ? 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
-                                : 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)')
+                            maskImage: isSmartphone
+                              ? 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
+                              : 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+                            WebkitMaskImage: isSmartphone
+                              ? 'linear-gradient(to bottom, black 0%, black 50%, transparent 100%)'
+                              : 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
                           }}
                         >
                           <Image
-                            src={isJoanaAp1 ? '/charactersNew/joana-ap1.png' : currentPatientData.imageSrc}
+                            src={isJoanaAp1Stacked ? '/charactersNew/joana-ap1.png' : currentPatientData.imageSrc}
                             alt={currentPatientData.name}
                             title={currentPatientData.name}
-                            width={isJoanaAp1 ? 760 : 400}
-                            height={isJoanaAp1 ? 900 : 200}
-                            className={isJoanaAp1
-                              ? "z-20 relative 2xl:block w-auto h-[70vh] max-w-none object-cover object-left"
-                              : "z-20 relative 2xl:block w-auto h-auto"}
+                            width={isJoanaAp1Stacked ? 760 : 400}
+                            height={isJoanaAp1Stacked ? 900 : 200}
+                            className="z-20 relative 2xl:block w-auto h-auto"
                             priority
                           />
                         </div>
@@ -595,8 +619,10 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             )}
           </div>
 
-          {/* Right Column - Guidelines */}
-          <div className="lg:col-span-2 flex gap-8 flex-col lg:flex-row relative z-20">
+          {/* Right Column - Guidelines — Joana narrow: start cards well below the hero */}
+          <div
+            className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row relative z-20 ${isJoanaAp1Stacked ? 'mt-[min(48vh,28rem)] pt-4' : ''}`}
+          >
              {/* What would you like to do next? - Visual placeholder */}
 
 <div className="w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex justify-start flex-col 2xl:block 2xl:mx-auto">
@@ -609,7 +635,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 width={500}
                 height={200}
                 sizes="(max-width: 1023px) 92vw, (max-width: 1700px) min(40vw, 500px), 500px"
-                className="mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-auto lg:mx-0"
+                className="mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-auto lg:mx-0 tablet-step-fullwidth"
               />
             </div>
             )}
@@ -627,7 +653,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       />
     </div>
 
-<div className="flex flex-col min-w-0 flex-1 basis-0 2xl:ml-auto 2xl:mr-0 justify-center 2xl:justify-start mx-auto w-full 2xl:w-auto max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px]">
+<div className="flex flex-col min-w-0 flex-1 basis-0 2xl:ml-auto 2xl:mr-0 justify-center 2xl:justify-start mx-auto w-full 2xl:w-auto max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] tablet-step-fullwidth">
     {/* Medical Record */}
             <motion.div
               key={`medical-${animationKey}`}
@@ -648,7 +674,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               showInterconnectedSystem ? (
                 <motion.div
                   key={`interconnected-${animationKey}`}
-                  className="2xl:w-[500px] bg-white/70 backdrop-blur-lg rounded-4xl h-fit pb-10"
+                  className="w-full tablet-step-fullwidth 2xl:w-[500px] bg-white/70 backdrop-blur-lg rounded-4xl h-fit pb-10"
                 >
                   <InterconnectedSystemAccordion 
                     isOpen={true} 
@@ -709,9 +735,9 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             />
           </div>
         )}
-        {isJoanaAp1 && (
+        {isJoanaAp1Desktop && (
           <div
-            className="fixed left-0 top-0 z-0 h-[calc(100dvh-var(--joana-ap1-bg-bottom-reserve))] max-h-[calc(100dvh-var(--joana-ap1-bg-bottom-reserve))] w-[40vw] max-w-[980px] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[calc(100dvh-var(--joana-ap1-bg-bottom-reserve))] max-h-[calc(100dvh-var(--joana-ap1-bg-bottom-reserve))] w-[40vw] max-w-[980px] overflow-hidden transition-opacity duration-300 pointer-events-none lg:w-[40vw] lg:max-w-[980px]"
             style={{ opacity: imageOpacity }}
           >
             <Image
@@ -720,10 +746,14 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               title="Joana AP1 background"
               width={1200}
               height={1600}
-              className="object-cover object-center h-full w-full"
+              className="h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom"
               priority
             />
-            <div className="absolute inset-y-0 right-0 w-[52%] bg-gradient-to-t 2xl:bg-gradient-to-l from-[#056368] via-[#056368]/75 to-transparent" />
+            {/* Tablet: full-bleed photo, no fade; desktop lg+: blend into content */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 right-0 hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/70 to-transparent md:via-[#056368]/60 lg:block"
+            />
           </div>
         )}
       </div>
