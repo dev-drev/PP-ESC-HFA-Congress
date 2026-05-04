@@ -21,26 +21,46 @@ interface PatientDetailProps {
 
 type PatientView = 'overview' | 'monitoring_ecg' | 'prescribe_sglt2i' | 'optimize_antihypertensive';
 
-type SplitHeroPatient = 'Joana' | 'Linda';
+type SplitHeroPatient = 'Joana' | 'Linda' | 'Robert';
 
-const SPLIT_HERO_BY_PATIENT: Record<
-  SplitHeroPatient,
-  { views: readonly PatientView[]; overview: string; step: string }
-> = {
+type SplitHeroConfig = {
+  views: readonly PatientView[];
+  overview: string;
+  /** Stesso asset per ogni step post-overview (nessun `stepByView`) */
+  step?: string;
+  /** Asset per vista: Linda Prescribe vs Monitoring; Robert Rapid vs Loop */
+  stepByView?: Partial<Record<PatientView, string>>;
+};
+
+const SPLIT_HERO_BY_PATIENT: Record<SplitHeroPatient, SplitHeroConfig> = {
   Joana: {
     views: ['overview', 'optimize_antihypertensive', 'prescribe_sglt2i'],
     overview: '/charactersNew/joana-ap1.png',
-    step: '/charactersNew/joana-ap2.png',
+    stepByView: {
+      prescribe_sglt2i: '/charactersNew/joana-ap21.png',
+      optimize_antihypertensive: '/charactersNew/joana-ap22.png',
+    },
   },
   Linda: {
     views: ['overview', 'monitoring_ecg', 'prescribe_sglt2i'],
     overview: '/charactersNew/linda-ap1.png',
-    step: '/charactersNew/linda-ap22.png',
+    stepByView: {
+      prescribe_sglt2i: '/charactersNew/linda-ap21.png',
+      monitoring_ecg: '/charactersNew/linda-ap22.png',
+    },
+  },
+  Robert: {
+    views: ['overview', 'prescribe_sglt2i', 'monitoring_ecg'],
+    overview: '/charactersNew/robert-ap1.png',
+    stepByView: {
+      prescribe_sglt2i: '/charactersNew/robert-ap21.png',
+      monitoring_ecg: '/charactersNew/robert-ap22.png',
+    },
   },
 };
 
 function splitHeroPatientKey(name: string): SplitHeroPatient | null {
-  return name === 'Joana' || name === 'Linda' ? name : null;
+  return name === 'Joana' || name === 'Linda' || name === 'Robert' ? name : null;
 }
 
 export default function PatientDetail({ patient }: PatientDetailProps) {
@@ -68,8 +88,8 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
     ? null
     : currentView === 'overview'
       ? splitHeroCfg.overview
-      : splitHeroCfg.step;
-  /** Split hero (Joana / Linda): desktop lg+ = striscia fissa; sotto lg = stack full-bleed */
+      : splitHeroCfg.stepByView?.[currentView] ?? splitHeroCfg.step ?? null;
+  /** Split hero (Joana / Linda / Robert): desktop lg+ = striscia fissa; sotto lg = stack full-bleed */
   const isSplitHeroStacked = isSplitHero && isBelowDesktopLg;
   const isSplitHeroDesktop = isSplitHero && !isBelowDesktopLg;
   /** Split hero su tablet (768–1023): disclaimer sotto l’hero */
