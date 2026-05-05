@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description: 'Presentation synchronization app with Supabase',
 }
 
-/** false = nascosto il blocco sotto References (PC code, QR, testi legali). Ripristinare insieme a globals.css. */
-const SHOW_QR_LEGAL_FOOTER = false
+/** Mostra il blocco PC code + QR + testi legali (mobile in flusso, tablet/desktop fixed in basso a destra). */
+const SHOW_QR_LEGAL_FOOTER = true
 
 export default function RootLayout({
   children,
@@ -53,31 +53,29 @@ export default function RootLayout({
         <div className="relative z-10 w-full bg-[#056368] shadow-[0_-6px_24px_rgba(0,0,0,0.12)]">
           <ConditionalReferencesButton />
           {SHOW_QR_LEGAL_FOOTER && (
-          <div className="w-full border-t px-4 pb-6 mt-6 border-t border-white/20 flex justify-center xl:bottom-10 xl:left-4 xl:w-auto xl:px-0 xl:pb-0 xl:mt-0 xl:border-0">
-            <div className="max-w-[220px] w-full pt-10 text-center rounded-2xl p-4 bg-[#066368] border border-white/15 shadow-lg">
-            <p className="text-white text-xs font-bold opacity-80 mb-2">
-              PC-ES-118210-032026
-            </p>
-            <div className="flex flex-col items-center gap-2 space-y-2">
-              <img
-                src="/spanish-qr.png"
-                alt="Spanish QR"
-                className="w-16 h-16 object-contain shrink-0"
-              />
-              <div className="text-white opacity-80 tracking-normal text-center">
-                <p className="text-[9px] leading-tight">
-                  Scan the QR code to access the Jardiance Summary of Product Characteristics.
-                </p>
-                <p className="text-[9px] leading-tight mt-1">
-                  <b>PRESENTATION &amp; PRICE:</b> Jardiance 10 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 49.31. Jardiance 25 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 51.52.
-                </p>
-                <p className="text-[9px] leading-tight mt-1">
-                  <b>CONDITIONS OF PRESCRIPTION AND DISPENSING:</b> Medication subject to medical prescription. Reimbursable by the Spanish National Health System. Reduced contribution.
-                </p>
+            <div className="w-full border-t border-white/20 px-4 py-6 flex justify-center">
+              <div className="w-full max-w-[260px] md:max-w-[300px] rounded-2xl p-4 bg-[#066368] border border-white/15 shadow-lg flex flex-col md:flex-row md:items-start gap-3 text-center md:text-left">
+                <img
+                  src="/spanish-qr.png"
+                  alt="Spanish QR"
+                  className="w-20 h-20 md:w-16 md:h-16 object-contain shrink-0 mx-auto md:mx-0"
+                />
+                <div className="text-white opacity-90">
+                  <p className="text-xs md:text-[10px] font-bold leading-tight mb-1 md:mb-1">
+                    PC-ES-118210-032026
+                  </p>
+                  <p className="text-[10px] md:text-[9px] leading-tight">
+                    Scan the QR code to access the Jardiance Summary of Product Characteristics.
+                  </p>
+                  <p className="text-[10px] md:text-[9px] leading-tight mt-1">
+                    <b>PRESENTATION &amp; PRICE:</b> Jardiance 10 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 49.31. Jardiance 25 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 51.52.
+                  </p>
+                  <p className="text-[10px] md:text-[9px] leading-tight mt-1">
+                    <b>CONDITIONS OF PRESCRIPTION AND DISPENSING:</b> Medication subject to medical prescription. Reimbursable by the Spanish National Health System. Reduced contribution.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          </div>
           )}
         </div>
         <HomepageButton />
