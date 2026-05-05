@@ -92,6 +92,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   /** Split hero (Joana / Linda / Robert): desktop lg+ = striscia fissa; sotto lg = stack full-bleed */
   const isSplitHeroStacked = isSplitHero && isBelowDesktopLg;
   const isSplitHeroDesktop = isSplitHero && !isBelowDesktopLg;
+  const useStage3NarrowLayout = isBelowDesktopLg;
   /** Split hero su tablet (768–1023): disclaimer sotto l’hero */
   const isTabletSplitHero = isSplitHeroStacked && !isSmartphone;
   /** Foto inline tipo Linda classica; con split hero su narrow si usa full-bleed, non questo blocco */
@@ -113,14 +114,14 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   useEffect(() => {
     const w = window.innerWidth;
     setIsSmartphone(w < 768);
-    setIsBelowDesktopLg(w < 1024);
+    setIsBelowDesktopLg(w < 1536);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const smartphone = window.innerWidth < 768;
       setIsSmartphone(smartphone);
-      setIsBelowDesktopLg(window.innerWidth < 1024);
+      setIsBelowDesktopLg(window.innerWidth < 1536);
 
       if (!smartphone) {
         setImageOpacity(1);
@@ -516,8 +517,12 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   const renderPatientHeader = () => {
     return (
       <div
-        className={`flex m-4 xl:m-0 items-start ${
-          isSplitHeroDesktop ? 'w-full justify-start' : 'justify-center 2xl:justify-between'
+        className={`flex items-start ${
+          useStage3NarrowLayout
+            ? 'justify-start'
+            : isSplitHeroDesktop
+              ? 'w-full justify-start'
+              : 'm-4 xl:m-0 justify-center 2xl:justify-between'
         }`}
       >
         <div className="flex gap-6 items-center">
@@ -540,9 +545,9 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               </motion.div>
 
             </AnimatePresence>
-                   <div className="mt-6">
+                   <div className={useStage3NarrowLayout ? 'mt-3' : 'mt-6'}>
                                     {currentPatientData.imageSrc && !showSglt2iReasoning && (
-              <div className="mb-6">
+              <div className={useStage3NarrowLayout ? 'mb-2' : 'mb-6'}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -595,7 +600,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[34%] bg-gradient-to-t from-[#056368]/55 via-[#056368]/14 to-transparent"
             />
             <div className="absolute inset-0 z-[2] bg-gradient-to-b from-black/50 via-black/15 to-[#056368]" aria-hidden />
-            {isSmartphone && (
+            {isSmartphone && !useStage3NarrowLayout && (
               <div className="absolute inset-x-0 bottom-36 z-20 px-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-8">
                 <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)]">
                   Not an actual patient. Visuals created with the help of AI.
@@ -606,25 +611,39 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
 
         <div
-          className={`relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8 patient-shell-fullwidth ${isSplitHeroStacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
+          className={`relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8 ${
+            useStage3NarrowLayout ? '' : 'patient-shell-fullwidth'
+          } ${isSplitHeroStacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
         >
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
 
-      <div className="mx-auto px-4 2xl:px-8 max-w-[1700px] relative z-10 patient-shell-fullwidth">
+      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] patient-shell-fullwidth'}`}>
 
         <div
-          className={`grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 relative z-20 ${
-            isSplitHeroDesktop ? 'lg:min-h-[var(--joana-ap1-hero-height)]' : ''
+          className={`relative z-20 ${
+            useStage3NarrowLayout
+              ? 'grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px]'
+              : `grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 ${
+                  isSplitHeroDesktop ? 'lg:min-h-[var(--joana-ap1-hero-height)]' : ''
+                }`
           }`}
         >
           {/* Left Column - Patient Info, Image and Action Selection */}
-          <div className="2xl:col-span-1">
+          <div
+            className={`2xl:col-span-1 ${
+              useStage3NarrowLayout ? 'mt-[28dvh] 2xl:mt-0 2xl:mb-0' : ''
+            }`}
+          >
             {/* Patient Header and Quote */}
-            <div className="mb-0">
+            <div
+              className={useStage3NarrowLayout ? 'mb-2 mx-auto px-4 2xl:px-0 max-w-[992px] 2xl:max-w-full' : 'mb-0'}
+            >
               <div
                 className={`relative z-30 w-full ${
-                  isSplitHeroDesktop
+                  useStage3NarrowLayout
+                    ? 'flex justify-start'
+                    : isSplitHeroDesktop
                     ? 'flex justify-start lg:-translate-x-2 xl:-translate-x-2 2xl:-translate-x-0'
                     : 'flex justify-center 2xl:justify-start'
                 } ${isSplitHeroStacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}
@@ -664,18 +683,12 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                             className="z-20 relative 2xl:block w-auto h-auto"
                             priority
                           />
-                          {/* Desktop (lg+): disclaimer in basso alla foto; su mobile resta il blocco sotto */}
-                          <div className="pointer-events-none absolute inset-x-0 bottom-3 z-30 hidden pb-2 pl-0 pr-2 pt-10 lg:block">
-                            <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]">
-                              Not an actual patient. Visuals created with the help of AI.
-                            </p>
-                          </div>
                         </div>
                       </div>
                   </div>}
 
                   {/* Disclaimer — split hero mobile: overlay in basso sull’hero; tablet: riga full width; desktop: striscia fissa / overlay inline */}
-                  {!isTabletSplitHero && !isSplitHeroDesktop && !(isSplitHeroStacked && isSmartphone) && (
+                  {!useStage3NarrowLayout && !isTabletSplitHero && !isSplitHeroDesktop && !(isSplitHeroStacked && isSmartphone) && (
                   <div
                     className={`text-left mt-4 mb-4 ${showInlinePatientPhoto ? 'lg:hidden' : ''}`}
                   >
@@ -711,27 +724,22 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             )}
           </div>
 
-          {isTabletSplitHero && (
-            <div className="col-span-full relative z-30 mb-4 mt-[min(28vh,16rem)] max-lg:px-1 text-center">
-              <p className="text-white/60 text-xs text-balance max-w-prose mx-auto">
-                Not an actual patient. Visuals created with the help of AI.
-              </p>
-            </div>
-          )}
 
           {/* Right Column — split hero narrow: cards sotto l’hero */}
           <div
-            className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row lg:items-start relative z-20 ${
-              isSplitHeroStacked
-                ? 'mt-[min(48vh,28rem)] pt-4'
-                : ''
+            className={`lg:col-span-2 flex gap-8 flex-col lg:flex-row lg:items-start relative ${
+              useStage3NarrowLayout
+                ? 'mx-0 lg:col-span-2 flex-col md:flex-row md:items-start flex gap-8 z-10 justify-center md:justify-start 2xl:pl-0 max-w-[1020px] 2xl:max-w-full mx-auto 2xl:mx-0'
+                : isSplitHeroStacked
+                  ? 'z-20 mt-[min(48vh,28rem)] pt-4'
+                  : ''
             }`}
           >
              {/* What would you like to do next? - Visual placeholder */}
 
-<div className="w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex flex-col items-stretch justify-start 2xl:block 2xl:mx-0 self-start">
+<div className={useStage3NarrowLayout ? "w-full max-w-[440px] mx-auto md:flex-1 md:basis-0 md:max-w-none md:min-w-0 md:mx-0" : "w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex flex-col items-stretch justify-start 2xl:block 2xl:mx-0 self-start"}>
             {!showSglt2iReasoning && (
-              <div className="w-full min-w-0">
+              <div className={useStage3NarrowLayout ? "" : "w-full min-w-0"}>
               <Image
                 src={currentStepImage}
                 alt="What would you like to do next?"
@@ -739,7 +747,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 width={500}
                 height={200}
                 sizes="(max-width: 1023px) 92vw, (max-width: 1700px) min(40vw, 500px), 500px"
-                className="mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-0 patient-panel-full"
+                className={useStage3NarrowLayout ? "mb-6 h-auto w-full max-w-[440px] object-contain mx-auto overflow-hidden" : "mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-0 patient-panel-full"}
               />
             </div>
             )}
@@ -757,7 +765,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       />
     </div>
 
-<div className="flex min-w-0 w-full max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] flex-1 basis-0 flex-col items-stretch justify-start 2xl:mx-0 patient-panel-full self-start">
+<div className={useStage3NarrowLayout ? "space-y-4 max-w-[500px] mx-auto md:flex-1 md:basis-0 md:max-w-none md:min-w-0 md:mx-0 2xl:ml-auto 2xl:pr-8 2xl:max-w-[500px]" : "flex min-w-0 w-full max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] flex-1 basis-0 flex-col items-stretch justify-start 2xl:mx-0 patient-panel-full self-start"}>
     {/* Medical Record */}
             <motion.div
               key={`medical-${animationKey}`}
@@ -823,6 +831,12 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             )}
           </div>
           </div>
+
+          <div className="text-left mt-[10px] col-span-full">
+            <p className="text-white/60 text-sm">
+              Not an actual patient. Visuals created with the help of AI.
+            </p>
+          </div>
         </div>
 
         {/* Background image for SGLT2i reasoning */}
@@ -863,11 +877,6 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               aria-hidden
               className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 lg:block"
             />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#056368] via-[#056368]/55 to-transparent px-3 pb-2 pt-10">
-              <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_3px_rgba(0,0,0,0.65)]">
-                Not an actual patient. Visuals created with the help of AI.
-              </p>
-            </div>
           </div>
         )}
       </div>
