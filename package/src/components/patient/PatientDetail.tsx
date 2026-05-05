@@ -114,14 +114,14 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   useEffect(() => {
     const w = window.innerWidth;
     setIsSmartphone(w < 768);
-    setIsBelowDesktopLg(w < 1024);
+    setIsBelowDesktopLg(w < 1280);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const smartphone = window.innerWidth < 768;
       setIsSmartphone(smartphone);
-      setIsBelowDesktopLg(window.innerWidth < 1024);
+      setIsBelowDesktopLg(window.innerWidth < 1280);
 
       if (!smartphone) {
         setImageOpacity(1);
@@ -640,7 +640,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               className={useStage3NarrowLayout ? 'mb-2 mx-auto px-4 2xl:px-0 max-w-[992px] 2xl:max-w-full' : 'mb-0'}
             >
               <div
-                className={`relative z-30 w-full ${
+                className={`pl-4 2xl:pl-0 relative z-30 w-full ${
                   useStage3NarrowLayout
                     ? 'flex justify-start'
                     : isSplitHeroDesktop
@@ -855,7 +855,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
         {isSplitHeroDesktop && (
           <div
-            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[min(50vw,var(--joana-ap1-strip-max-width))] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: imageOpacity }}
           >
             <Image
@@ -864,7 +864,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               title={`${patient.name} — hero`}
               width={1200}
               height={1600}
-              className="relative z-0 h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom xl:object-[56%_100%] 2xl:object-[2%_100%]"
+              className="relative z-0 h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom xl:object-[56%_100%] 2xl:object-[0%_100%]"
               priority
             />
             {/* Leggero fade in basso sulla foto (step 1 / 2, desktop) */}
