@@ -583,7 +583,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                 SGLT2is, such as JARDIANCE<sup>®</sup>, are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk, heart failure hospitalizations, and CV and kidney failure risk.<sup>3</sup>
+                 SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk, heart failure hospitalizations, and CV and kidney failure risk.<sup>3</sup>
                 </p>
                 <div className="mb-6">
                   <Image
@@ -672,7 +672,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                   />
                 </div>
                 <p className="text-base mt-6 text-gray-700">
-                 And did you know that JARDIANCE<sup>®</sup> (empagliflozin) is the <b>first and only</b> SGLT2i proven to reduce the risk of CV death in patients with eCVD and T2D<sup>*†‡8</sup>
+                 And did you know that JARDIANCE<sup>®</sup> (empagliflozin) is the <b>first and only</b> SGLT2i proven to reduce the risk of CV death in patients with eCVD and T2D<sup>*†8</sup>
                 </p>
               </div>
             ),
@@ -758,7 +758,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
               <div className="flex flex-col h-full">
                
                 <p className="text-base mb-4 text-gray-700">
-                  Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*†8</sup>
+                  Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death for patients with eCVD and T2D?<sup>*8</sup>
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
@@ -781,7 +781,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
             content: (
               <div className="flex flex-col h-full">
                 <p className="text-base mb-4 text-gray-700">
-                 SGLT2is, such as JARDIANCE<sup>®</sup>, are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk, heart failure hospitalizations, and CV and kidney falure risk.<sup>3</sup>
+                 SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are Class 1 recommended for first-line use in patients like Joana, to reduce the cardiovascular risk, heart failure hospitalizations, and CV and kidney falure risk.<sup>3</sup>
                 </p>
                 <div className="mb-6">
                   <Image
@@ -996,7 +996,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-6 text-gray-700">
-              While managing comorbidities and underlying conditions is important in the treatment of HFpEF, therapies such as ACE inhibitors, statins, and beta-blockers have limited evidence for improving outcomes.<sup>1</sup>
+              While managing comorbidities and underlying conditions is important in the treatment of HFpEF, therapies such as ACE inhibitors, statins, and beta-blockers have limited evidence for improving outcomes.<sup>4</sup>
 
               </p>
 
@@ -1073,7 +1073,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-4 font-medium text-gray-700">
-              Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death or HHF for patients with HFpEF?<sup>*6</sup>
+              Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death or HHF for patients with HFpEF?<sup>†6</sup>
               </p>
               <div className="flex items-center justify-center mt-4 max-w-[340px] w-full mx-auto">
                 <div className="relative">
@@ -1089,7 +1089,8 @@ Continue delivering the best care by implementing the guideline-recommended foun
               </div>
               <p className="text-lg mt-8 text-gray-700">
               The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.
-                <sup>*‡6,12 </sup>
+                <sup>†§
+                6,12 </sup>
               </p>
             </div>
           ),
@@ -1099,7 +1100,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-6 text-gray-700">
-              While managing comorbidities and underlying conditions is important in the treatment of HFpEF, therapies such as ACE inhibitors, statins, and beta-blockers have limited evidence for improving outcomes.<sup>1</sup>
+              While managing comorbidities and underlying conditions is important in the treatment of HFpEF, therapies such as ACE inhibitors, statins, and beta-blockers have limited evidence for improving outcomes.<sup>4</sup>
 
               </p>
 
@@ -1115,7 +1116,8 @@ Continue delivering the best care by implementing the guideline-recommended foun
               </div>
 
               <p className="text-base mb-3 text-gray-700">
-               The <b>only disease-modifying therapy </b>recommended by the 2023 ESC HF guidelines is an SGLT2i.<sup>4</sup> <br /> <br />Initiate JARDIANCE<sup>®</sup> (empagliflozin) early so that your patients with HFpEF like Linda can benefit from significant risk reduction – as early as Day 18!<sup>*‡6,11</sup> 
+               The <b>only disease-modifying therapy </b>recommended by the 2023 ESC HF guidelines is an SGLT2i.<sup>4</sup> <br /> <br />Initiate JARDIANCE<sup>®</sup> (empagliflozin) early so that your patients with HFpEF like Linda can benefit from significant risk reduction – as early as Day 18!<sup>†§
+                6,12</sup> 
               </p>
             
             </div>
@@ -1176,13 +1178,13 @@ Continue delivering the best care by implementing the guideline-recommended foun
           content: (
             <div className="flex flex-col h-full">
               <p className="text-lg mb-4 font-medium text-gray-700">
-               By prescribing Linda an SGLT2i such as JARDIANCE<sup>®</sup> (empagliflozin), soon after her diagnosis, you helped protect her by reducing her risk of CV death or HHF.<sup>*5</sup>
+               By prescribing Linda an SGLT2i such as JARDIANCE<sup>®</sup> (empagliflozin), soon after her diagnosis, you helped protect her by reducing her risk of CV death or HHF.<sup>†6</sup>
 
               </p>
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
                 <div className="relative">
                   <Image
-                    src="/icons/21A.png"
+                    src="/icons/21D.png"
                     alt="Heart"
                     title="Heart"
                     width={500}
@@ -1193,7 +1195,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
               </div>
               <p className="text-base mt-6 text-gray-700">
                 And did you know that, in addition to improving CV outcomes, JARDIANCE<sup>®</sup> (empagliflozin) improved quality of life regardless of LVEF?
-                <sup>†12,13</sup>
+                <sup>†8,9</sup>
               </p>
             </div>
           ),
@@ -1234,15 +1236,15 @@ Continue delivering the best care by implementing the guideline-recommended foun
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-6">
-              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>24</sup>
+              <b>uACR</b> is a prognostic marker for HF and CVD outcomes, and CKD progression.<sup>10</sup>
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-6">
-               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>15</sup>
+               <b>Elevated uACR or reduced eGFR</b>  is associated with an increased risk of CV mortality, <b>independently of each other</b>.<sup>11</sup>
               </p>
 
               <p className="text-lg text-center text-gray-700 mb-8">
-                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>23</sup>
+                <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>11</sup>
               </p>
 
               <img src="/PP-new/uACR-symbols.png" alt="uACR and eGFR" title="uACR and eGFR" width={400} height={150} className="object-contain" />
@@ -1301,7 +1303,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
                 </div>
               </div>
               <p className="text-lg mt-6 text-gray-700">
-              The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.<sup>*‡9,16 </sup>
+              And did you know that, in addition to improving CV outcomes, JARDIANCE<sup>®</sup> (empagliflozin) improved quality of life regardless of LVEF?<sup>†12,13</sup>
               </p>
             </div>
           ),
@@ -1327,9 +1329,7 @@ Continue delivering the best care by implementing the guideline-recommended foun
               </div>
 
               <p className="text-lg text-gray-700">
-         
-
-            Major guidelines recommend <b>rapid initiation and <br /> up-titration</b>  of all four foundational treatments for all patients with HFrEF.<sup>5</sup>
+                Continue delivering the best care by implementing GDMT for HF across the LVEF spectrum and help drive meaningful change for your patients.
               </p>
             </div>
           ),

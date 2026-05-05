@@ -5,11 +5,11 @@ interface TimelineProps {
   patientName?: string
 }
 
-export default function TimelineComponent({ activeYear = 2025, patientName }: TimelineProps) {
+export default function TimelineComponent({ activeYear = 2026, patientName }: TimelineProps) {
   // For James and Erik, use 2040 as the end year
   const years = (patientName === 'James' || patientName === 'Erik')
-    ? [2025, 2030, 2040]
-    : [2025, 2030, 2035]  // Default years for other patients
+    ? [2026, 2031, 2040]
+    : [2026, 2031, 2036]  // Default years for other patients
 
   return (
     <div className="relative z-30 flex w-full justify-center pt-4 pb-4 lg:pb-16 lg:pt-4 px-2 lg:px-4">

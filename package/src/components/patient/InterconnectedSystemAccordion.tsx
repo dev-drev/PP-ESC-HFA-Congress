@@ -27,7 +27,7 @@ export default function InterconnectedSystemAccordion({
     if (name === 'linda' || patientId === '1') {
       return {
         title: "KDIGO Digital Heatmap",
-        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
+        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their uACR and eGFR values?",
         intro: "Scan and Learn more",
       };
     }
@@ -36,7 +36,7 @@ export default function InterconnectedSystemAccordion({
     if (name === 'robert' || patientId === '2') {
       return {
         title: "KDIGO Digital Heatmap",
-        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
+        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their uACR and eGFR values?",
         intro: "Scan and Learn more",
       };
     }
@@ -45,7 +45,7 @@ export default function InterconnectedSystemAccordion({
     if (name === 'joana' || patientId === '3') {
       return {
         title: "KDIGO Digital Heatmap",
-        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
+        subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their uACR and eGFR values?",
         intro: "Scan and Learn more",
       };
     }
@@ -53,7 +53,7 @@ export default function InterconnectedSystemAccordion({
     // Default content
     return {
       title: "KDIGO Digital Heatmap",
-      subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their ACR and eGFR values?",
+      subtitle: "Do you want to visualize your patients' risk for adverse CV and kidney outcomes by entering their uACR and eGFR values?",
       intro: "Scan and Learn more",
     };
   };

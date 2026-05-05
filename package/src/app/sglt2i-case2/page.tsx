@@ -11,7 +11,7 @@ export default function SGLT2iCase2Page() {
     <ClientWrapper>
       <CaseResult
         patient={patient}
-        year={2035}
+        year={2036}
         quote="Recently, I was hospitalized again due to severe dyspnea. Can you help me feel better, doctor?"
         backgroundImage="/backgrounds/01C.jpg"
         currentStepImage="/next-steps/linda/final/step10.png"

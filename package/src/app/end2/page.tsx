@@ -11,7 +11,7 @@ export default function End2Page() {
     <ClientWrapper>
       <CaseResult
         patient={patient}
-        year={2035}
+        year={2036}
         age={72}
         currentStepImage="/next-steps/robert/final/step9.png"
         quote="I'm grateful that I can still enjoy the time with my wife and that my heart failure is well managed."

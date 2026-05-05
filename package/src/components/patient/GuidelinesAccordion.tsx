@@ -41,7 +41,7 @@ export default function GuidelinesAccordion({
 
   const guidelineSlide3 = (
     <div className="space-y-8 pb-4">
-      <p className="text-gray-700">However, in practice:</p>
+      <p className="text-gray-700">However, in practice<sup>7</sup>:</p>
       <Image
         src="/PP-new/1in20.png"
         alt="Guidelines placeholder"
@@ -112,7 +112,7 @@ export default function GuidelinesAccordion({
           id: "linda-slide-3",
           content: (
             <div className="space-y-8 pb-4">
-              <p className="text-gray-700">However, in practice:</p>
+              <p className="text-gray-700">However, in practice<sup>5</sup>:</p>
               <Image
                 src="/PP-new/1in14.png"
                 alt="HFpEF treatment gap"

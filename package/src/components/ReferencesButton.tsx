@@ -80,7 +80,7 @@ export default function ReferencesButton() {
 
                   <div>
                     <h4 className="font-semibold mb-2">Very rare AEs:</h4>
-                    <p>Tubulointerstitial nephritis</p>
+                    <p>Tubulointerstitial nephritis.</p>
                   </div>
                 </div>
               </section>
@@ -122,9 +122,7 @@ export default function ReferencesButton() {
                     <sup>*</sup>
                     In the EMPEROR-Reduced trial, a randomised, double-blind,
                     parallel-group, placebo-controlled study of 3730 patients
-                    with HFrEF, the efficacy and safety of JARDIANCE<sup>
-                      ®
-                    </sup>{" "}
+                    with HFrEF, the efficacy and safety of JARDIANCE<sup>®</sup>{" "}
                     10 mg (n=1863) were evaluated vs placebo (n=1867). Patients
                     were adults with chronic HF (NYHA class II, III, or IV) and
                     reduced ejection fraction (LVEF ≤40%). The primary endpoint
@@ -132,25 +130,24 @@ export default function ReferencesButton() {
                     hospitalisation for HF, analysed as time to the first event.
                     Patients treated with JARDIANCE<sup>®</sup> experienced a
                     25% RRR in this endpoint (HR=0.75; 95% CI: 0.65, 0.86;
-                    <em>p</em>&lt;0.001).<sup>6</sup>
+                    <em>p</em>&lt;0.001).<sup>9</sup>
                   </p>
                   <p>
                     <sup>†</sup>Change from baseline in clinical summary score
-                    (HF symptoms and physical limitations domains) of the KCCQ
-                    at week 52 was a prespecified secondary endpoint in the
-                    EMPEROR-Reduced and EMPEROR-Preserved trials. KCCQ change
-                    from baseline to 52 weeks. EMPEROR-Reduced: JARDIANCE
-                    <sup>®</sup> 5.8 ± 0.4; placebo 4.1 ± 0.4.
-                    EMPEROR-Preserved: JARDIANCE<sup>®</sup> 4.51 ± 0.31,
-                    placebo: 3.18 ± 0.31. Patient-reported outcomes measured
-                    changes in KCCQ summary scores. JARDIANCE<sup>®</sup> led to
-                    significant improvements in mean KCCQ-CSS, -TSS, and -OSS,
-                    which were apparent as early as 3 months and were sustained
-                    at 8 and 12 months. Patients treated with JARDIANCE
+                    (HF symptoms and physical limitations domains) of the KCCQ at
+                    week 52 was a prespecified secondary endpoint in the
+                    EMPEROR-Reduced and EMPEROR-Preserved trials. KCCQ change from
+                    baseline to 52 weeks. EMPEROR-Reduced: JARDIANCE<sup>®</sup>{" "}
+                    5.8 ± 0.4; placebo 4.1 ± 0.4. EMPEROR-Preserved: JARDIANCE
+                    <sup>®</sup> 4.51 ± 0.31, placebo: 3.18 ± 0.31. Patient-reported
+                    outcomes measured changes in KCCQ summary scores. JARDIANCE
+                    <sup>®</sup> led to significant improvements in mean KCCQ-CSS,
+                    -TSS, and -OSS, which were apparent as early as 3 months and were
+                    sustained at 8 and 12 months. Patients treated with JARDIANCE
                     <sup>®</sup> were more likely to show clinically meaningful
                     improvements (≥5, ≥10, and ≥15 points) and less likely to
-                    experience clinically meaningful deterioration in health
-                    status when compared to placebo.<sup>7,8</sup>
+                    experience clinically meaningful deterioration in health status
+                    when compared to placebo.<sup>12,13</sup>
                   </p>
                   <p>
                     <sup>‡</sup>In the EMPEROR-Reduced trial, the effect of
@@ -159,7 +156,7 @@ export default function ReferencesButton() {
                     heart failure visit was statistically significant at 12 days
                     after randomisation and statistical significance was
                     sustained from day 12 onward (HR=0.70; 95% CI 0.63–0.78;{" "}
-                    <em>p</em>&lt;0.0001).<sup>9</sup>
+                    <em>p</em>&lt;0.0001).<sup>16</sup>
                   </p>
                 </div>
               </section>
@@ -191,69 +188,109 @@ export default function ReferencesButton() {
                 <h3 className="text-xl font-semibold mb-4">References</h3>
                 <ol className="text-xs space-y-1 list-decimal pl-5">
                   <li>
-                    McDonagh TA, Metra M, Adamo M, et al. 2023 Focused Update of
-                    the 2021 ESC Guidelines for the diagnosis and treatment of
-                    acute and chronic heart failure. <em>Eur Heart J</em>.
-                    2023;44(37):3627-3639.
+                    Settergren C, Benson L, Shahim A, et al. Cause-specific death
+                    in heart failure across the ejection fraction spectrum: A
+                    comprehensive assessment of over 100 000 patients in the Swedish
+                    Heart Failure Registry. <em>Eur J Heart Fail</em>.
+                    2024;26(5):1150-1159.
                   </li>
                   <li>
-                    Shen L, et al. Accelerated and personalized therapy for
-                    heart failure with reduced ejection fraction.{" "}
-                    <em>Eur Heart J</em>. 2022;43:2573.
+                    Khan MS, Sreenivasan J, Lateef N, et al. Trends in 30- and
+                    90-day readmission rates for heart failure.{" "}
+                    <em>Circ Heart Fail</em>. 2021;14(4):e008335.
                   </li>
                   <li>
-                    Janse RJ, Fu EL, Dahlström U, et al. Use of
-                    guideline-recommended medical therapy in patients with heart
-                    failure and chronic kidney disease: from physician's
-                    prescriptions to patient's dispensations, medication
-                    adherence and persistence. <em>Eur J Heart Fail</em>.
-                    2022;24(11):2185-2195.
+                    Abdin A, Anker SD, Butler J, et al. 'Time is prognosis' in
+                    heart failure: time-to-treatment initiation as a modifiable risk
+                    factor. <em>ESC Heart Failure</em>. 2021;8(6):4444-4453.
                   </li>
                   <li>
-                    Ma CX, Ma XN, Guan CH, Li YD, Mauricio D, Fu SB.
-                    Cardiovascular disease in type 2 diabetes mellitus: progress
-                    toward personalized management. <em>Cardiovasc Diabetol</em>
-                    . 2022;21(74):1-15.
+                    Maddox TM, Januzzi JL, Allen LA, et al. 2024 ACC expert
+                    consensus decision pathway for treatment of heart failure with
+                    reduced ejection fraction. <em>J Am Coll Cardiol</em>.
+                    2024;83(15):1444-1488.
                   </li>
                   <li>
-                    Lawson CA, Seidu S, Zaccardi F, McCann G, Kadam UT, Davies
-                    MJ, et al. Outcome trends in people with heart failure, type
-                    2 diabetes mellitus and chronic kidney disease in the UK
-                    over twenty years. <em>E Clinical Medicine</em>.
-                    2021;32:100739.
+                    McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for
+                    the diagnosis and treatment of acute and chronic heart failure.
+                    <em>Eur Heart J</em>. 2021;42(36):3599-3726.
+                  </li>
+                  <li>
+                    Shen L et al. Accelerated and personalized therapy for heart
+                    failure with reduced ejection fraction. <em>Eur Heart J</em>.
+                    2022;43:2573.
+                  </li>
+                  <li>
+                    Greene SJ, Adam A, Schmedt N, et al. Contemporary
+                    Guideline-Directed Medical Therapy for Heart Failure in the
+                    United States: The EMPACE Study. <em>J Am Heart Assoc</em>.
+                    2026;15(6):e044785.
+                  </li>
+                  <li>
+                    Heidenreich PA, Bozkurt B, Aguilar D, et al. 2022
+                    AHA/ACC/HFSA guideline for the management of heart failure:
+                    executive summary. <em>J Am Coll Cardiol</em>.
+                    2022;79(17):1757-1780.
                   </li>
                   <li>
                     Packer M, Anker SD, Butler J, et al; EMPEROR-Reduced Trial
                     Investigators. Cardiovascular and renal outcomes with
                     empagliflozin in heart failure. <em>N Engl J Med</em>.
-                    2020;383(15):1413-1424.
+                    2020;383(15):1413-1424. (EMPEROR-Reduced results and the
+                    publication's Supplementary Appendix.)
                   </li>
                   <li>
-                    Butler J, Anker SD, Filippatos G, et al; EMPEROR-Reduced
-                    Trial Committees and Investigators. Empagliflozin and
-                    health-related quality of life outcomes in patients with
-                    heart failure with reduced ejection fraction: the
-                    EMPEROR-Reduced trial. <em>Eur Heart J</em>.
-                    2021;42(13):1203-1212.
+                    Anker SD, Butler J, Filippatos G, et al. Effect of empagliflozin
+                    on cardiovascular and renal outcomes in patients with heart
+                    failure by baseline diabetes status: Results from the
+                    EMPEROR-Reduced trial. <em>Circulation</em>.
+                    2021;143(4):337-349.
                   </li>
                   <li>
-                    Butler J, Filippatos G, Siddiqi J, et al. Empagliflozin,
-                    health status, and quality of life in patients with heart
-                    failure and preserved ejection fraction: the
-                    EMPEROR-Preserved trial. <em>Circulation</em>.
-                    2022;145(3):184-193.
+                    Anker SD, Butler J, Filippatos G, et al; EMPEROR-Preserved Trial
+                    Investigators. Empagliflozin in heart failure with a preserved
+                    ejection fraction. <em>N Engl J Med</em>.
+                    2021;385(16):1451-1461. (EMPEROR-Preserved results and the
+                    publication's Supplementary Appendix.)
+                  </li>
+                  <li>
+                    Butler J, Anker SD, Filippatos G, et al; EMPEROR-Reduced Trial
+                    Committees and Investigators. Empagliflozin and health-related
+                    quality of life outcomes in patients with heart failure with
+                    reduced ejection fraction: the EMPEROR-Reduced trial.{" "}
+                    <em>Eur Heart J</em>. 2021;42(13):1203-1212.
+                  </li>
+                  <li>
+                    Butler J, Filippatos G, Siddiqi J, et al. Empagliflozin, health
+                    status, and quality of life in patients with heart failure and
+                    preserved ejection fraction: the EMPEROR-Preserved trial.{" "}
+                    <em>Circulation</em>. 2022;145(3):184-193.
+                  </li>
+                  <li>
+                    Bozkurt B, Rossignol P, Vassalotti JA. Albuminuria as a
+                    diagnostic criterion and a therapeutic target in heart failure
+                    and other cardiovascular disease. <em>Eur J Heart Fail</em>.
+                    2025;27(11):2357-2371.
+                  </li>
+                  <li>
+                    Matsushita K, Velde M, Astor B, et al; Chronic Kidney Disease
+                    Prognosis Consortium. Association of estimated glomerular
+                    filtration rate and albuminuria with all-cause and
+                    cardiovascular mortality in general population cohorts: a
+                    collaborative meta-analysis. <em>Lancet</em>.
+                    2010;375(9371):2073-2081.
                   </li>
                   <li>
                     Packer M, Anker SD, Butler J, et al; EMPEROR-Reduced Trial
                     Committee and Investigators. Effect of empagliflozin on the
-                    clinical stability of patients with heart failure and a
-                    reduced ejection fraction: the EMPEROR-Reduced trial.{" "}
-                    <em>Circulation</em>. 2021;143(4):326-336.
+                    clinical stability of patients with heart failure and the
+                    EMPEROR-Reduced trial. <em>Circulation</em>.
+                    2021;143(4):326-336.
                   </li>
                   <li>
                     JARDIANCE<sup>®</sup> [summary of product characteristics].
-                    Ingelheim am Rhein, Germany; Boehringer Ingelheim
-                    International GmbH; June 2025.
+                    Ingelheim am Rhein, Germany; Boehringer Ingelheim International
+                    GmbH; March 2026.
                   </li>
                 </ol>
               </section>

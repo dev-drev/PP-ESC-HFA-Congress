@@ -11,7 +11,7 @@ export default function JoanaOptimizeCasePage() {
     <ClientWrapper>
       <CaseResult
         patient={patient}
-        year={2035}
+        year={2036}
         age={67}
         quote="Some days are better than others, but I’m learning to live with my both heart and kidney issues"
         backgroundImage="/backgrounds/03B.jpg"
@@ -19,7 +19,7 @@ export default function JoanaOptimizeCasePage() {
         currentStepImage="/next-steps/joana/final/step9.png"
         sglt2iAccordionTitle="The earlier, the better."
         endActions={[
-          { id: 'go-back', text: 'Go back' },
+          { id: 'go-back', text: 'Go Back' },
           { id: 'restart', text: 'Restart' },
           { id: 'select-another', text: 'Select another patient' }
         ]}

@@ -45,6 +45,8 @@ function CaseResultContent({
   const patientAge = age || (year - (2025 - patient.age));
   const router = useRouter();
 
+  const getAp1Path = () => `/patient/${patient.id}`;
+
   useEffect(() => {
     const handleScroll = () => {
       const isMobile = window.innerWidth < 1536;
@@ -81,7 +83,7 @@ function CaseResultContent({
   const actions = endActions || [
     {
       id: 'go-back',
-      text: 'Go back',
+      text: 'Go Back',
     },
     {
       id: 'restart',
@@ -96,9 +98,13 @@ function CaseResultContent({
 
   const handleActionSelect = (actionId: string) => {
     if (actionId === 'restart') {
-      router.push(`/patient/${patient.id}`);
+      router.push(getAp1Path());
     } else if (actionId === 'go-back' || actionId === 'time-travel') {
-      router.back();
+      if (typeof window !== 'undefined' && window.history.length > 1) {
+        router.back();
+      } else {
+        router.push(getAp1Path());
+      }
     } else if (actionId === 'select-another') {
       router.push('/');
     } else if (actionId === 'see-joana-again') {

@@ -66,7 +66,7 @@ function splitHeroPatientKey(name: string): SplitHeroPatient | null {
 export default function PatientDetail({ patient }: PatientDetailProps) {
   const pathname = usePathname();
   const [selectedAction, setSelectedAction] = useState<string | null>(null);
-  const [timelineYear, setTimelineYear] = useState(2025);
+  const [timelineYear, setTimelineYear] = useState(2026);
   const [showHeartView, setShowHeartView] = useState(false);
   const [isMedicalRecordOpen, setIsMedicalRecordOpen] = useState(true);
   const [showSglt2iReasoning, setShowSglt2iReasoning] = useState(false);
@@ -300,13 +300,13 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       ];
 
   const viewTimelineSettings: Record<PatientView, { year: number }> = {
-    overview: { year: 2025 },
-    monitoring_ecg: { year: 2030 },
-    prescribe_sglt2i: { year: 2030 },
-    optimize_antihypertensive: { year: 2025 },
-    flow2_no_sglt2i_at_60: { year: 2030 },
-    flow1_sglt2i_at_60: { year: 2030 },
-    flow1_sglt2i_arni_at_52: { year: 2035 },
+    overview: { year: 2026 },
+    monitoring_ecg: { year: 2031 },
+    prescribe_sglt2i: { year: 2031 },
+    optimize_antihypertensive: { year: 2026 },
+    flow2_no_sglt2i_at_60: { year: 2031 },
+    flow1_sglt2i_at_60: { year: 2031 },
+    flow1_sglt2i_arni_at_52: { year: 2036 },
   } as any;
 
   const currentPatientData = useMemo(() => {

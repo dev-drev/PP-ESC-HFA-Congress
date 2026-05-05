@@ -11,7 +11,7 @@ export default function JoanaAddSGLT2iCasePage() {
     <ClientWrapper>
       <CaseResult
         patient={patient}
-        year={2035}
+        year={2036}
          age={67}
         quote="It's reassuring to know that the steps my doctor and I took years ago are still helping me stay stable today."
         backgroundImage="/backgrounds/03A.jpg"
@@ -19,7 +19,7 @@ export default function JoanaAddSGLT2iCasePage() {
         sglt2iAccordionTitle="Commit to standing against CV risk."
         showClinicalReasoning={true}
         endActions={[
-          { id: 'go-back', text: 'Go back' },
+          { id: 'go-back', text: 'Go Back' },
           { id: 'restart', text: 'Restart' },
           { id: 'select-another', text: 'Select another patient' }
         ]}

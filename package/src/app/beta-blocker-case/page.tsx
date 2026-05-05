@@ -11,7 +11,7 @@ export default function BetaBlockerPage() {
     <ClientWrapper>
       <CaseResult
         patient={patient}
-        year={2035}
+        year={2036}
         quote="In recent years, my symptoms have been more manageable, and I haven’t needed a hospital stay — which I’m thankful for."
         backgroundImage="/backgrounds/01B.jpg"
         currentStepImage="/next-steps/linda/final/step9.png"

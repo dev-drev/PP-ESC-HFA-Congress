@@ -11,11 +11,11 @@ export default function ContinueACEIPage() {
     <ClientWrapper>
       <CaseResult
         patient={patient}
-        year={2035}
+        year={2036}
         quote="Recently, I was hospitalized again due to acute decompensated HF. Can you help me feel better, doctor?"
         backgroundImage="/backgrounds/02C.jpg"
         currentStepImage="/next-steps/robert/final/step8.png"
-        sglt2iAccordionTitle="Initiate SGLT2i"
+        sglt2iAccordionTitle="Don't miss the moment"
         showClinicalReasoning={false}
       />
     </ClientWrapper>

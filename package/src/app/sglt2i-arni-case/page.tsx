@@ -11,7 +11,7 @@ export default function SGLT2iARNIPage() {
     <ClientWrapper>
       <CaseResult
         patient={patient}
-        year={2035}
+        year={2036}
         quote="I'm grateful that I can still enjoy the time with my wife and that my heart failure is well managed."
         backgroundImage="/backgrounds/02B.jpg"
         currentStepImage="/next-steps/robert/final/step7.png"
