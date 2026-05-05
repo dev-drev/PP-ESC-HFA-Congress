@@ -114,14 +114,14 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   useEffect(() => {
     const w = window.innerWidth;
     setIsSmartphone(w < 768);
-    setIsBelowDesktopLg(w < 1536);
+    setIsBelowDesktopLg(w < 1024);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const smartphone = window.innerWidth < 768;
       setIsSmartphone(smartphone);
-      setIsBelowDesktopLg(window.innerWidth < 1536);
+      setIsBelowDesktopLg(window.innerWidth < 1024);
 
       if (!smartphone) {
         setImageOpacity(1);
@@ -864,13 +864,13 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               title={`${patient.name} — hero`}
               width={1200}
               height={1600}
-              className="relative z-0 h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom xl:object-[56%_100%] 2xl:object-left-bottom"
+              className="relative z-0 h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom xl:object-[56%_100%] 2xl:object-[2%_100%]"
               priority
             />
             {/* Leggero fade in basso sulla foto (step 1 / 2, desktop) */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[38%] bg-gradient-to-t from-[#056368]/48 via-[#056368]/10 to-transparent"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[38%] bg-gradient-to-t from-[#056368]/43 via-[#056368]/10 to-transparent"
             />
             {/* Tablet: full-bleed photo, no fade; desktop lg+: blend into content */}
             <div
