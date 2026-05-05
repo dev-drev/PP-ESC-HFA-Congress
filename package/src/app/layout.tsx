@@ -53,8 +53,8 @@ export default function RootLayout({
         <div className="relative z-10 w-full bg-[#056368] shadow-[0_-6px_24px_rgba(0,0,0,0.12)]">
           <ConditionalReferencesButton />
           {SHOW_QR_LEGAL_FOOTER && (
-            <div className="w-full border-t border-white/20 px-4 py-6 flex justify-center">
-              <div className="w-full max-w-[260px] md:max-w-[300px] rounded-2xl p-4 bg-[#066368] border border-white/15 shadow-lg flex flex-col md:flex-row md:items-start gap-3 text-center md:text-left">
+            <div className="w-full px-4 py-6 flex justify-center">
+              <div className="w-full max-w-[260px] md:max-w-[300px] rounded-2xl p-4 bg-[#066368] flex flex-col md:flex-row md:items-start gap-3 text-center md:text-left">
                 <img
                   src="/spanish-qr.png"
                   alt="Spanish QR"
