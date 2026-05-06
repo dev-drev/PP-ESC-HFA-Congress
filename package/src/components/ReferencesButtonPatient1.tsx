@@ -32,7 +32,7 @@ export default function ReferencesButtonPatient1() {
 
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h4 className="font-semibold mb-2">Very common AEs:</h4>
+                    <h4 className="font-semibold mb-2">Very common AEs<sup>13</sup>:</h4>
                     <p className="mb-2">
                       <strong>Volume depletion:</strong> The frequency was
                       increased in patients aged 75 years and older (JARDIANCE
@@ -111,7 +111,7 @@ export default function ReferencesButtonPatient1() {
                   </p>
                   <p>
                     JARDIANCE<sup>®</sup> is indicated in adults for the
-                    treatment of chronic kidney disease.<sup>17</sup>
+                    treatment of chronic kidney disease.<sup>13</sup>
                   </p>
                 </div>
               </section>
@@ -120,46 +120,47 @@ export default function ReferencesButtonPatient1() {
                 <h3 className="text-xl font-semibold mb-4">Footnotes</h3>
                 <div className="text-xs space-y-2">
                   <p>
-                    <sup>*</sup>
-                    In the EMPEROR-Reduced trial, a randomised, double-blind,
-                    parallel-group, placebo-controlled study of 3730 patients
-                    with HFrEF, the efficacy and safety of JARDIANCE<sup>
-                      ®
-                    </sup>{" "}
-                    10 mg (n=1863) were evaluated vs placebo (n=1867). Patients
-                    were adults with chronic HF (NYHA class II, III, or IV) and
-                    reduced ejection fraction (LVEF ≤40%). The primary endpoint
-                    in the EMPEROR-Reduced trial was a composite of CV death or
-                    hospitalisation for HF, analysed as time to the first event.
-                    Patients treated with JARDIANCE<sup>®</sup> experienced a
-                    25% RRR in this endpoint (HR=0.75; 95% CI 0.65, 0.86;
-                    <em>p</em>&lt;0.001).<sup>9</sup>
+                    <sup>*</sup>Patients are defined as those with acute
+                    decompensated HFpEF.<sup>2</sup>
                   </p>
                   <p>
-                    <sup>†</sup>Change from baseline in clinical summary score
-                    (HF symptoms and physical limitations domains) of the KCCQ at
-                    week 52 was a prespecified secondary endpoint in the
-                    EMPEROR-Reduced and EMPEROR-Preserved trials. KCCQ change from
-                    baseline to 52 weeks. EMPEROR-Reduced: JARDIANCE<sup>®</sup>{" "}
-                    5.8 ± 0.4; placebo 4.1 ± 0.4. EMPEROR-Preserved: JARDIANCE
-                    <sup>®</sup> 4.51 ± 0.31, placebo: 3.18 ± 0.31. Patient-reported
-                    outcomes measured changes in KCCQ summary scores. JARDIANCE
-                    <sup>®</sup> led to significant improvements in mean KCCQ-CSS,
-                    -TSS, and -OSS, which were apparent as early as 3 months and were
-                    sustained at 8 and 12 months. Patients treated with JARDIANCE
-                    <sup>®</sup> were more likely to show clinically meaningful
-                    improvements (≥5, ≥10, and ≥15 points) and less likely to
-                    experience clinically meaningful deterioration in health status
-                    when compared to placebo.<sup>12,13</sup>
+                    <sup>†</sup>In the EMPEROR-Preserved trial, a randomised,
+                    double-blind, parallel-group, placebo-controlled study of
+                    5988 patients with HFpEF, the efficacy and safety of
+                    JARDIANCE<sup>®</sup> 10 mg (n=2997) were evaluated vs
+                    placebo (n=2991). Patients were adults with chronic HF
+                    (NYHA class II, III, or IV) and preserved ejection fraction
+                    (LVEF &gt;40%). The primary endpoint in the EMPEROR-Preserved
+                    trial was a composite of CV death or hospitalisation for HF,
+                    analysed as time to the first event. Patients treated with
+                    JARDIANCE<sup>®</sup> experienced a 21% RRR in this endpoint
+                    (HR=0.79; 95% CI: 0.69, 0.90; p&lt;0.001).<sup>6</sup>
                   </p>
                   <p>
-                    <sup>‡</sup>In the EMPEROR-Reduced trial, the effect of
-                    JARDIANCE<sup>®</sup> to reduce the combined risk of death,
-                    hospitalisation for heart failure, or an emergent or urgent
-                    heart failure visit was statistically significant at 12 days
-                    after randomisation and statistical significance was
-                    sustained from day 12 onward (HR, 0.70; 95% CI, 0.63-0.78;
-                    <em>p</em>&lt;0.0001).<sup>16</sup>
+                    <sup>‡</sup>Change from baseline in clinical summary score
+                    (HF symptoms and physical limitations domains) of the KCCQ
+                    at week 52 was a prespecified secondary endpoint in the
+                    EMPEROR-Reduced and EMPEROR-Preserved trials. KCCQ change
+                    from baseline to 52 weeks. EMPEROR-Reduced: JARDIANCE<sup>®</sup>
+                    5.8 ± 0.4; placebo 4.1 ± 0.4. EMPEROR-Preserved:
+                    JARDIANCE<sup>®</sup> 4.51 ± 0.31, placebo: 3.18 ± 0.31.
+                    Patient-reported outcomes measured changes in KCCQ summary
+                    scores. JARDIANCE<sup>®</sup> led to significant improvements
+                    in mean KCCQ-CSS, -TSS, and -OSS, which were apparent as
+                    early as 3 months and were sustained at 8 and 12 months.
+                    Patients treated with JARDIANCE<sup>®</sup> were more likely
+                    to show clinically meaningful improvements (≥5, ≥10, and
+                    ≥15 points) and less likely to experience clinically
+                    meaningful deterioration in health status when compared to
+                    placebo.<sup>8,9</sup>
+                  </p>
+                  <p>
+                    <sup>§</sup>In the EMPEROR-Preserved trial, the effect of
+                    JARDIANCE<sup>®</sup> on time to cardiovascular death or
+                    heart failure hospitalization was statistically significant
+                    at 18 days after randomisation and statistical significance
+                    was sustained from day 18 onward (HR=0.41, 95% CI
+                    0.17-0.99; p=0.0476).<sup>12</sup>
                   </p>
                 </div>
               </section>
@@ -174,11 +175,13 @@ export default function ReferencesButtonPatient1() {
                   CV=cardiovascular; CVD=cardiovascular disease; DM=diabetes
                   mellitus; ESC=European Society of Cardiology; eGFR=estimated
                   glomerular filtration rate; GDMT=guideline-directed medical
-                  therapy; HF=heart failure; HFrEF=heart failure with reduced
-                  ejection fraction; HHF=hospitalization for heart failure;
-                  HR=hazard ratio; KCCQ= KCCQ=Kansas City Cardiomyopathy
-                  Questionnaire; LV=left ventricular; LVEF=left ventricular
-                  ejection fraction; MRA=mineralocorticoid receptor antagonist;
+                  therapy; HF=heart failure; HFmrEF=heart failure with mildly
+                  reduced ejection fraction; HFpEF=heart failure with preserved
+                  ejection fraction; HFrEF=heart failure with reduced ejection
+                  fraction; HHF=hospitalization for heart failure; HR=hazard
+                  ratio; KCCQ= KCCQ=Kansas City Cardiomyopathy Questionnaire;
+                  LV=left ventricular; LVEF=left ventricular ejection
+                  fraction; MRA=mineralocorticoid receptor antagonist;
                   NNT=number needed to treat; NT-proBNP=N-terminal pro-brain
                   natriuretic peptide; NYHA=New York Heart Association;
                   OSS=Overall Summary Score; RRR=relative risk reduction;
@@ -199,9 +202,11 @@ export default function ReferencesButtonPatient1() {
                     2024;26(5):1150-1159.
                   </li>
                   <li>
-                    Khan MS, Sreenivasan J, Lateef N, et al. Trends in 30- and
-                    90-day readmission rates for heart failure.{" "}
-                    <em>Circ Heart Fail</em>. 2021;14(4):e008335.
+                    DeAngelo S, Gajjar R, Bittar-Carlini G, et al. Predictors
+                    and trends of 30-day readmissions in patients with acute
+                    decompensated heart failure with preserved ejection
+                    fraction: insight from the National Readmission Database.
+                    <em> Int J Heart Fail</em>. 2025;7(1):21-29.
                   </li>
                   <li>
                     Abdin A, Anker SD, Butler J, et al. 'Time is prognosis' in
@@ -209,20 +214,10 @@ export default function ReferencesButtonPatient1() {
                     factor. <em>ESC Heart Failure</em>. 2021;8(6):4444-4453.
                   </li>
                   <li>
-                    Maddox TM, Januzzi JL, Allen LA, et al. 2024 ACC expert
-                    consensus decision pathway for treatment of heart failure with
-                    reduced ejection fraction. <em>J Am Coll Cardiol</em>.
-                    2024;83(15):1444-1488.
-                  </li>
-                  <li>
-                    McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for
-                    the diagnosis and treatment of acute and chronic heart failure.
-                    <em>Eur Heart J</em>. 2021;42(36):3599-3726.
-                  </li>
-                  <li>
-                    Shen L et al. Accelerated and personalized therapy for heart
-                    failure with reduced ejection fraction. <em>Eur Heart J</em>.
-                    2022;43:2573.
+                    McDonagh TA, Metra M, Adamo M, et al. 2023 Focused Update
+                    of the 2021 ESC Guidelines for the diagnosis and treatment
+                    of acute and chronic heart failure. <em>Eur Heart J</em>.
+                    2023;44(37):3627-3639.
                   </li>
                   <li>
                     Greene SJ, Adam A, Schmedt N, et al. Contemporary
@@ -231,17 +226,11 @@ export default function ReferencesButtonPatient1() {
                     2026;15(6):e044785.
                   </li>
                   <li>
-                    Heidenreich PA, Bozkurt B, Aguilar D, et al. 2022
-                    AHA/ACC/HFSA guideline for the management of heart failure:
-                    executive summary. <em>J Am Coll Cardiol</em>.
-                    2022;79(17):1757-1780.
-                  </li>
-                  <li>
-                    Packer M, Anker SD, Butler J, et al; EMPEROR-Reduced Trial
-                    Investigators. Cardiovascular and renal outcomes with
-                    empagliflozin in heart failure. <em>N Engl J Med</em>.
-                    2020;383(15):1413-1424. (EMPEROR-Reduced results and the
-                    publication's Supplementary Appendix.)
+                    Anker SD, Butler J, Filippatos G, et al; EMPEROR-Preserved
+                    Trial Investigators. Empagliflozin in heart failure with a
+                    preserved ejection fraction. <em>N Engl J Med</em>.
+                    2021;385(16):1451-1461. (EMPEROR-Preserved results and the
+                    publication&apos;s Supplementary Appendix.)
                   </li>
                   <li>
                     Anker SD, Butler J, Filippatos G, et al. Effect of empagliflozin
@@ -249,13 +238,6 @@ export default function ReferencesButtonPatient1() {
                     failure by baseline diabetes status: Results from the
                     EMPEROR-Reduced trial. <em>Circulation</em>.
                     2021;143(4):337-349.
-                  </li>
-                  <li>
-                    Anker SD, Butler J, Filippatos G, et al; EMPEROR-Preserved Trial
-                    Investigators. Empagliflozin in heart failure with a preserved
-                    ejection fraction. <em>N Engl J Med</em>.
-                    2021;385(16):1451-1461. (EMPEROR-Preserved results and the
-                    publication's Supplementary Appendix.)
                   </li>
                   <li>
                     Butler J, Anker SD, Filippatos G, et al; EMPEROR-Reduced Trial
@@ -277,19 +259,18 @@ export default function ReferencesButtonPatient1() {
                     2025;27(11):2357-2371.
                   </li>
                   <li>
-                    Matsushita K, Velde M, Astor B, et al; Chronic Kidney Disease
-                    Prognosis Consortium. Association of estimated glomerular
-                    filtration rate and albuminuria with all-cause and
-                    cardiovascular mortality in general population cohorts: a
-                    collaborative meta-analysis. <em>Lancet</em>.
+                    Matsushita K, Velde M, Astor B, et al; Chronic Kidney
+                    Disease Prognosis Consortium. Association of estimated
+                    glomerular filtration rate and albuminuria with all-cause
+                    and cardiovascular mortality in general population cohorts:
+                    a collaborative meta-analysis. <em>Lancet</em>.
                     2010;375(9371):2073-2081.
                   </li>
                   <li>
-                    Packer M, Anker SD, Butler J, et al; EMPEROR-Reduced Trial
-                    Committee and Investigators. Effect of empagliflozin on the
-                    clinical stability of patients with heart failure and the
-                    EMPEROR-Reduced trial. <em>Circulation</em>.
-                    2021;143(4):326-336.
+                    Butler J, Siddiqi TJ, Filippatos G, et al. Early benefit
+                    with empagliflozin in heart failure with preserved ejection
+                    fraction: insights from the EMPEROR-Preserved Trial.
+                    <em> Eur J Heart Fail</em>. 2022;24(2):245-248.
                   </li>
                   <li>
                     JARDIANCE<sup>®</sup> [summary of product characteristics].

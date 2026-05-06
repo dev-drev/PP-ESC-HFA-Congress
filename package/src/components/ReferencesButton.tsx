@@ -32,7 +32,7 @@ export default function ReferencesButton() {
 
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h4 className="font-semibold mb-2">Very common AEs:</h4>
+                    <h4 className="font-semibold mb-2">Very common AEs<sup>17</sup>:</h4>
                     <p className="mb-2">
                       <strong>Volume depletion:</strong> The frequency was
                       increased in patients aged 75 years and older (JARDIANCE
@@ -110,7 +110,7 @@ export default function ReferencesButton() {
                   </p>
                   <p>
                     JARDIANCE<sup>®</sup> is indicated in adults for the
-                    treatment of chronic kidney disease.<sup>10</sup>
+                    treatment of chronic kidney disease.<sup>17</sup>
                   </p>
                 </div>
               </section>

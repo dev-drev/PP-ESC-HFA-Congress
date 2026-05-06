@@ -32,7 +32,7 @@ export default function ReferencesButtonPatient3() {
 
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h4 className="font-semibold mb-2">Very common AEs:</h4>
+                    <h4 className="font-semibold mb-2">Very common AEs<sup>10</sup>:</h4>
                     <p className="mb-2">
                       <strong>Volume depletion:</strong> The frequency was
                       increased in patients aged 75 years and older (JARDIANCE
@@ -110,7 +110,7 @@ export default function ReferencesButtonPatient3() {
                   </p>
                   <p>
                     JARDIANCE<sup>®</sup> is indicated in adults for the
-                    treatment of chronic kidney disease.<sup>7</sup>
+                    treatment of chronic kidney disease<sup>10</sup>
                   </p>
                 </div>
               </section>
@@ -119,46 +119,35 @@ export default function ReferencesButtonPatient3() {
                 <h3 className="text-xl font-semibold mb-4">Footnotes</h3>
                 <div className="text-xs space-y-2">
                   <p>
-                    <sup>*</sup>
-                    In the EMPEROR-Reduced trial, a randomised, double-blind,
-                    parallel-group, placebo-controlled study of 3730 patients
-                    with HFrEF, the efficacy and safety of JARDIANCE<sup>®</sup>{" "}
-                    10 mg (n=1863) were evaluated vs placebo (n=1867). Patients
-                    were adults with chronic HF (NYHA class II, III, or IV) and
-                    reduced ejection fraction (LVEF ≤40%). The primary endpoint in
-                    the EMPEROR-Reduced trial was a composite of CV death or
-                    hospitalisation for HF, analysed as time to the first event.
-                    Patients treated with JARDIANCE<sup>®</sup> experienced a 25%
-                    RRR in this endpoint (HR=0.75; 95% CI 0.65, 0.86;
-                    p&lt;0.001).<sup>9</sup>
+                    <sup>*</sup>In the EMPA-REG OUTCOME<sup>®</sup> trial, a
+                    randomised, double-blind, placebo-controlled study of 7020
+                    patients with T2D at high cardiovascular risk, the efficacy
+                    and safety of JARDIANCE<sup>®</sup> 10 mg or 25 mg (n=4687)
+                    were evaluated vs placebo (n=2333). Patients were adults with
+                    insufficiently controlled T2D and CAD, PAD, or a history of MI
+                    or stroke. The primary composite outcome in the EMPA-REG
+                    OUTCOME<sup>®</sup> trial was 3-point MACE, composed of death
+                    from CV causes, nonfatal MI, or nonfatal stroke, as analysed in
+                    the pooled JARDIANCE<sup>®</sup> group vs the placebo group.
+                    The result was 14% RRR (1.6% ARR) in 3-point MACE (HR=0.86; 95%
+                    CI: 0.74, 0.99; p&lt;0.001 for noninferiority; p=0.04 for
+                    superiority). The 14% RRR in 3-point MACE was driven by a
+                    reduction in the risk of CV death (HR=0.62; 95% CI: 0.49, 0.77;
+                    p&lt;0.001); there was no change in risk of nonfatal MI
+                    (HR=0.87; 95% CI: 0.70, 1.09; p=0.22) or nonfatal stroke
+                    (HR=1.24; 95% CI: 0.92, 1.67; p=0.16).<sup>8</sup>
                   </p>
-
                   <p>
-                    <sup>†</sup>Change from baseline in clinical summary score
-                    (HF symptoms and physical limitations domains) of the KCCQ at
-                    week 52 was a prespecified secondary endpoint in the
-                    EMPEROR-Reduced and EMPEROR-Preserved trials. KCCQ change from
-                    baseline to 52 weeks. EMPEROR-Reduced: JARDIANCE<sup>®</sup>{" "}
-                    5.8 ± 0.4; placebo 4.1 ± 0.4. EMPEROR-Preserved: JARDIANCE
-                    <sup>®</sup> 4.51 ± 0.31, placebo: 3.18 ± 0.31. Patient-reported
-                    outcomes measured changes in KCCQ summary scores. JARDIANCE
-                    <sup>®</sup> led to significant improvements in mean KCCQ-CSS,
-                    -TSS, and -OSS, which were apparent as early as 3 months and were
-                    sustained at 8 and 12 months. Patients treated with JARDIANCE
-                    <sup>®</sup> were more likely to show clinically meaningful
-                    improvements (≥5, ≥10, and ≥15 points) and less likely to
-                    experience clinically meaningful deterioration in health status
-                    when compared to placebo.<sup>12,13</sup>
+                    <sup>†</sup>In addition to reducing the risk of CV death when
+                    added to the standard of care, JARDIANCE<sup>®</sup> also
+                    lowered HbA1c. In addition, JARDIANCE<sup>®</sup> demonstrated
+                    reduction in weight and blood pressure. JARDIANCE<sup>®</sup>{" "}
+                    is not indicated for weight loss or reduction of blood pressure.<sup>8</sup>
                   </p>
-
                   <p>
-                    <sup>‡</sup>In the EMPEROR-Reduced trial, the effect of
-                    JARDIANCE<sup>®</sup> to reduce the combined risk of death,
-                    hospitalisation for heart failure, or an emergent or urgent
-                    heart failure visit was statistically significant at 12 days
-                    after randomisation and statistical significance was sustained
-                    from day 12 onward (HR, 0.70; 95% CI, 0.63-0.78;
-                    p&lt;0.0001).<sup>16</sup>
+                    <sup>‡</sup>The benefit of empagliflozin on CV death was first
+                    statistically significant at Day 59 (HR [95% CI], 0.28 [0.08, 0.96],
+                    p = 0.0424) and was largely sustained during follow up.<sup>9</sup>
                   </p>
                 </div>
               </section>
@@ -166,24 +155,24 @@ export default function ReferencesButtonPatient3() {
               <section className="mb-8">
                 <h3 className="text-xl font-semibold mb-4">Abbreviations</h3>
                 <p className="text-xs">
-                  ARR=absolute risk reduction; ASCVDOatherosclerotic
+                  ARR=absolute risk reduction; ASCVD=atherosclerotic
                   cardiovascular disease; BMI=body mass index; CAD=coronary
-                  artery disease; Cl=confidence interval; CKD=chronic kidney
+                  artery disease; CI=confidence interval; CKD=chronic kidney
                   disease; CV=cardiovascular; CVD=cardiovascular disease;
                   eCVD=established cardiovascular disease; eGFR=estimated
-                  glomerular filtration rate; ESC?European Society of
+                  glomerular filtration rate; ESC=European Society of
                   Cardiology; HbA1c=haemoglobin A1c; HF=heart failure;
                   HFmrEF=heart failure with mildly reduced ejection fraction;
                   HFpEF=heart failure with preserved ejection fraction;
                   HFrEF=heart failure with reduced ejection fraction;
                   HHF=hospitalization for heart failure; HR=hazard ratio;
                   LVEF=left ventricular ejection fraction; MACE=major adverse
-                  cardiovascular events; Mi=myocardial infarction; NNT=number
+                  cardiovascular events; MI=myocardial infarction; NNT=number
                   needed to treat; NT-proBNP=N-terminal pro-brain natriuretic
                   peptide; NYHA=New York Heart Association; PAD=peripheral
                   artery disease; RRR=relative risk reduction;
                   SGLT2i=sodium-glucose cotransporter-2 inhibitor; T2D=type 2
-                  diabetes; ACR=urine albumin-to-creatinine ratio.
+                  diabetes; uACR=urine albumin-to-creatinine ratio.
                 </p>
               </section>
 
@@ -191,109 +180,67 @@ export default function ReferencesButtonPatient3() {
                 <h3 className="text-xl font-semibold mb-4">References</h3>
                 <ol className="text-xs space-y-1 list-decimal pl-5">
                   <li>
-                    Settergren C, Benson L, Shahim A, et al. Cause-specific death
-                    in heart failure across the ejection fraction spectrum: A
-                    comprehensive assessment of over 100 000 patients in the
-                    Swedish Heart Failure Registry. <em>Eur J Heart Fail</em>.
-                    2024;26(5):1150-1159.
+                    Raghavan S, Vassy JL, Ho YL, et al. Diabetes
+                    Mellitus-Related All-Cause and Cardiovascular Mortality in
+                    a National Cohort of Adults. <em>J Am Heart Assoc</em>.
+                    2019;8(4):e011295.
                   </li>
                   <li>
-                    Khan MS, Sreenivasan J, Lateef N, et al. Trends in 30- and
-                    90-day readmission rates for heart failure.{" "}
-                    <em>Circ Heart Fail</em>. 2021;14(4):e008335.
+                    Coles B, Zaccardi F, Hvid C, Davies MJ, Khunti K.
+                    Cardiovascular events and mortality in people with type 2
+                    diabetes and multimorbidity: A real-world study of patients
+                    followed for up to 19 years. <em>Diabetes Obes Metab</em>.
+                    2021;23(1):218-227.
                   </li>
                   <li>
-                    Abdin A, Anker SD, Butler J, et al. 'Time is prognosis' in
-                    heart failure: time-to-treatment initiation as a modifiable
-                    risk factor. <em>ESC Heart Failure</em>. 2021;8(6):4444-4453.
+                    Marx N, Federici M, Schütt K, et al. 2023 ESC Guidelines
+                    for the management of cardiovascular disease in patients
+                    with diabetes. <em>Eur Heart J</em>. 2023;44(39):4043-4140.
                   </li>
                   <li>
-                    Maddox TM, Januzzi JL, Allen LA, et al. 2024 ACC expert
-                    consensus decision pathway for treatment of heart failure with
-                    reduced ejection fraction. <em>J Am Coll Cardiol</em>.
-                    2024;83(15):1444-1488.
+                    GBD Chronic Kidney Disease Collaboration. Global, regional,
+                    and national burden of chronic kidney disease, 1990-2017:
+                    a systematic analysis for the Global Burden of Disease
+                    Study 2017. <em>Lancet</em>. 2020;395(10225):709-733.
                   </li>
                   <li>
-                    McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for
-                    the diagnosis and treatment of acute and chronic heart
-                    failure. <em>Eur Heart J</em>. 2021;42(36):3599-3726.
-                  </li>
-                  <li>
-                    Shen L et al. Accelerated and personalized therapy for heart
-                    failure with reduced ejection fraction. <em>Eur Heart J</em>.
-                    2022;43:2573.
-                  </li>
-                  <li>
-                    Greene SJ, Adam A, Schmedt N, et al. Contemporary
-                    Guideline-Directed Medical Therapy for Heart Failure in the
-                    United States: The EMPACE Study. <em>J Am Heart Assoc</em>.
-                    2026;15(6):e044785.
-                  </li>
-                  <li>
-                    Heidenreich PA, Bozkurt B, Aguilar D, et al. 2022
-                    AHA/ACC/HFSA guideline for the management of heart failure:
-                    executive summary. <em>J Am Coll Cardiol</em>.
-                    2022;79(17):1757-1780.
-                  </li>
-                  <li>
-                    Packer M, Anker SD, Butler J, et al; EMPEROR-Reduced Trial
-                    Investigators. Cardiovascular and renal outcomes with
-                    empagliflozin in heart failure. <em>N Engl J Med</em>.
-                    2020;383(15):1413-1424. (EMPEROR-Reduced results and the
-                    publication's Supplementary Appendix.)
-                  </li>
-                  <li>
-                    Anker SD, Butler J, Filippatos G, et al. Effect of empagliflozin
-                    on cardiovascular and renal outcomes in patients with heart
-                    failure by baseline diabetes status: Results from the
-                    EMPEROR-Reduced trial. <em>Circulation</em>.
-                    2021;143(4):337-349.
-                  </li>
-                  <li>
-                    Anker SD, Butler J, Filippatos G, et al; EMPEROR-Preserved Trial
-                    Investigators. Empagliflozin in heart failure with a preserved
-                    ejection fraction. <em>N Engl J Med</em>.
-                    2021;385(16):1451-1461. (EMPEROR-Preserved results and the
-                    publication's Supplementary Appendix.)
-                  </li>
-                  <li>
-                    Butler J, Anker SD, Filippatos G, et al; EMPEROR-Reduced Trial
-                    Committees and Investigators. Empagliflozin and health-related
-                    quality of life outcomes in patients with heart failure with
-                    reduced ejection fraction: the EMPEROR-Reduced trial.{" "}
-                    <em>Eur Heart J</em>. 2021;42(13):1203-1212.
-                  </li>
-                  <li>
-                    Butler J, Filippatos G, Siddiqi J, et al. Empagliflozin, health
-                    status, and quality of life in patients with heart failure and
-                    preserved ejection fraction: the EMPEROR-Preserved trial.{" "}
-                    <em>Circulation</em>. 2022;145(3):184-193.
+                    Davies MJ, Aroda VR, Collins BS, et al. Management of
+                    hyperglycemia in type 2 diabetes, 2022: a consensus report
+                    by the American Diabetes Association (ADA) and the European
+                    Association for the Study of Diabetes (EASD).
+                    <em> Diabetes Care</em>. 2022;45(11):2753-2786.
                   </li>
                   <li>
                     Bozkurt B, Rossignol P, Vassalotti JA. Albuminuria as a
-                    diagnostic criterion and a therapeutic target in heart failure
-                    and other cardiovascular disease. <em>Eur J Heart Fail</em>.
-                    2025;27(11):2357-2371.
+                    diagnostic criterion and a therapeutic target in heart
+                    failure and other cardiovascular disease.
+                    <em> Eur J Heart Fail</em>. 2025;27(11):2357-2371
                   </li>
                   <li>
-                    Matsushita K, Velde M, Astor B, et al; Chronic Kidney Disease
-                    Prognosis Consortium. Association of estimated glomerular
-                    filtration rate and albuminuria with all-cause and
-                    cardiovascular mortality in general population cohorts: a
-                    collaborative meta-analysis. <em>Lancet</em>.
+                    Matsushita K, Velde M, Astor B, et al; Chronic Kidney
+                    Disease Prognosis Consortium. Association of estimated
+                    glomerular filtration rate and albuminuria with all-cause
+                    and cardiovascular mortality in general population cohorts:
+                    a collaborative meta-analysis. <em>Lancet</em>.
                     2010;375(9371):2073-2081.
                   </li>
                   <li>
-                    Packer M, Anker SD, Butler J, et al; EMPEROR-Reduced Trial
-                    Committee and Investigators. Effect of empagliflozin on the
-                    clinical stability of patients with heart failure and a reduced
-                    ejection fraction: the EMPEROR-Reduced trial.{" "}
-                    <em>Circulation</em>. 2021;143(4):326-336.
+                    Zinman B, Wanner C, Lachin JM, et al; EMPA-REG OUTCOME
+                    Investigators. Empagliflozin, cardiovascular outcomes, and
+                    mortality in type 2 diabetes. <em>N Engl J Med</em>.
+                    2015;373(22):2117-2128. (EMPA-REG OUTCOME<sup>®</sup>{" "}
+                    results and the publications Supplementary Appendix.)
+                  </li>
+                  <li>
+                    Verma S, Leiter LA, Sharma A, et al. How early after
+                    treatment initiation are the CV benefits of empagliflozin
+                    apparent? A post hoc analysis of EMPA-REG- OUTCOME.
+                    <em> Diabetes</em>. 2020;69(suppl 1):28-OR
                   </li>
                   <li>
                     JARDIANCE<sup>®</sup> [summary of product characteristics].
-                    Ingelheim am Rhein, Germany; Boehringer Ingelheim International
-                    GmbH; March 2026.
+                    Ingelheim am Rhein, Germany; Boehringer Ingelheim
+                    International GmbH; March 2026.
                   </li>
                 </ol>
               </section>
