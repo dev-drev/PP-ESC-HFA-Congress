@@ -10,6 +10,11 @@ export default function TimelineComponent({ activeYear = 2026, patientName }: Ti
   const years = (patientName === 'James' || patientName === 'Erik')
     ? [2026, 2031, 2040]
     : [2026, 2031, 2036]  // Default years for other patients
+  const normalizedActiveYear = years.reduce((closestYear, candidateYear) => {
+    const candidateDistance = Math.abs(candidateYear - activeYear)
+    const closestDistance = Math.abs(closestYear - activeYear)
+    return candidateDistance < closestDistance ? candidateYear : closestYear
+  }, years[0])
 
   return (
     <div className="relative z-30 flex w-full justify-center pt-4 pb-4 lg:pb-16 lg:pt-4 px-2 lg:px-4">
@@ -22,19 +27,19 @@ export default function TimelineComponent({ activeYear = 2026, patientName }: Ti
             <div className="flex items-center gap-1 lg:gap-2">
               <div
                 className={`rounded-full transition-all duration-300 ${
-                  activeYear === year
+                  normalizedActiveYear === year
                     ? 'w-2 h-2 lg:w-3 lg:h-3 bg-[#ffbf00] shadow-[0_0_10px_rgba(255,191,0,0.8)] lg:shadow-[0_0_15px_rgba(255,191,0,0.8)]'
                     : 'w-1.5 h-1.5 lg:w-2 lg:h-2 bg-white/50'
                 }`}
               />
               <span
                 className={`font-lato transition-all duration-300 whitespace-nowrap ${
-                  activeYear === year
+                  normalizedActiveYear === year
                     ? 'text-[#ffbf00] font-bold text-sm 2xl:text-2xl'
                     : 'text-white/60 font-normal text-xs 2xl:text-lg'
                 }`}
                 style={{
-                  filter: activeYear === year ? 'drop-shadow(0 0 8px rgba(255,191,0,0.6))' : 'none',
+                  filter: normalizedActiveYear === year ? 'drop-shadow(0 0 8px rgba(255,191,0,0.6))' : 'none',
                   letterSpacing: '0.02em'
                 }}
               >
