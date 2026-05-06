@@ -311,6 +311,20 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
     if (stepImage) {
       setCurrentStepImage(stepImage);
     }
+    // Align currentView so the photo/timeline don't briefly flash the AP1 (overview) state.
+    if (selectedActionFromQuery === 'monitoring') {
+      setCurrentView('monitoring_ecg');
+    } else if (selectedActionFromQuery === 'prescribe-sglt2i') {
+      setCurrentView('prescribe_sglt2i');
+    } else if (selectedActionFromQuery === 'add-sglt2i') {
+      setCurrentView('prescribe_sglt2i');
+    } else if (selectedActionFromQuery === 'optimize-antihypertensive') {
+      setCurrentView('optimize_antihypertensive' as PatientView);
+    } else if (selectedActionFromQuery === 'add-loop-diuretic') {
+      setCurrentView('monitoring_ecg');
+    } else if (selectedActionFromQuery === 'rapid-initiation') {
+      setCurrentView('prescribe_sglt2i');
+    }
   }, [searchParams, patient.name]);
 
   const viewTimelineSettings: Record<PatientView, { year: number }> = {
@@ -769,6 +783,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         actions={actions.map(a => ({ id: a.id, text: a.text }))}
         onSelect={handleActionSelect}
         selectedActionId={selectedAction}
+        restorePhase={searchParams.get('phase')}
         onGoBack={() => {
           setCurrentView('overview');
           setShowSglt2iReasoning(false);

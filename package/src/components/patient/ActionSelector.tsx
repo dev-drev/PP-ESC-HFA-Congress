@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 interface Action {
@@ -16,6 +16,7 @@ interface ActionSelectorProps {
   isEndCase?: boolean;
   onGoBack?: () => void;
   selectedActionId?: string | null;
+  restorePhase?: string | null;
 }
 
 export default function ActionSelector({
@@ -24,10 +25,12 @@ export default function ActionSelector({
   isEndCase = false,
   onGoBack,
   selectedActionId,
+  restorePhase,
 }: ActionSelectorProps) {
   const [selectedAction, setSelectedAction] = useState<Action | null>(null);
   const [mainAction, setMainAction] = useState<Action | null>(null);
   const [showFollowUpOptions, setShowFollowUpOptions] = useState(false);
+  const restoredFromUrlRef = useRef(false);
   const router = useRouter();
 
   const isHFrEF = actions.some((action) =>
@@ -142,6 +145,33 @@ export default function ActionSelector({
 
   // Sync selectedAction with prop
   useEffect(() => {
+    // When coming back from a final page with phase=followup, jump straight to the
+    // follow-up panel skipping the 1500ms ActionSelector animation timer.
+    if (
+      selectedActionId &&
+      restorePhase === 'followup' &&
+      !restoredFromUrlRef.current
+    ) {
+      const allActions = [
+        ...actions,
+        ...hfpefFollowUpActions,
+        ...hfrefFollowUpActions,
+        ...joanaFollowUpActions,
+        ...jamesFollowUpActions,
+        ...jamesSglt2iFollowUpActions,
+        ...erikFollowUpActions,
+        ...erikSglt2iFollowUpActions,
+      ];
+      const action = allActions.find(a => a.id === selectedActionId);
+      if (action) {
+        restoredFromUrlRef.current = true;
+        setMainAction(action);
+        setShowFollowUpOptions(true);
+        setSelectedAction(null);
+        return;
+      }
+    }
+
     if (selectedActionId) {
       const action = [...actions, ...hfpefFollowUpActions, ...hfrefFollowUpActions, ...joanaFollowUpActions, ...jamesFollowUpActions, ...jamesSglt2iFollowUpActions, ...erikFollowUpActions, ...erikSglt2iFollowUpActions]
         .find(a => a.id === selectedActionId);
@@ -151,7 +181,7 @@ export default function ActionSelector({
     } else {
       setSelectedAction(null);
     }
-  }, [selectedActionId, actions]);
+  }, [selectedActionId, actions, restorePhase]);
 
   useEffect(() => {
     if (!selectedAction) return;

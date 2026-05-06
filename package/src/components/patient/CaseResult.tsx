@@ -99,18 +99,21 @@ function CaseResultContent({
   const getPreviousStepPath = () => {
     // Deterministic previous-step routing for final patient flows.
     const previousStepByPath: Record<string, string> = {
+      // AP3/AP2 go-back returns to the immediately previous patient-page UI step,
+      // not a generic AP1 reset. `phase=followup` skips the 1500ms ActionSelector
+      // animation when we already passed through the main->follow-up transition.
       // Linda
-      // AP3/AP2 go back should return to the immediately previous Linda UI step,
-      // not a generic AP1 reset.
-      '/sglt2i-case2': '/patient/1?selectedAction=monitoring',
-      '/beta-blocker-case': '/patient/1?selectedAction=monitoring',
+      '/sglt2i-case2': '/patient/1?selectedAction=monitoring&phase=followup',
+      '/beta-blocker-case': '/patient/1?selectedAction=monitoring&phase=followup',
       '/sglt2i-case': '/patient/1?selectedAction=prescribe-sglt2i',
       // Robert
-      '/end2': '/continue-acei-case',
-      '/continue-acei-case': '/sglt2i-arni-case',
+      '/sglt2i-arni-case': '/patient/2?selectedAction=add-loop-diuretic&phase=followup',
+      '/continue-acei-case': '/patient/2?selectedAction=add-loop-diuretic&phase=followup',
+      '/end2': '/patient/2?selectedAction=rapid-initiation',
       // Joana
-      '/joana-five-years': '/joana-optimize-case',
-      '/joana-optimize-case': '/joana-add-sglt2i-case',
+      '/joana-five-years': '/patient/3?selectedAction=optimize-antihypertensive&phase=followup',
+      '/joana-optimize-case': '/patient/3?selectedAction=optimize-antihypertensive&phase=followup',
+      '/joana-add-sglt2i-case': '/patient/3?selectedAction=add-sglt2i',
     };
 
     return previousStepByPath[pathname] || null;
