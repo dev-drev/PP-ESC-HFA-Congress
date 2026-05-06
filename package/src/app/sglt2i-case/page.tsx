@@ -12,6 +12,7 @@ export default function SGLT2iCasePage() {
       <CaseResult
         patient={patient}
         year={2036}
+        age={77}
         quote="I'm grateful that I can still meet my friends and that my doctor takes care of my heart failure."
         backgroundImage="/backgrounds/01A.jpg"
         currentStepImage="/next-steps/linda/final/step8.png"

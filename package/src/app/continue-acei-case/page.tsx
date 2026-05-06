@@ -12,6 +12,7 @@ export default function ContinueACEIPage() {
       <CaseResult
         patient={patient}
         year={2036}
+        age={72}
         quote="Recently, I was hospitalized again due to acute decompensated HF. Can you help me feel better, doctor?"
         backgroundImage="/backgrounds/02C.jpg"
         currentStepImage="/next-steps/robert/final/step8.png"

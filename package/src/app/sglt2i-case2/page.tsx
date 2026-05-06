@@ -12,6 +12,7 @@ export default function SGLT2iCase2Page() {
       <CaseResult
         patient={patient}
         year={2036}
+        age={77}
         quote="Recently, I was hospitalized again due to severe dyspnea. Can you help me feel better, doctor?"
         backgroundImage="/backgrounds/01C.jpg"
         currentStepImage="/next-steps/linda/final/step10.png"

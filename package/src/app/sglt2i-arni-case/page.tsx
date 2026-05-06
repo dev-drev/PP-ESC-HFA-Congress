@@ -12,6 +12,7 @@ export default function SGLT2iARNIPage() {
       <CaseResult
         patient={patient}
         year={2036}
+        age={72}
         quote="I'm grateful that I can still enjoy the time with my wife and that my heart failure is well managed."
         backgroundImage="/backgrounds/02B.jpg"
         currentStepImage="/next-steps/robert/final/step7.png"
