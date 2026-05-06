@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Lato } from 'next/font/google'
 import Image from 'next/image'
 import { Suspense } from 'react'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import SessionSyncProvider from '@/components/SessionSyncProvider'
 import ConditionalReferencesButton from '@/components/ConditionalReferencesButton'
@@ -92,6 +93,7 @@ export default function RootLayout({
           priority
           className="fixed z-40 h-auto w-18 top-6 md:top-4 xl:top-5 right-3 pointer-events-none select-none opacity-80 md:top-7 md:right-6 md:w-30"
         />
+        <Analytics />
       </body>
     </html>
   )
