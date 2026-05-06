@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import AnimatedPatientCircle from '@/components/AnimatedPatientCircle'
+import { preloadPatientFlowAssets } from '@/components/ImagePreloader'
 
 interface Patient {
   id: string
@@ -47,6 +48,7 @@ export default function PatientSelection() {
   const [selectedPatient, setSelectedPatient] = useState<string | null>(null)
 
   const handlePatientSelect = async (patientId: string) => {
+    void preloadPatientFlowAssets(patientId)
     setSelectedPatient(patientId)
   }
 
@@ -159,7 +161,7 @@ export default function PatientSelection() {
                     width={200}
                     height={220}
                     className={`relative z-10 object-cover transition-all duration-300 max-w-[150px] lg:max-w-[350px] ${selectedPatient && selectedPatient !== patient.id ? 'brightness-[0.2]' : ''}`}
-                    priority
+                    priority={index === 1}
                   />
                   {selectedPatient === patient.id ? (
                     <AnimatedPatientCircle />

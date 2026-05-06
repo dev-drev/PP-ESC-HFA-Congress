@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import AnimatedPatientCircle from '@/components/AnimatedPatientCircle'
 import useEmblaCarousel from 'embla-carousel-react'
+import { preloadPatientFlowAssets } from '@/components/ImagePreloader'
 
 interface Patient {
   id: string
@@ -60,6 +61,7 @@ export default function PatientSelection() {
   }
 
   const handlePatientSelect = async (patientId: string) => {
+    void preloadPatientFlowAssets(patientId)
     setSelectedPatient(patientId)
   }
 
@@ -183,7 +185,7 @@ export default function PatientSelection() {
                       width={200}
                       height={220}
                       className={`relative z-10 object-cover transition-all duration-300 max-w-[150px] lg:max-w-[350px] ${selectedPatient && selectedPatient !== patient.id ? 'brightness-[0.2]' : ''}`}
-                      priority
+                      priority={index === 1}
                       onLoad={() => handleImageLoad(patient.id)}
                     />
                   </motion.div>
@@ -240,7 +242,7 @@ export default function PatientSelection() {
                           width={200}
                           height={220}
                           className={`relative z-10 object-cover transition-all duration-300 max-w-[120px] xl:max-w-[150px] 2xl:max-w-[200px] ${selectedPatient && selectedPatient !== patient.id ? 'brightness-[0.2]' : ''}`}
-                          priority
+                          priority={index === currentIndex}
                           onLoad={() => handleImageLoad(patient.id)}
                         />
                       </motion.div>

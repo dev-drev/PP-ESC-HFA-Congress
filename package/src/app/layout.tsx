@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 import { Lato } from 'next/font/google'
+import Image from 'next/image'
 import { Suspense } from 'react'
 import './globals.css'
 import SessionSyncProvider from '@/components/SessionSyncProvider'
 import ConditionalReferencesButton from '@/components/ConditionalReferencesButton'
 import HomepageButton from '@/components/HomepageButton'
+import ImagePreloader from '@/components/ImagePreloader'
 
 const lato = Lato({ 
   weight: ['100', '300', '400', '700', '900'],
@@ -46,6 +48,7 @@ export default function RootLayout({
       <body className={`${lato.className} ${lato.variable} min-h-dvh`}>
         <Suspense fallback={null}>
           <SessionSyncProvider>
+            <ImagePreloader />
             {children}
           </SessionSyncProvider>
         </Suspense>
@@ -55,9 +58,11 @@ export default function RootLayout({
           {SHOW_QR_LEGAL_FOOTER && (
             <div className="w-full px-4 py-6 flex justify-center">
               <div className="w-full max-w-[260px] md:max-w-[300px] rounded-2xl p-4 bg-[#066368] flex flex-col md:flex-row md:items-start gap-3 text-center md:text-left">
-                <img
+                <Image
                   src="/spanish-qr.png"
                   alt="Spanish QR"
+                  width={80}
+                  height={80}
                   className="w-20 h-20 md:w-16 md:h-16 object-contain shrink-0 mx-auto md:mx-0"
                 />
                 <div className="text-white opacity-90">
@@ -79,9 +84,12 @@ export default function RootLayout({
           )}
         </div>
         <HomepageButton />
-        <img
+        <Image
           src="/logo-white.svg"
           alt="Logo"
+          width={120}
+          height={60}
+          priority
           className="fixed z-40 h-auto w-18 top-6 md:top-4 xl:top-5 right-3 pointer-events-none select-none opacity-80 md:top-7 md:right-6 md:w-30"
         />
       </body>
