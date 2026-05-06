@@ -1281,57 +1281,120 @@ export default function DynamicSglt2iAccordion({
         pathname.includes('/continue-acei-case') ||
         pathname.includes('/sglt2i-arni-case')
       ) {
-        return [
-          {
-            id: 'robert-slide-1',
-            content: (
-              <div className="flex flex-col h-full">
-                <p className="text-lg mb-4 font-medium text-gray-700">
-                  Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death or HHF for patients with HFrEF?<sup>*9</sup>
+        // Robert + Rapid initiation + "See Robert again in 5 years" (route /end2)
+        // uses a Robert-specific opening slide (not generic "Did you know that
+        // SGLT2is..."). The /continue-acei-case and /sglt2i-arni-case routes
+        // keep the original generic slide.
+        const isEnd2 = pathname.includes('/end2');
+        const slideOne = isEnd2
+          ? {
+              id: 'robert-end2-slide-1',
+              content: (
+                <div className="flex flex-col h-full">
+                  <p className="text-lg mb-4 font-medium text-gray-700">
+                    By prescribing Robert an SGLT2i, such as JARDIANCE<sup>®</sup> (empagliflozin), soon after his diagnosis, you helped protect him by reducing his risk of CV death or HHF.<sup>*9</sup>
+                  </p>
+                  <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
+                    <div className="relative">
+                      <Image
+                        src="/icons/25A.png"
+                        alt="Heart"
+                        title="Heart"
+                        width={400}
+                        height={150}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-lg mt-6 text-gray-700">
+                    And did you know that, in addition to improving CV outcomes, JARDIANCE<sup>®</sup> (empagliflozin) improved quality of life regardless of LVEF?<sup>†12,13</sup>
+                  </p>
+                </div>
+              ),
+            }
+          : {
+              id: 'robert-slide-1',
+              content: (
+                <div className="flex flex-col h-full">
+                  <p className="text-lg mb-4 font-medium text-gray-700">
+                    Did you know that SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), provide protection by significantly reducing the risk of CV death or HHF for patients with HFrEF?<sup>*9</sup>
 
-                </p>
-                <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
-                  <div className="relative">
+                  </p>
+                  <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
+                    <div className="relative">
+                      <Image
+                        src="/icons/25A.png"
+                        alt="Heart"
+                        title="Heart"
+                        width={400}
+                        height={150}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-lg mt-6 text-gray-700">
+                    The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.<sup>*‡9,16</sup>              
+                    </p>
+                </div>
+              ),
+            };
+
+        // Slide 2 closing paragraph differs only on /end2: the
+        // /continue-acei-case and /sglt2i-arni-case routes keep the
+        // original "Major guidelines recommend rapid initiation..." text.
+        const slideTwo = isEnd2
+          ? {
+              id: 'robert-end2-slide-2',
+              content: (
+                <div className="flex flex-col h-full">
+                  <p className="text-lg mb-6 text-gray-700">
+                    You are well aware: SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.<sup>5</sup>
+                  </p>
+
+                  <div className="mb-6">
                     <Image
-                      src="/icons/25A.png"
-                      alt="Heart"
-                      title="Heart"
+                      src="/guidelines.png"
+                      alt="SGLT2i"
+                      title="SGLT2i guidelines"
                       width={400}
                       height={150}
-                      className="object-contain"
-                    />
+                      className="object-contain" />
                   </div>
-                </div>
-                <p className="text-lg mt-6 text-gray-700">
-                  The earlier you initiate JARDIANCE<sup>®</sup> (empagliflozin), the more likely your patients are to benefit from improved long-term outcomes.<sup>*‡9,16</sup>              
+
+                  <p className="text-lg text-gray-700">
+                    Continue delivering the best care by implementing GDMT for HF across the LVEF spectrum and help drive meaningful change for your patients.
                   </p>
-              </div>
-            ),
-          },
-          {
-            id: 'robert-slide-2',
-            content: (
-              <div className="flex flex-col h-full">
-                <p className="text-lg mb-6 text-gray-700">
-                SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), <br /> are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.<sup>5</sup>
-                </p>
-
-                <div className="mb-6">
-                  <Image
-                    src="/guidelines.png"
-                    alt="SGLT2i"
-                    title="SGLT2i guidelines"
-                    width={400}
-                    height={150}
-                    className="object-contain" />
                 </div>
+              ),
+            }
+          : {
+              id: 'robert-slide-2',
+              content: (
+                <div className="flex flex-col h-full">
+                  <p className="text-lg mb-6 text-gray-700">
+                  SGLT2is, such as JARDIANCE<sup>®</sup> (empagliflozin), <br /> are 1 of 4 foundational guideline-recommended treatments (Class I, Level A) for patients with HFrEF like Robert.<sup>5</sup>
+                  </p>
 
-                <p className="text-lg text-gray-700">
-                Major guidelines recommend <b>rapid initiation and up-titration</b> of all four foundational treatments for all patients with HFrEF.<sup>*5</sup>
-                </p>
-              </div>
-            ),
-          },
+                  <div className="mb-6">
+                    <Image
+                      src="/guidelines.png"
+                      alt="SGLT2i"
+                      title="SGLT2i guidelines"
+                      width={400}
+                      height={150}
+                      className="object-contain" />
+                  </div>
+
+                  <p className="text-lg text-gray-700">
+                  Major guidelines recommend <b>rapid initiation and up-titration</b> of all four foundational treatments for all patients with HFrEF.<sup>*5</sup>
+                  </p>
+                </div>
+              ),
+            };
+
+        return [
+          slideOne,
+          slideTwo,
           {
             id: 'robert-slide-3',
             content: (
