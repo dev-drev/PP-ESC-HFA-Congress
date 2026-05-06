@@ -389,6 +389,7 @@ export default function ActionSelector({
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
           className="space-y-4"
         >
        
@@ -479,9 +480,12 @@ export default function ActionSelector({
       {/* Top row with go-back and restart side by side */}
       {!showProceedButtons && topRowActions.length > 0 && (
         <div className="flex gap-4">
-          {topRowActions.map((action) => (
+          {topRowActions.map((action, idx) => (
             <motion.button
               key={action.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: idx * 0.05, ease: 'easeOut' }}
               onClick={() => handleActionClick(action)}
               className={`flex-1 p-5 rounded-2xl lg:rounded-full  text-left transition-all duration-300 flex items-center justify-between relative ${
                 isEndCase
@@ -540,6 +544,9 @@ export default function ActionSelector({
       {!showProceedButtons && otherActions.map((action, index) => (
         <motion.button
           key={action.id}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: index * 0.05, ease: 'easeOut' }}
           onClick={() => handleActionClick(action)}
           className={`w-full py-5 px-8 rounded-2xl lg:rounded-full text-left transition-all duration-300 flex items-center justify-between relative ${
             isEndCase

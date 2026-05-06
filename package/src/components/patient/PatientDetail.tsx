@@ -561,7 +561,6 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             <AnimatePresence mode="wait">
               <motion.div
                 key={`quote-${currentPatientData.quote?.substring(0, 15) || ''}-${showSglt2iReasoning}`}
-               
                 transition={{ duration: 0.3 }}
               >
                 {currentPatientData.quote && (
@@ -603,7 +602,11 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   return (
     <>
 
-      <div className={`relative pb-0 ${
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className={`relative pb-0 ${
         showSglt2iReasoning ? 'entry-screen-bg' : 'entry-screen'
     }`}>
         {isSplitHeroStacked && (
@@ -739,7 +742,9 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             {/* Clinical Reasoning (when SGLT2i is selected) */}
             {showSglt2iReasoning && (
               <motion.div
-                
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="mb-6"
               >
                 <ClinicalReasoningAccordion
@@ -767,16 +772,16 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
 <div className={useStage3NarrowLayout ? "w-full max-w-[440px] mx-auto md:flex-1 md:basis-0 md:max-w-none md:min-w-0 md:mx-0" : "w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex flex-col items-stretch justify-start 2xl:block 2xl:mx-0 self-start"}>
             {!showSglt2iReasoning && (
               <div className={useStage3NarrowLayout ? "" : "w-full min-w-0"}>
-              <Image
-                src={currentStepImage}
-                alt="What would you like to do next?"
-                title="What would you like to do next?"
-                width={500}
-                height={200}
-                sizes="(max-width: 1023px) 92vw, (max-width: 1700px) min(40vw, 500px), 500px"
-                className={useStage3NarrowLayout ? "mb-6 h-auto w-full max-w-[440px] object-contain mx-auto overflow-hidden" : "mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-0 patient-panel-full"}
-              />
-            </div>
+                <Image
+                  src={currentStepImage}
+                  alt="What would you like to do next?"
+                  title="What would you like to do next?"
+                  width={500}
+                  height={200}
+                  sizes="(max-width: 1023px) 92vw, (max-width: 1700px) min(40vw, 500px), 500px"
+                  className={useStage3NarrowLayout ? "mb-6 h-auto w-full max-w-[440px] object-contain mx-auto overflow-hidden" : "mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-0 patient-panel-full"}
+                />
+              </div>
             )}
 
               <ActionSelector
@@ -908,9 +913,9 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           </div>
         )}
       </div>
+      </motion.div>
 
     
-    </div>
     </>
   );
 }

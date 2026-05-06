@@ -180,7 +180,12 @@ function CaseResultContent({
   };
 
   return (
-    <div className="min-h-screen relative z-10 pb-40 bg-[#056368]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="min-h-screen relative z-10 pb-40 bg-[#056368]"
+    >
 
 
         <TimelineComponent activeYear={year} patientName={patient.name} />
@@ -278,7 +283,7 @@ function CaseResultContent({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
