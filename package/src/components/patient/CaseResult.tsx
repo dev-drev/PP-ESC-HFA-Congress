@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import TimelineComponent from '@/components/TimelineComponent'
 import PatientAccordion from '@/components/patient/PatientAccordion';
 import MedicalRecordContent from '@/components/patient/MedicalRecord';
@@ -44,6 +44,7 @@ function CaseResultContent({
   const [backgroundOpacity, setBackgroundOpacity] = useState(1);
   const patientAge = age || (year - (2025 - patient.age));
   const router = useRouter();
+  const pathname = usePathname();
 
   const getAp1Path = () => `/patient/${patient.id}`;
 
@@ -95,11 +96,36 @@ function CaseResultContent({
     },
   ];
 
+  const getPreviousStepPath = () => {
+    // Deterministic previous-step routing for final patient flows.
+    const previousStepByPath: Record<string, string> = {
+      // Linda
+      // AP3/AP2 go back should return to the immediately previous Linda UI step,
+      // not a generic AP1 reset.
+      '/sglt2i-case2': '/patient/1?selectedAction=monitoring',
+      '/beta-blocker-case': '/patient/1?selectedAction=monitoring',
+      '/sglt2i-case': '/patient/1?selectedAction=prescribe-sglt2i',
+      // Robert
+      '/end2': '/continue-acei-case',
+      '/continue-acei-case': '/sglt2i-arni-case',
+      // Joana
+      '/joana-five-years': '/joana-optimize-case',
+      '/joana-optimize-case': '/joana-add-sglt2i-case',
+    };
+
+    return previousStepByPath[pathname] || null;
+  };
+
 
   const handleActionSelect = (actionId: string) => {
     if (actionId === 'restart') {
       router.push(getAp1Path());
     } else if (actionId === 'go-back' || actionId === 'time-travel') {
+      const previousStepPath = getPreviousStepPath();
+      if (previousStepPath) {
+        router.push(previousStepPath);
+        return;
+      }
       if (typeof window !== 'undefined' && window.history.length > 1) {
         router.back();
       } else {

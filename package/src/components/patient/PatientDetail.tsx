@@ -65,6 +65,7 @@ function splitHeroPatientKey(name: string): SplitHeroPatient | null {
 
 export default function PatientDetail({ patient }: PatientDetailProps) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [selectedAction, setSelectedAction] = useState<string | null>(null);
   const [timelineYear, setTimelineYear] = useState(2026);
   const [showHeartView, setShowHeartView] = useState(false);
@@ -299,6 +300,18 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           text: 'Rapid initiation (Prescribe SGLT2i, ARNi, and MRA; and add loop diuretic)'
         },
       ];
+
+  useEffect(() => {
+    const selectedActionFromQuery = searchParams.get('selectedAction');
+    if (!selectedActionFromQuery) return;
+
+    // Restore intermediate UI step when coming back from final pages.
+    setSelectedAction(selectedActionFromQuery);
+    const stepImage = getActionStepImage(selectedActionFromQuery);
+    if (stepImage) {
+      setCurrentStepImage(stepImage);
+    }
+  }, [searchParams, patient.name]);
 
   const viewTimelineSettings: Record<PatientView, { year: number }> = {
     overview: { year: 2026 },
