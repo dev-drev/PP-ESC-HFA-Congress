@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import AnimatedPatientCircle from '@/components/AnimatedPatientCircle'
-import { preloadPatientFlowAssets } from '@/components/ImagePreloader'
+import { preloadPatientFlowAssets, preloadPatientSelectionAssets } from '@/components/ImagePreloader'
 
 interface Patient {
   id: string
@@ -46,11 +46,37 @@ const patients: Patient[] = [
 export default function PatientSelection() {
   const router = useRouter()
   const [selectedPatient, setSelectedPatient] = useState<string | null>(null)
+  const [isBootLoading, setIsBootLoading] = useState<boolean | null>(null)
 
   const handlePatientSelect = async (patientId: string) => {
+    if (isBootLoading !== false) return
     void preloadPatientFlowAssets(patientId)
     setSelectedPatient(patientId)
   }
+
+  useEffect(() => {
+    let isMounted = true
+    const firstVisitKey = 'patient-assets-preloaded'
+    const hasPreloadedBefore = window.sessionStorage.getItem(firstVisitKey) === '1'
+
+    if (hasPreloadedBefore) {
+      setIsBootLoading(false)
+      return () => {
+        isMounted = false
+      }
+    }
+
+    setIsBootLoading(true)
+    preloadPatientSelectionAssets(3000).finally(() => {
+      if (isMounted) {
+        window.sessionStorage.setItem(firstVisitKey, '1')
+        setIsBootLoading(false)
+      }
+    })
+    return () => {
+      isMounted = false
+    }
+  }, [])
 
   useEffect(() => {
     if (selectedPatient) {
@@ -65,6 +91,7 @@ export default function PatientSelection() {
   return (
     <>
       <div className="relative bg-patients">
+      {isBootLoading === true && <div className="absolute inset-0 z-50 bg-[#056368]/45 backdrop-blur-md" />}
 
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-10">
@@ -128,7 +155,7 @@ export default function PatientSelection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => handlePatientSelect(patient.id)}
-              className="relative cursor-pointer"
+              className={`relative cursor-pointer ${isBootLoading !== false ? 'pointer-events-none opacity-60' : ''}`}
             >
 
               <div className="text-center flex gap-0 flex-col lg:flex-row">

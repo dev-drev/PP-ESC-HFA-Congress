@@ -18,6 +18,14 @@ const INITIAL_ASSETS = [
   '/logo-white.svg',
 ];
 
+const PATIENT_SELECTION_ASSETS = [
+  '/Card-Man_A_20241028.png',
+  '/linda.png',
+  '/characters/03B.png',
+  '/patient-circle.svg',
+  '/arrow.svg',
+];
+
 const FLOW_ASSETS: Record<string, string[]> = {
   robert: [
     '/next-steps/robert/final/step1.png',
@@ -90,6 +98,15 @@ export function preloadPatientFlowAssets(patientId: string) {
   const urls = FLOW_ASSETS[patientId];
   if (!urls) return Promise.resolve();
   return preloadAssets(urls);
+}
+
+export async function preloadPatientSelectionAssets(minDelayMs = 3000) {
+  const start = Date.now();
+  await preloadAssets(PATIENT_SELECTION_ASSETS);
+  const elapsedMs = Date.now() - start;
+  if (elapsedMs < minDelayMs) {
+    await new Promise((resolve) => setTimeout(resolve, minDelayMs - elapsedMs));
+  }
 }
 
 export default function ImagePreloader({ onLoadingChange, onProgress }: ImagePreloaderProps) {
