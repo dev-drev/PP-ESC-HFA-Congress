@@ -187,22 +187,22 @@ function CaseResultContent({
       className="min-h-screen relative z-10 pb-40 bg-[#056368]"
     >
 
-
+      <div className="relative z-30 mx-auto flex w-full max-w-[1700px] min-[1920px]:max-w-[2000px] justify-center px-4 2xl:px-8">
         <TimelineComponent activeYear={year} patientName={patient.name} />
+      </div>
 
-
-      <div className="mx-auto px-4 ">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
+      <div className="relative z-10 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
           {/* Left Column - Patient Info, Image and Medical Record */}
-          <div className="xl:col-span-1 mt-[30dvh] xl:mt-0 xl:mb-0">
+          <div className="2xl:col-span-1 mt-[30dvh] 2xl:mt-0 2xl:mb-0">
             {/* Patient Header and Quote */}
             <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] xl:max-w-[360px] 2xl:-translate-x-6 min-[1920px]:-translate-x-10">{renderPatientHeader()}</div>
           </div>
 
           {/* Right Column - Guidelines and Background Image */}
-          <div className="mx-0 xl:col-span-2 flex-col lg:flex-row flex gap-6 z-10 relative justify-center lg:justify-start 2xl:pl-0 max-w-[1020px] 2xl:max-w-full mx-auto 2xl:mx-0">
+          <div className="lg:col-span-2 flex gap-8 flex-col lg:flex-row lg:items-start relative">
             {!showSglt2iReasoning && (
-              <div className="2xl:block justify-center mx-auto w-full max-w-[500px] min-[1920px]:max-w-[620px]">
+              <div className="w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex flex-col items-stretch justify-start 2xl:block 2xl:mx-0 self-start min-[1920px]:max-w-[620px]">
                 <Image
                   quality={100}
                   src={currentStepImage || "/step1.png"}
@@ -221,7 +221,7 @@ function CaseResultContent({
             )}
 
             {/* Guidelines and SGLT2i Accordions */}
-            <div className="space-y-4 2xl:ml-auto 2xl:pr-0 max-w-[500px] min-[1920px]:max-w-[620px] mx-auto">
+            <div className="flex min-w-0 w-full max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] min-[1920px]:max-w-[620px] flex-1 basis-0 flex-col items-stretch justify-start 2xl:mx-0 patient-panel-full self-start">
                {/* Medical Record */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -242,7 +242,7 @@ function CaseResultContent({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className={`2xl:w-[500px] h-fit ${openAccordion === 'sglt2i' ? 'pb-10' : ''}`}
+                  className={`h-fit ${openAccordion === 'sglt2i' ? 'pb-10' : ''}`}
                 >
                   <DynamicSglt2iAccordion
                     patientId={patient.id}
@@ -265,7 +265,7 @@ function CaseResultContent({
           </div>
 
           <div
-          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[44vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
             <div className="absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
