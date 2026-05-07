@@ -19,6 +19,7 @@ export default function HomepageButton() {
       aria-label="Return to Homepage"
     >
       <Image
+                  quality={100}
         src="/icons/home.png"
         alt="Home"
         title="Return to Homepage"

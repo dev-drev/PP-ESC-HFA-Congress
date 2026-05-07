@@ -45,6 +45,7 @@ export default function LockedRobertsView() {
             <h3 className="text-2xl font-medium text-white mb-6">Monitoring ECG</h3>
             <div className="relative">
               <Image
+                  quality={100}
                 src="/characters/02B.png"
                 alt="Robert - Monitoring"
                 title="Robert - Monitoring"
@@ -70,6 +71,7 @@ export default function LockedRobertsView() {
         >
           <div className="relative">
             <Image
+                  quality={100}
               src="/characters/02.png"
               alt="Robert - Current"
               title="Robert - Current"
@@ -97,6 +99,7 @@ export default function LockedRobertsView() {
             <h3 className="text-2xl font-medium text-white mb-6">Prescribe SGLT2i</h3>
             <div className="relative">
               <Image
+                  quality={100}
                 src="/characters/02A.png"
                 alt="Robert - SGLT2i"
                 title="Robert - SGLT2i"

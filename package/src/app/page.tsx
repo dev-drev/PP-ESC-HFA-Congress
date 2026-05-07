@@ -207,6 +207,7 @@ export default function PatientSelection() {
                     transition={{ duration: 0.5 }}
                   >
                     <Image
+                  quality={100}
                       src={patient.image}
                       alt={patient.name}
                       width={200}
@@ -220,6 +221,7 @@ export default function PatientSelection() {
                     <AnimatedPatientCircle />
                   ) : (
                     <Image
+                  quality={100}
                       src="/patient-circle.svg"
                       alt="Patient circle"
                       title="Patient circle"
@@ -263,6 +265,7 @@ export default function PatientSelection() {
                         transition={{ duration: 0.5 }}
                       >
                         <Image
+                  quality={100}
                           src={patient.image}
                           alt={patient.name}
                           title={patient.name}

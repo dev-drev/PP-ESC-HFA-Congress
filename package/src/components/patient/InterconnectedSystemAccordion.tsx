@@ -95,6 +95,7 @@ export default function InterconnectedSystemAccordion({
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
                 
                   <Image
+                  quality={100}
                     src="/PP-new/guidelines-vcf.png"
                     alt="Placeholder image 2"
                     title="Placeholder image 2"

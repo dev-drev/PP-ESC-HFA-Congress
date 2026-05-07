@@ -404,6 +404,7 @@ export default function ActionSelector({
                 >
                   <span className="font-medium text-lg 2xl:text-2xl">{proceedText}</span>
                   <Image
+                  quality={100}
                     src="/arrow-yellow-blur.svg"
                     alt="Arrow"
                     title="Arrow"
@@ -422,6 +423,7 @@ export default function ActionSelector({
                   className="w-full p-5 rounded-2xl lg:rounded-full  text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/20 border-4 border-[#044449] text-white"
                 >
                   <Image
+                  quality={100}
                     src="/arrow-gray.svg"
                     alt="Arrow"
                     title="Arrow"
@@ -446,6 +448,7 @@ export default function ActionSelector({
                   className="flex-1 p-5 rounded-2xl lg:rounded-full  text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/80 border-4 border-[#044449] text-white"
                 >
                   <Image
+                  quality={100}
                     src="/arrow-gray.svg"
                     alt="Arrow"
                     title="Arrow"
@@ -463,6 +466,7 @@ export default function ActionSelector({
                 >
                   <span className="font-medium text-lg 2xl:text-2xl">{proceedText}</span>
 <Image
+                  quality={100}
                   src="/arrow-yellow-blur.svg"
                   alt="Arrow"
                   title="Arrow"
@@ -503,6 +507,7 @@ export default function ActionSelector({
             >
               {(action.id === 'go-back' || action.id === 'time-travel') && (
                 <Image
+                  quality={100}
                   src="/arrow-gray.svg"
                   alt="Arrow"
                   title="Arrow"
@@ -514,6 +519,7 @@ export default function ActionSelector({
               <span className="font-medium text-lg 2xl:text-2xl">{action.text}</span>
               {action.id === 'restart' ? (
                 <Image
+                  quality={100}
                   src="/restart-icon.svg"
                   alt="Restart"
                   title="Restart"
@@ -523,6 +529,7 @@ export default function ActionSelector({
                 />
               ) : action.id !== 'go-back' && action.id !== 'time-travel' ? (
                 <Image
+                  quality={100}
                   src={
                     action.id === 'add-loop-diuretic' || action.id === 'monitoring' || action.id === 'optimize-antihypertensive' || action.id === 'continue_acei' || action.id === 'beta_blocker'
                       ? '/arrow-yellow-blur.svg'
@@ -562,6 +569,7 @@ export default function ActionSelector({
         >
           {(action.id === 'go-back' || action.id === 'time-travel') && (
             <Image
+                  quality={100}
               src="/arrow-gray.svg"
               alt="Arrow"
               title="Arrow"
@@ -573,6 +581,7 @@ export default function ActionSelector({
           <span className="font-medium text-md 2xl:text-xl">{action.text}</span>
           {action.id === 'restart' ? (
 <Image
+                  quality={100}
                 src="/restart-icon.svg"
                 alt="Restart"
                 title="Restart"
@@ -582,6 +591,7 @@ export default function ActionSelector({
               />
           ) : action.id !== 'go-back' && action.id !== 'time-travel' ? (
             <Image
+                  quality={100}
               src={
                 (selectedAction?.id === action.id && (action.id === 'add-loop-diuretic' || action.id === 'add_loop_diuretic' || action.id === 'monitoring' || action.id === 'optimize-antihypertensive' || action.id === 'continue_acei' || action.id === 'beta_blocker' || action.id === 'prescribe_sglt2i_mra' || action.id === 'prescribe_sglt2i' || action.id === 'add_sglt2i_loop_diuretic' || action.id === 'confirm-ckd-initiate-sglt2i' || action.id === 'uptitrate-statin-diuretic' || action.id === 'initiate-sglt2i-erik' || action.id === 'continue-monitoring-erik' || action.id === 'add-sglt2i-erik' || action.id === 'intensify-statin' || action.id === 'confirm_sglt2i_followup' || action.id === 'add_beta_blocker' || action.id === 'proceed-erik-flow1' || action.id === 'proceed-james-flow1'))
                   ? '/arrow-yellow-blur.svg'

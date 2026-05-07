@@ -192,20 +192,19 @@ function CaseResultContent({
 
 
       <div className="mx-auto px-4 ">
-        <div className="grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px]">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px]">
           {/* Left Column - Patient Info, Image and Medical Record */}
-          <div className="2xl:col-span-1 mt-[30dvh] 2xl:mt-0 2xl:mb-0">
+          <div className="xl:col-span-1 mt-[30dvh] xl:mt-0 xl:mb-0">
             {/* Patient Header and Quote */}
             <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] 2xl:max-w-[300px] 2xl:-translate-x-6">{renderPatientHeader()}</div>
-
-           
           </div>
 
           {/* Right Column - Guidelines and Background Image */}
-          <div className="mx-0 lg:col-span-2 flex-col lg:flex-row flex gap-8 z-10 relative justify-center lg:justify-start 2xl:pl-0 max-w-[1020px] 2xl:max-w-full mx-auto 2xl:mx-0">
+          <div className="mx-0 xl:col-span-2 flex-col lg:flex-row flex gap-8 z-10 relative justify-center lg:justify-start 2xl:pl-0 max-w-[1020px] 2xl:max-w-full mx-auto 2xl:mx-0">
             {!showSglt2iReasoning && (
               <div className="2xl:block justify-center mx-auto">
                 <Image
+                  quality={100}
                   src={currentStepImage || "/step1.png"}
                   alt="What would you like to do next?"
                   title="What would you like to do next?"
@@ -259,15 +258,14 @@ function CaseResultContent({
             </div>
           </div>
 
-          {/* Disclaimer */}
-          <div className="text-left mt-[10px]">
+          <div className="hidden xl:block text-left mt-[10px] col-span-full">
             <p className="text-white/60 text-sm">
               Not an actual patient. Visuals created with the help of AI.
             </p>
           </div>
 
           <div
-          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen 2xl:w-[40vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen 2xl:w-[43vw] xl:w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
             <div className="absolute inset-y-0 right-0 z-[2] hidden w-[30%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
@@ -275,6 +273,7 @@ function CaseResultContent({
               src={backgroundImage}
               alt="Background"
               title="Background"
+              quality={100}
               width={1200}
               height={1600}
               className="relative z-0 h-full w-full object-cover object-top 2xl:object-right-top"

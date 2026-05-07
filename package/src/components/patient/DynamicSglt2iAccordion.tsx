@@ -55,6 +55,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/icons/28c.png"
                     alt="Kidney"
                     title="Kidney"
@@ -78,6 +79,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/kdigosglt2i.png"
                     alt="kdigo-sglt2i"
                     title="KDIGO SGLT2i"
@@ -100,7 +102,8 @@ export default function DynamicSglt2iAccordion({
                 <p className="text-base text-gray-700">
                   The KDIGO Heatmap is a risk stratification tool that integrates eGFR and uACR to categorize patients into prognostic risk levels using a color-coded grid.<sup>2</sup>
                 </p>
-                <Image src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
+                <Image
+                  quality={100} src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
                 <p className="text-base text-gray-700">
                   These risk categories indicate the likelihood of CKD progression, CV events, and mortality, helping clinicians make informed decisions on monitoring frequency, specialist referrals, and treatment adjustments.<sup>2</sup>
                 </p>
@@ -144,6 +147,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/icons/28c.png"
                     alt="Kidney"
                     title="Kidney"
@@ -168,6 +172,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/kdigosglt2i.png"
                     alt="kdigo-sglt2i"
                     title="KDIGO SGLT2i"
@@ -190,7 +195,8 @@ export default function DynamicSglt2iAccordion({
                 <p className="text-base text-gray-700">
                   The KDIGO Heatmap is a risk stratification tool that integrates eGFR and uACR to categorize patients into prognostic risk levels using a color-coded grid.<sup>2</sup>
                 </p>
-                <Image src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
+                <Image
+                  quality={100} src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
                 <p className="text-base text-gray-700">
                   These risk categories indicate the likelihood of CKD progression, CV events, and mortality, helping clinicians make informed decisions on monitoring frequency, specialist referrals, and treatment adjustments.<sup>2</sup>
                 </p>
@@ -234,6 +240,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/icons/28c.png"
                     alt="Kidney"
                     title="Kidney"
@@ -258,6 +265,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/kdigosglt2i.png"
                     alt="kdigo-sglt2i"
                     title="KDIGO SGLT2i"
@@ -280,7 +288,8 @@ export default function DynamicSglt2iAccordion({
                 <p className="text-base text-gray-700">
                   The KDIGO Heatmap is a risk stratification tool that integrates eGFR and uACR to categorize patients into prognostic risk levels using a color-coded grid.<sup>2</sup>
                 </p>
-                <Image src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
+                <Image
+                  quality={100} src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
                 <p className="text-base text-gray-700">
                   These risk categories indicate the likelihood of CKD progression, CV events, and mortality, helping clinicians make informed decisions on monitoring frequency, specialist referrals, and treatment adjustments.<sup>2</sup>
                 </p>
@@ -323,6 +332,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/icons/28c.png"
                     alt="Kidney"
                     title="Kidney"
@@ -356,6 +366,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/icons/28c.png"
                     alt="Kidney"
                     title="Kidney"
@@ -381,6 +392,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/kdigosglt2i.png"
                     alt="kdigo-sglt2i"
                     title="KDIGO SGLT2i"
@@ -403,7 +415,8 @@ export default function DynamicSglt2iAccordion({
                 <p className="text-base text-gray-700">
                   The KDIGO Heatmap is a risk stratification tool that integrates eGFR and uACR to categorize patients into prognostic risk levels using a color-coded grid.<sup>2</sup>
                 </p>
-                <Image src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
+                <Image
+                  quality={100} src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
                 <p className="text-base text-gray-700">
                   These risk categories indicate the likelihood of CKD progression, CV events, and mortality, helping clinicians make informed decisions on monitoring frequency, specialist referrals, and treatment adjustments.<sup>2</sup>
                 </p>
@@ -444,6 +457,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/icons/28c.png"
                     alt="Kidney"
                     title="Kidney"
@@ -468,6 +482,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/kdigosglt2i.png"
                     alt="kdigo-sglt2i"
                     title="KDIGO SGLT2i"
@@ -491,7 +506,8 @@ export default function DynamicSglt2iAccordion({
                 <p className="text-base text-gray-700">
                   The KDIGO Heatmap is a risk stratification tool that integrates eGFR and uACR to categorize patients into prognostic risk levels using a color-coded grid.<sup>2</sup>
                 </p>
-                <Image src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
+                <Image
+                  quality={100} src="/guidelines-tips.png" alt="Guidelines" title="Guidelines" width={420} height={300} className="rounded-lg w-full h-auto" />
                 <p className="text-base text-gray-700">
                   These risk categories indicate the likelihood of CKD progression, CV events, and mortality, helping clinicians make informed decisions on monitoring frequency, specialist referrals, and treatment adjustments.<sup>2</sup>
                 </p>
@@ -564,6 +580,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/PP-new/38.png"
                     alt="Heart"
                     title="Heart"
@@ -587,6 +604,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="mb-6">
                   <Image
+                  quality={100}
                     src="/icons/sglti.png"
                     alt="SGLT2i"
                     title="SGLT2i"
@@ -663,6 +681,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/PP-new/38.png"
                     alt="Heart"
                     title="Heart"
@@ -686,6 +705,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="mb-6">
                   <Image
+                  quality={100}
                     src="/icons/sglti.png"
                     alt="SGLT2i"
                     title="SGLT2i"
@@ -762,6 +782,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="flex items-center justify-between mt-4">
                   <Image
+                  quality={100}
                     src="/PP-new/38.png"
                     alt="Heart"
                     title="Heart"
@@ -785,6 +806,7 @@ export default function DynamicSglt2iAccordion({
                 </p>
                 <div className="mb-6">
                   <Image
+                  quality={100}
                     src="/icons/sglti.png"
                     alt="SGLT2i"
                     title="SGLT2i"
@@ -863,6 +885,7 @@ export default function DynamicSglt2iAccordion({
               </p>
               <div className="flex items-center justify-between mt-4">
                 <Image
+                  quality={100}
                   src="/PP-new/38.png"
                   alt="Heart"
                   title="Heart"
@@ -893,6 +916,7 @@ export default function DynamicSglt2iAccordion({
               </p>
               <div className="mb-6">
                 <Image
+                  quality={100}
                   src="/icons/sglti.png"
                   alt="SGLT2i"
                   title="SGLT2i"
@@ -949,6 +973,7 @@ export default function DynamicSglt2iAccordion({
               </p>
               <div className="flex items-center justify-center mt-4">
                 <Image
+                  quality={100}
                   src="/icons/21A.png"
                   alt="Clinical reasoning"
                   title="Clinical reasoning"
@@ -975,6 +1000,7 @@ export default function DynamicSglt2iAccordion({
                 <div className="flex items-center justify-center mt-4 max-w-[340px] w-full mx-auto">
                   <div className="relative">
                     <Image
+                  quality={100}
                       src="/PP-new/21.png"
                       alt="Heart"
                       title="Heart"
@@ -1002,6 +1028,7 @@ export default function DynamicSglt2iAccordion({
 
                 <div className="mb-6">
                   <Image
+                  quality={100}
                     src="/icons/sglti.png"
                     alt="SGLT2i"
                     title="SGLT2i"
@@ -1078,6 +1105,7 @@ export default function DynamicSglt2iAccordion({
                 <div className="flex items-center justify-center mt-4 max-w-[340px] w-full mx-auto">
                   <div className="relative">
                     <Image
+                  quality={100}
                       src="/PP-new/21.png"
                       alt="Heart"
                       title="Heart"
@@ -1106,6 +1134,7 @@ export default function DynamicSglt2iAccordion({
 
                 <div className="mb-6">
                   <Image
+                  quality={100}
                     src="/icons/sglti.png"
                     alt="SGLT2i"
                     title="SGLT2i"
@@ -1184,6 +1213,7 @@ export default function DynamicSglt2iAccordion({
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
                 <div className="relative">
                   <Image
+                  quality={100}
                     src="/icons/21D.png"
                     alt="Heart"
                     title="Heart"
@@ -1211,6 +1241,7 @@ export default function DynamicSglt2iAccordion({
 
               <div className="mb-6">
                 <Image
+                  quality={100}
                   src="/icons/sglti.png"
                   alt="SGLT2i"
                   title="SGLT2i"
@@ -1297,6 +1328,7 @@ export default function DynamicSglt2iAccordion({
                   <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
                     <div className="relative">
                       <Image
+                  quality={100}
                         src="/icons/25A.png"
                         alt="Heart"
                         title="Heart"
@@ -1323,6 +1355,7 @@ export default function DynamicSglt2iAccordion({
                   <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
                     <div className="relative">
                       <Image
+                  quality={100}
                         src="/icons/25A.png"
                         alt="Heart"
                         title="Heart"
@@ -1353,6 +1386,7 @@ export default function DynamicSglt2iAccordion({
 
                   <div className="mb-6">
                     <Image
+                  quality={100}
                       src="/guidelines.png"
                       alt="SGLT2i"
                       title="SGLT2i guidelines"
@@ -1377,6 +1411,7 @@ export default function DynamicSglt2iAccordion({
 
                   <div className="mb-6">
                     <Image
+                  quality={100}
                       src="/guidelines.png"
                       alt="SGLT2i"
                       title="SGLT2i guidelines"
@@ -1459,6 +1494,7 @@ export default function DynamicSglt2iAccordion({
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
                 <div className="relative">
                   <Image
+                  quality={100}
                     src="/icons/25A.png"
                     alt="Heart"
                     title="Heart"
@@ -1486,6 +1522,7 @@ export default function DynamicSglt2iAccordion({
 
               <div className="mb-6">
                 <Image
+                  quality={100}
                   src="/guidelines.png"
                   alt="SGLT2i"
                   title="SGLT2i guidelines"

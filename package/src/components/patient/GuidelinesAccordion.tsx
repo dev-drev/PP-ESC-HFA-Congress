@@ -29,6 +29,7 @@ export default function GuidelinesAccordion({
       </p>
       <p className="text-gray-700">In patients living with HFrEF (LVEF ≤40%):</p>
       <Image
+                  quality={100}
         src="/PP-new/5year37.png"
         alt="Guidelines placeholder"
         title="Guidelines placeholder"
@@ -43,6 +44,7 @@ export default function GuidelinesAccordion({
     <div className="space-y-8 pb-4">
       <p className="text-gray-700">However, in practice<sup>7</sup>:</p>
       <Image
+                  quality={100}
         src="/PP-new/1in20.png"
         alt="Guidelines placeholder"
         title="Guidelines placeholder"
@@ -82,6 +84,7 @@ export default function GuidelinesAccordion({
               </p>
               <p className="text-gray-700">In patients living with HFpEF:</p>
               <Image
+                  quality={100}
                 src="/PP-new/5year45.png"
                 alt="HFpEF 5-year outcomes"
                 title="HFpEF 5-year outcomes"
@@ -103,7 +106,8 @@ export default function GuidelinesAccordion({
                 The guidelines recommend SGLT2is as Class I, Level A therapy for patients with HFmrEF (LVEF 41-49%) and HFpEF (LVEF ≥50%) to reduce the risk of HHF or CV death, which makes <b>SGLT2is the only class with Class I, Level A recommendation.</b> <sup>4</sup>
               </p>
               <div className="space-y-3">
-                <Image src="/icons/sglti.png" alt="Guidelines Image HFpEF" title="Guidelines Image HFpEF" width={420} height={300} className="rounded-lg w-full h-auto" />
+                <Image
+                  quality={100} src="/icons/sglti.png" alt="Guidelines Image HFpEF" title="Guidelines Image HFpEF" width={420} height={300} className="rounded-lg w-full h-auto" />
               </div>
             </div>
           ),
@@ -114,6 +118,7 @@ export default function GuidelinesAccordion({
             <div className="space-y-8 pb-4">
               <p className="text-gray-700">However, in practice<sup>5</sup>:</p>
               <Image
+                  quality={100}
                 src="/PP-new/1in14.png"
                 alt="HFpEF treatment gap"
                 title="HFpEF treatment gap"
@@ -146,7 +151,8 @@ export default function GuidelinesAccordion({
             … provide recommendations for the management of HFrEF (LVEF≤40%). The following four disease-modifying drugs should be administered to all patients with HFrEF and up-titrated to optimal doses without significant delay.<sup>5,6</sup>
           </p>
           <div className="space-y-3 py-4">
-            <Image src="/guidelines.png" alt="Guidelines Image HFrEF" title="Guidelines Image HFrEF" width={420} height={300} className="rounded-lg w-full h-auto" />
+            <Image
+                  quality={100} src="/guidelines.png" alt="Guidelines Image HFrEF" title="Guidelines Image HFrEF" width={420} height={300} className="rounded-lg w-full h-auto" />
           </div>
         </div> },
         { id: "robert-slide-3", content: guidelineSlide3 },
@@ -166,6 +172,7 @@ export default function GuidelinesAccordion({
                 CVD is the #1 cause of death in patients with T2D<sup>1</sup>
               </p>
               <Image
+                  quality={100}
                 src="/PP-new/organism-heart.png"
                 alt="CVD risk in patients with T2D"
                 title="CVD risk in patients with T2D"
@@ -188,7 +195,8 @@ export default function GuidelinesAccordion({
                 The guidelines recommend SGLT2is as Class I, Level A therapy for patients with <b>ASCVD and T2D</b> to reduce cardiovascular risk, for patients with <b>T2D and HF</b> (HFpEF, HFmrEF, HFrEF) to reduce the risk of HHF and CV death, and for patients with <b>T2D and CKD</b> to reduce the CV and kidney failure risk - independent of glucose control and in addition to standard of care.<sup>3</sup>
               </p>
               <div className="space-y-3">
-                <Image src="/icons/sglti.png" alt="Guidelines Image T2D" title="Guidelines Image T2D" width={420} height={300} className="rounded-lg w-full h-auto" />
+                <Image
+                  quality={100} src="/icons/sglti.png" alt="Guidelines Image T2D" title="Guidelines Image T2D" width={420} height={300} className="rounded-lg w-full h-auto" />
               </div>
               <p className="text-gray-700 font-bold text-xl py-6">
                 Don&apos;t miss the moment.
@@ -213,6 +221,7 @@ export default function GuidelinesAccordion({
                 <b>But, uACR</b> identifies CV risk much earlier than eGFR decline.<sup>7</sup>
               </p>
               <Image
+                  quality={100}
                 src="/PP-new/uACR-symbols.png"
                 alt="uACR and eGFR"
                 title="uACR and eGFR"
@@ -231,6 +240,7 @@ export default function GuidelinesAccordion({
                 Early intervention can help reduce cardio-renal risk progression in patients with T2D and established CVD.<sup>1,3-5</sup>
               </p>
               <Image
+                  quality={100}
                 src="/PP-new/guidelines-vcf.png"
                 alt="Early intervention for cardio-renal risk"
                 title="Early intervention for cardio-renal risk"
@@ -267,6 +277,7 @@ export default function GuidelinesAccordion({
                 using a color-coded grid.<sup>2</sup>
               </p>
               <Image
+                  quality={100}
                 src="/guidelines-tips.png"
                 alt="Guidelines"
                 title="Guidelines tips"
@@ -313,6 +324,7 @@ export default function GuidelinesAccordion({
                 using a color-coded grid.<sup>2</sup>
               </p>
               <Image
+                  quality={100}
                 src="/guidelines-tips.png"
                 alt="Guidelines"
                 title="Guidelines tips"
@@ -348,7 +360,8 @@ export default function GuidelinesAccordion({
         … provide comprehensive recommendations for the management of heart failure across the spectrum of ejection fraction.<sup>1,2</sup>
         </p>
         <div className="space-y-3">
-          <Image src="/guidelines.png" alt="Guidelines Image" title="Guidelines Image" width={420} height={300} className="rounded-lg w-full h-auto" />
+          <Image
+                  quality={100} src="/guidelines.png" alt="Guidelines Image" title="Guidelines Image" width={420} height={300} className="rounded-lg w-full h-auto" />
         </div>
       </div>
     );

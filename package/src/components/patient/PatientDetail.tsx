@@ -616,6 +616,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           >
             <div className="relative h-full w-full" aria-hidden>
               <Image
+                  quality={100}
                 src={splitHeroImageSrc!}
                 alt=""
                 fill
@@ -680,6 +681,19 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               >
                 {renderPatientHeader()}
               </div>
+              <div
+                className={`pl-4 2xl:pl-0 relative z-30 w-full mt-2 ${
+                  useStage3NarrowLayout
+                    ? 'flex justify-start'
+                    : isSplitHeroDesktop
+                    ? 'flex justify-start lg:-translate-x-2 xl:-translate-x-2 2xl:-translate-x-0 xl:mt-[550px]'
+                    : 'flex justify-center 2xl:justify-start'
+                } ${isSplitHeroStacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}
+              >
+                <p className="text-white/60 text-sm">
+                  Not an actual patient. Visuals created with the help of AI.
+                </p>
+              </div>
                 {showInlinePatientPhoto && <div
                   className={currentPatientData.name === 'Linda' ? '' : currentPatientData.name === 'Joana' ? '' : '2xl:w-[448px]'}
                   style={{
@@ -705,6 +719,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                           }}
                         >
                           <Image
+                  quality={100}
                             src={isSplitHeroStacked ? splitHeroImageSrc! : currentPatientData.imageSrc}
                             alt={currentPatientData.name}
                             title={currentPatientData.name}
@@ -717,16 +732,6 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                       </div>
                   </div>}
 
-                  {/* Disclaimer — split hero mobile: overlay in basso sull’hero; tablet: riga full width; desktop: striscia fissa / overlay inline */}
-                  {!useStage3NarrowLayout && !isTabletSplitHero && !isSplitHeroDesktop && !(isSplitHeroStacked && isSmartphone) && (
-                  <div
-                    className={`text-left mt-4 mb-4 ${showInlinePatientPhoto ? 'lg:hidden' : ''}`}
-                  >
-                    <p className="text-white/60 text-xs">
-                      Not an actual patient. Visuals created with the help of AI.
-                    </p>
-                  </div>
-                  )}
             </div>
 
 
@@ -773,6 +778,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             {!showSglt2iReasoning && (
               <div className={useStage3NarrowLayout ? "" : "w-full min-w-0"}>
                 <Image
+                  quality={100}
                   src={currentStepImage}
                   alt="What would you like to do next?"
                   title="What would you like to do next?"
@@ -865,17 +871,13 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           </div>
           </div>
 
-          <div className="text-left mt-[10px] col-span-full">
-            <p className="text-white/60 text-sm">
-              Not an actual patient. Visuals created with the help of AI.
-            </p>
-          </div>
         </div>
 
         {/* Background image for SGLT2i reasoning */}
         {showSglt2iReasoning && currentPatientData.backgroundSrc && (
           <div className="relative overflow-hidden mb-6">
             <Image
+                  quality={100}
               src={currentPatientData.backgroundSrc}
               alt="Background"
               title="Background"
@@ -897,6 +899,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             }}
           >
             <Image
+                  quality={100}
               src={splitHeroImageSrc!}
               alt={`${patient.name} — hero`}
               title={`${patient.name} — hero`}

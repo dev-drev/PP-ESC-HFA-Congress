@@ -33,6 +33,7 @@ export default function ClinicalReasoningAccordion({
               <div className="flex items-center justify-between mt-4 max-w-[380px] w-full mx-auto">
                 <div className="relative">
                   <Image
+                  quality={100}
                     src="/icons/21C.png"
                     alt="Heart"
                     title="Heart"
@@ -63,6 +64,7 @@ export default function ClinicalReasoningAccordion({
 
               <div className="mb-6">
                 <Image
+                  quality={100}
                   src="/icons/sglti.png"
                   alt="Heart"
                   title="SGLT2i"
@@ -101,6 +103,7 @@ export default function ClinicalReasoningAccordion({
                 </div>
                 <div className="w-[100px] h-[100px] rounded-full bg-white overflow-hidden flex-shrink-0">
                   <Image
+                  quality={100}
                     src="/avatars/robert.png"
                     alt="Robert"
                     title="Robert"
@@ -141,6 +144,7 @@ export default function ClinicalReasoningAccordion({
               <div className="flex items-center justify-center mt-4 max-w-[380px] w-full mx-auto">
                 <div className="relative">
 <Image
+                  quality={100}
                   src="/icons/25A.png"
                   alt="Heart"
                   title="Heart"
@@ -171,7 +175,8 @@ export default function ClinicalReasoningAccordion({
               </p>
 
               <div className="mb-6">
-                <Image 
+                <Image
+                  quality={100} 
                   src="/icons/sglti.png"
                   alt="Heart"
                   width={400}

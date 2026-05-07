@@ -173,6 +173,7 @@ export default function PatientSelection() {
                   className={`absolute top-[-120px] transform z-20 ${patient.id === 'robert' ? 'right-auto ml-[15px]' : 'right-auto'}`}
                 >
                   <Image
+                  quality={100}
                     src="/arrow.svg"
                     alt="Selected"
                     title="Selected"
@@ -182,6 +183,7 @@ export default function PatientSelection() {
                 </motion.div>
               )}
                   <Image
+                  quality={100}
                     src={patient.image}
                     alt={patient.name}
                     title={patient.name}
@@ -194,6 +196,7 @@ export default function PatientSelection() {
                     <AnimatedPatientCircle />
                   ) : (
                     <Image
+                  quality={100}
                       src="/patient-circle.svg"
                       alt="Patient circle"
                       title="Patient circle"

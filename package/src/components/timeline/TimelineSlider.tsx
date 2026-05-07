@@ -33,6 +33,7 @@ export default function TimelineSlider({
         <div className="background-timeline-1"></div>
         <div className="background-timeline-2"></div>
         <Image
+                  quality={100}
           src="/timeline.svg"
           alt="Timeline"
           title="Timeline"
@@ -51,6 +52,7 @@ export default function TimelineSlider({
         <div className="background-timeline-1"></div>
         <div className="background-timeline-2"></div>
         <Image
+                  quality={100}
           src="/timeline.svg"
           alt="Timeline"
           title="Timeline"

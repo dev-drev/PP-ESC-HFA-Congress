@@ -55,11 +55,17 @@ export default function RootLayout({
         </Suspense>
         {/* In flusso a fine pagina (non fixed), così non copre contenuti su schermi bassi */}
         <div className="relative z-10 w-full bg-[#056368] shadow-[0_-6px_24px_rgba(0,0,0,0.12)]">
+          <div className="xl:hidden w-full px-4 pt-3">
+            <p className="text-white/60 text-xs text-left">
+              Not an actual patient. Visuals created with the help of AI.
+            </p>
+          </div>
           <ConditionalReferencesButton />
           {SHOW_QR_LEGAL_FOOTER && (
             <div className="w-full px-4 py-6 flex justify-center">
               <div className="w-full max-w-[260px] md:max-w-[300px] rounded-2xl p-4 bg-[#066368] flex flex-col md:flex-row md:items-start gap-3 text-center md:text-left">
                 <Image
+                  quality={100}
                   src="/spanish-qr.png"
                   alt="Spanish QR"
                   width={80}
@@ -86,12 +92,13 @@ export default function RootLayout({
         </div>
         <HomepageButton />
         <Image
+                  quality={100}
           src="/logo-white.svg"
           alt="Logo"
           width={120}
           height={60}
           priority
-          className="fixed z-40 h-auto w-18 top-6 md:top-4 xl:top-5 right-3 pointer-events-none select-none opacity-80 md:top-7 md:right-6 md:w-30"
+          className="fixed z-40 h-auto w-18 top-6 md:top-4 xl:top-5 right-3 pointer-events-none select-none opacity-80 md:top-7 md:right-6 md:w-30 xl:md:w-40"
         />
         <Analytics />
       </body>
