@@ -550,10 +550,10 @@ Dietary guidance for dialysis patients`;
   };
 
   return (
-    <div className="w-full 2xl:w-[500px] bg-white/70 backdrop-blur-lg rounded-4xl z-30 relative">
+    <div className="w-full 2xl:w-[500px] min-[1920px]:w-[620px] bg-white/70 backdrop-blur-lg rounded-4xl z-30 relative">
       <button
         onClick={handleToggle}
-        className="w-full bg-white/80 border border-white text-[#585858] backdrop-blur-lg text-[20px] lg:text-[32px] font-bold px-6 lg:px-10 py-4 rounded-xl 2xl:rounded-4xl flex items-center justify-between hover:bg-white/90 transition-colors"
+        className="w-full bg-white/80 border border-white text-[#585858] backdrop-blur-lg text-[20px] lg:text-[32px] min-[1920px]:text-[2.2rem] font-bold px-6 lg:px-10 min-[1920px]:px-12 py-4 min-[1920px]:py-5 rounded-xl 2xl:rounded-4xl flex items-center justify-between hover:bg-white/90 transition-colors"
       >
         <span>Medical Record</span>
         <motion.svg
@@ -585,7 +585,7 @@ Dietary guidance for dialysis patients`;
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 px-8 py-6 gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 px-8 py-6 gap-10 min-[1920px]:px-10 min-[1920px]:py-8 min-[1920px]:gap-12">
       <div className="">
         <div>
           <h3 className="text-md text-gray-700 font-bold mb-1">
@@ -725,7 +725,7 @@ Dietary guidance for dialysis patients`;
       </div>
 
       {/* Right Column - Medical Metrics */}
-      <div className="space-y-5">
+      <div className="space-y-5 min-[1920px]:space-y-6">
       
 
         {caseMetrics.heartRate && caseMetrics.heartRate !== 'not ordered' && caseMetrics.heartRate !== 'not tested' && patient.name !== 'Joana' && patient.name !== 'James' && patient.name !== 'Erik' && (

@@ -555,7 +555,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         <div className="flex gap-6 items-center">
        
           <div className="pl-[0px] relative">
-            <h1 className={`text-[32px] font-semibold text-white lg:text-5xl mb-3 ${isSplitHeroDesktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]' : ''}`}>
+            <h1 className={`text-[32px] font-semibold text-white lg:text-5xl min-[1920px]:text-[3.4rem] mb-3 ${isSplitHeroDesktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]' : ''}`}>
               {currentPatientData.name}, {currentPatientData.age}
             </h1>
             <AnimatePresence mode="wait">
@@ -564,7 +564,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 transition={{ duration: 0.3 }}
               >
                 {currentPatientData.quote && (
-                  <div className={`text-white text-md 2xl:text-lg relative max-w-md mt-1 text-balance ${isSplitHeroDesktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]' : ''}`}>
+                  <div className={`text-white text-md 2xl:text-lg min-[1920px]:text-xl relative max-w-md mt-1 text-balance ${isSplitHeroDesktop ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]' : ''}`}>
                     "{currentPatientData.quote}"
                   </div>
                 )}
@@ -642,19 +642,19 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
 
         <div
-          className={`relative z-30 mx-auto flex w-full max-w-[1700px] justify-center px-4 2xl:px-8 ${
+          className={`relative z-30 mx-auto flex w-full max-w-[1700px] min-[1920px]:max-w-[2000px] justify-center px-4 2xl:px-8 ${
             useStage3NarrowLayout ? '' : 'patient-shell-fullwidth'
           } ${isSplitHeroStacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
         >
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
 
-      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] 2xl:max-w-[1700px] patient-shell-fullwidth'}`}>
+      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px] 2xl:max-w-[2000px] patient-shell-fullwidth'}`}>
 
         <div
           className={`relative z-20 ${
             useStage3NarrowLayout
-              ? 'grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px]'
+              ? 'grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]'
               : `grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 ${
                   isSplitHeroDesktop ? 'lg:min-h-[var(--joana-ap1-hero-height)]' : ''
                 }`
@@ -675,7 +675,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                   useStage3NarrowLayout
                     ? 'flex justify-start'
                     : isSplitHeroDesktop
-                    ? 'flex justify-start lg:-translate-x-2 xl:-translate-x-2 2xl:-translate-x-0'
+                    ? 'flex justify-start lg:-translate-x-2 xl:-translate-x-2 2xl:-translate-x-0 min-[1920px]:-translate-x-6'
                     : 'flex justify-center 2xl:justify-start'
                 } ${isSplitHeroStacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}
               >
@@ -774,7 +774,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           >
              {/* What would you like to do next? - Visual placeholder */}
 
-<div className={useStage3NarrowLayout ? "w-full max-w-[440px] mx-auto md:flex-1 md:basis-0 md:max-w-none md:min-w-0 md:mx-0" : "w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex flex-col items-stretch justify-start 2xl:block 2xl:mx-0 self-start"}>
+<div className={useStage3NarrowLayout ? "w-full max-w-[440px] mx-auto md:flex-1 md:basis-0 md:max-w-none md:min-w-0 md:mx-0" : "w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex flex-col items-stretch justify-start 2xl:block 2xl:mx-0 self-start min-[1920px]:max-w-[620px]"}>
             {!showSglt2iReasoning && (
               <div className={useStage3NarrowLayout ? "" : "w-full min-w-0"}>
                 <Image
@@ -785,7 +785,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                   width={500}
                   height={200}
                   sizes="(max-width: 1023px) 92vw, (max-width: 1700px) min(40vw, 500px), 500px"
-                  className={useStage3NarrowLayout ? "mb-6 h-auto w-full max-w-[440px] object-contain mx-auto overflow-hidden" : "mb-6 h-auto w-full max-w-[clamp(17rem,32vw,31.25rem)] object-contain mx-0 patient-panel-full"}
+                  className={useStage3NarrowLayout ? "mb-6 h-auto w-full max-w-[440px] object-contain mx-auto overflow-hidden" : "mb-6 h-auto w-full max-w-[clamp(18rem,38vw,31.25rem)] min-[1920px]:max-w-[620px] object-contain mx-0 patient-panel-full"}
                 />
               </div>
             )}
@@ -804,7 +804,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
       />
     </div>
 
-<div className={useStage3NarrowLayout ? "space-y-4 max-w-[500px] mx-auto md:flex-1 md:basis-0 md:max-w-none md:min-w-0 md:mx-0 2xl:ml-auto 2xl:pr-8 2xl:max-w-[500px]" : "flex min-w-0 w-full max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] flex-1 basis-0 flex-col items-stretch justify-start 2xl:mx-0 patient-panel-full self-start"}>
+<div className={useStage3NarrowLayout ? "space-y-4 max-w-[500px] mx-auto md:flex-1 md:basis-0 md:max-w-none md:min-w-0 md:mx-0 2xl:ml-auto 2xl:pr-0 2xl:max-w-[500px] min-[1920px]:max-w-[620px]" : "flex min-w-0 w-full max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] min-[1920px]:max-w-[620px] flex-1 basis-0 flex-col items-stretch justify-start 2xl:mx-0 patient-panel-full self-start"}>
     {/* Medical Record */}
             <motion.div
               key={`medical-${animationKey}`}
@@ -825,7 +825,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               showInterconnectedSystem ? (
                 <motion.div
                   key={`interconnected-${animationKey}`}
-                  className="w-full patient-panel-full 2xl:w-[500px] bg-white/70 backdrop-blur-lg rounded-4xl h-fit pb-10"
+                  className="w-full patient-panel-full 2xl:w-[500px] min-[1920px]:w-[620px] bg-white/70 backdrop-blur-lg rounded-4xl h-fit pb-10"
                 >
                   <InterconnectedSystemAccordion 
                     isOpen={true} 
@@ -916,6 +916,10 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
             <div
               aria-hidden
               className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 lg:block"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 left-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-r from-[#056368]/68 via-[#056368]/30 to-transparent lg:block"
             />
           </div>
         )}

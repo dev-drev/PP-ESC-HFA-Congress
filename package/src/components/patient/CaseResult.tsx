@@ -165,12 +165,12 @@ function CaseResultContent({
       <div className="flex justify-between items-start mb-6">
         <div className="flex gap-6 items-center">
           <div className="lg:pl-[0px]">
-            <h1 className="text-[32px] md:text-4xl font-semibold text-white 2xl:text-5xl mb-3 text-shadow-md">
+            <h1 className="text-[32px] md:text-4xl font-semibold text-white 2xl:text-5xl min-[1920px]:text-[3.4rem] mb-3 text-shadow-md">
               {patient.name}, {patientAge}
             </h1>
             <AnimatePresence mode="wait">
               <motion.div key={`quote-${quote.substring(0, 15)}`} transition={{ duration: 0.3 }}>
-                <div className="text-white text-md  md:text-lg 2xl:text-lg relative max-w-md mt-1 text-balance text-shadow-md">"{quote}"</div>
+                <div className="text-white text-md  md:text-lg 2xl:text-lg min-[1920px]:text-xl relative max-w-md mt-1 text-balance text-shadow-md">"{quote}"</div>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -192,17 +192,17 @@ function CaseResultContent({
 
 
       <div className="mx-auto px-4 ">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px]">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
           {/* Left Column - Patient Info, Image and Medical Record */}
           <div className="xl:col-span-1 mt-[30dvh] xl:mt-0 xl:mb-0">
             {/* Patient Header and Quote */}
-            <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] xl:max-w-[360px] 2xl:-translate-x-6">{renderPatientHeader()}</div>
+            <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] xl:max-w-[360px] 2xl:-translate-x-6 min-[1920px]:-translate-x-10">{renderPatientHeader()}</div>
           </div>
 
           {/* Right Column - Guidelines and Background Image */}
-          <div className="mx-0 xl:col-span-2 flex-col lg:flex-row flex gap-8 z-10 relative justify-center lg:justify-start 2xl:pl-0 max-w-[1020px] 2xl:max-w-full mx-auto 2xl:mx-0">
+          <div className="mx-0 xl:col-span-2 flex-col lg:flex-row flex gap-6 z-10 relative justify-center lg:justify-start 2xl:pl-0 max-w-[1020px] 2xl:max-w-full mx-auto 2xl:mx-0">
             {!showSglt2iReasoning && (
-              <div className="2xl:block justify-center mx-auto">
+              <div className="2xl:block justify-center mx-auto w-full max-w-[500px] min-[1920px]:max-w-[620px]">
                 <Image
                   quality={100}
                   src={currentStepImage || "/step1.png"}
@@ -210,7 +210,7 @@ function CaseResultContent({
                   title="What would you like to do next?"
                   width={500}
                   height={200}
-                  className="mb-6 overflow-hidden"
+                  className="mb-6 overflow-hidden w-full h-auto"
                 />
                 <ActionSelector
                   actions={actions.map(a => ({ id: a.id, text: a.text }))}
@@ -221,7 +221,7 @@ function CaseResultContent({
             )}
 
             {/* Guidelines and SGLT2i Accordions */}
-            <div className="space-y-4 2xl:ml-auto 2xl:pr-8 max-w-[500px] mx-auto">
+            <div className="space-y-4 2xl:ml-auto 2xl:pr-0 max-w-[500px] min-[1920px]:max-w-[620px] mx-auto">
                {/* Medical Record */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -265,10 +265,11 @@ function CaseResultContent({
           </div>
 
           <div
-          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen 2xl:w-[40vw] xl:w-[44vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[clamp(38rem,42vw,56vw)] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
-            <div className="absolute inset-y-0 right-0 z-[2] hidden w-[30%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
+            <div className="absolute inset-y-0 right-0 z-[2] hidden w-[30%] min-w-[8rem] max-w-[30%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
+            <div className="absolute inset-y-0 left-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-r from-[#056368]/68 via-[#056368]/30 to-transparent xl:block"></div>
             <Image
               src={backgroundImage}
               alt="Background"
@@ -276,9 +277,7 @@ function CaseResultContent({
               quality={100}
               width={1200}
               height={1600}
-              className={`relative z-0 h-full w-full object-cover object-top ${
-                patient.name === 'Joana' ? 'xl:object-center-top' : ''
-              }`}
+              className="relative z-0 h-full w-full object-cover object-top xl:object-right-top"
               priority
             />
           </div>

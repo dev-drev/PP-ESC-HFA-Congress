@@ -383,7 +383,7 @@ export default function ActionSelector({
         : 'Proceed';
 
   return (
-    <div className="space-y-4 max-w-[500px] z-10 w-full patient-panel-full">
+    <div className="space-y-4 min-[1920px]:space-y-5 max-w-[500px] min-[1920px]:max-w-[620px] z-10 w-full patient-panel-full">
       {/* Show Go Back and Proceed buttons if action is selected */}
       {showProceedButtons && (
         <motion.div
@@ -400,9 +400,9 @@ export default function ActionSelector({
                 {/* Proceed Button (See Robert again in five years) */}
                 <motion.button
                   onClick={handleProceed}
-                  className="w-full p-5 rounded-2xl lg:rounded-full  text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/20 border-4 border-yellow-400 text-white shadow-[0_0_20px_rgba(251,191,36,0.5)] focus:border-yellow-400 active:border-yellow-400 focus:outline-none"
+                  className="w-full p-5 min-[1920px]:p-6 rounded-2xl lg:rounded-full text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/20 border-4 border-yellow-400 text-white shadow-[0_0_20px_rgba(251,191,36,0.5)] focus:border-yellow-400 active:border-yellow-400 focus:outline-none"
                 >
-                  <span className="font-medium text-lg 2xl:text-2xl">{proceedText}</span>
+                  <span className="font-medium text-lg 2xl:text-2xl min-[1920px]:text-[1.65rem]">{proceedText}</span>
                   <Image
                   quality={100}
                     src="/arrow-yellow-blur.svg"
@@ -420,7 +420,7 @@ export default function ActionSelector({
                     const patientId = isHFrEF ? '2' : isJoana ? '3' : isJames ? '4' : isErik ? '5' : '1';
                     window.location.href = `/patient/${patientId}`;
                   }}
-                  className="w-full p-5 rounded-2xl lg:rounded-full  text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/20 border-4 border-[#044449] text-white"
+                  className="w-full p-5 min-[1920px]:p-6 rounded-2xl lg:rounded-full text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/20 border-4 border-[#044449] text-white"
                 >
                   <Image
                   quality={100}
@@ -431,7 +431,7 @@ export default function ActionSelector({
                     height={36}
                     className="mr-4 rotate-180 w-[32px] h-[32px] 2xl:w-[43px] 2xl:h-[43px]"
                   />
-                  <span className="font-medium text-lg 2xl:text-2xl">{goBackText}</span>
+                  <span className="font-medium text-lg 2xl:text-2xl min-[1920px]:text-[1.65rem]">{goBackText}</span>
                 </motion.button>
               </>
             )}
@@ -445,7 +445,7 @@ export default function ActionSelector({
                     const patientId = isHFrEF ? '2' : isJoana ? '3' : isJames ? '4' : isErik ? '5' : '1';
                     window.location.href = `/patient/${patientId}`;
                   }}
-                  className="flex-1 p-5 rounded-2xl lg:rounded-full  text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/80 border-4 border-[#044449] text-white"
+                  className="flex-1 p-5 min-[1920px]:p-6 rounded-2xl lg:rounded-full text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/80 border-4 border-[#044449] text-white"
                 >
                   <Image
                   quality={100}
@@ -456,15 +456,15 @@ export default function ActionSelector({
                     height={36}
                     className="mr-4 rotate-180 w-[32px] h-[32px] 2xl:w-[43px] 2xl:h-[43px]"
                   />
-                  <span className="font-medium text-lg 2xl:text-2xl">{goBackText}</span>
+                  <span className="font-medium text-lg 2xl:text-2xl min-[1920px]:text-[1.65rem]">{goBackText}</span>
                 </motion.button>
                 
                 {/* Proceed Button */}
                 <motion.button
                   onClick={handleProceed}
-                  className="flex-1 p-5 rounded-2xl lg:rounded-full  text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/20 border-4 border-yellow-400 text-white shadow-[0_0_20px_rgba(251,191,36,0.5)] focus:border-yellow-400 active:border-yellow-400 focus:outline-none"
+                  className="flex-1 p-5 min-[1920px]:p-6 rounded-2xl lg:rounded-full text-left transition-all duration-300 flex items-center justify-between relative bg-[#03585e]/20 border-4 border-yellow-400 text-white shadow-[0_0_20px_rgba(251,191,36,0.5)] focus:border-yellow-400 active:border-yellow-400 focus:outline-none"
                 >
-                  <span className="font-medium text-lg 2xl:text-2xl">{proceedText}</span>
+                  <span className="font-medium text-lg 2xl:text-2xl min-[1920px]:text-[1.65rem]">{proceedText}</span>
 <Image
                   quality={100}
                   src="/arrow-yellow-blur.svg"
@@ -483,7 +483,7 @@ export default function ActionSelector({
       
       {/* Top row with go-back and restart side by side */}
       {!showProceedButtons && topRowActions.length > 0 && (
-        <div className="flex gap-4">
+        <div className="flex gap-4 min-[1920px]:gap-5">
           {topRowActions.map((action, idx) => (
             <motion.button
               key={action.id}
@@ -491,7 +491,7 @@ export default function ActionSelector({
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: idx * 0.05, ease: 'easeOut' }}
               onClick={() => handleActionClick(action)}
-              className={`flex-1 p-5 rounded-2xl lg:rounded-full  text-left transition-all duration-300 flex items-center justify-between relative ${
+              className={`flex-1 p-5 min-[1920px]:p-6 rounded-2xl lg:rounded-full text-left transition-all duration-300 flex items-center justify-between relative ${
                 isEndCase
                   ? action.id === 'restart'
                     ? 'bg-[#03585e]/30 border-4 border-yellow-400 text-white shadow-[0_0_20px_rgba(251,191,36,0.5)]'
@@ -516,7 +516,7 @@ export default function ActionSelector({
                   className="mr-4 rotate-180 w-[32px] h-[32px] 2xl:w-[43px] 2xl:h-[43px]"
                 />
               )}
-              <span className="font-medium text-lg 2xl:text-2xl">{action.text}</span>
+              <span className="font-medium text-lg 2xl:text-2xl min-[1920px]:text-[1.65rem]">{action.text}</span>
               {action.id === 'restart' ? (
                 <Image
                   quality={100}
@@ -555,7 +555,7 @@ export default function ActionSelector({
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: index * 0.05, ease: 'easeOut' }}
           onClick={() => handleActionClick(action)}
-          className={`w-full py-5 px-8 rounded-2xl lg:rounded-full text-left transition-all duration-300 flex items-center justify-between relative ${
+          className={`w-full py-5 px-8 min-[1920px]:py-6 min-[1920px]:px-10 rounded-2xl lg:rounded-full text-left transition-all duration-300 flex items-center justify-between relative ${
             isEndCase
               ? action.id === 'restart'
                 ? 'bg-[#03585e]/20 border-4 border-yellow-400 text-white shadow-[0_0_20px_rgba(251,191,36,0.5)]'
@@ -578,7 +578,7 @@ export default function ActionSelector({
               className="mr-4 rotate-180 w-[32px] h-[32px] 2xl:w-[43px] 2xl:h-[43px]"
             />
           )}
-          <span className="font-medium text-md 2xl:text-xl">{action.text}</span>
+          <span className="font-medium text-md 2xl:text-xl min-[1920px]:text-2xl">{action.text}</span>
           {action.id === 'restart' ? (
 <Image
                   quality={100}

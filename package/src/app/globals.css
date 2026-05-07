@@ -70,17 +70,8 @@ body {
 
 
 
-@media (min-width: 1800px) {
-  body {
-    zoom: 1;
-  }
-}
-
-@media (min-width: 2540px) {
-  body {
-    zoom: 1.22;
-  }
-}
+/* Keep scale consistent across large desktop sizes.
+   Avoid body zoom, which causes layout jumps while resizing viewport. */
 
 @layer utilities {
   .text-balance {
