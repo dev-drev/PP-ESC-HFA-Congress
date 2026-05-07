@@ -14,7 +14,7 @@ export default function JoanaAddSGLT2iCasePage() {
         year={2036}
          age={67}
         quote="It's reassuring to know that the steps my doctor and I took years ago are still helping me stay stable today."
-        backgroundImage="/backgrounds/03A.jpg"
+        backgroundImage="/backgrounds/03A.png"
         currentStepImage="/next-steps/joana/final/step8.png"
         sglt2iAccordionTitle="Commit to standing against CV risk."
         showClinicalReasoning={true}

@@ -12,7 +12,7 @@ export default function JoanaFiveYearsPage() {
       year={2036}
       age={67}
       quote="I was recently hospitalised for heart failure. Breathing is harder now, and I feel like I’m not as independent as I used to be."
-      backgroundImage="/backgrounds/03C.jpg"
+      backgroundImage="/backgrounds/03C.png"
       currentStepImage="/next-steps/joana/final/step10.png"
       showClinicalReasoning={false}
        sglt2iAccordionTitle="Don't miss the moment"

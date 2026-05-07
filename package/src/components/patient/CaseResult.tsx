@@ -274,7 +274,11 @@ function CaseResultContent({
               quality={100}
               width={1200}
               height={1600}
-              className="relative z-0 h-full w-full object-cover object-right-top"
+              className={`relative z-0 h-full w-full object-cover ${
+                backgroundImage.includes('/backgrounds/03B')
+                  ? 'object-center-top'
+                  : 'object-right-top'
+              }`}
               priority
             />
           </div>
