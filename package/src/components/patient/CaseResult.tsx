@@ -192,15 +192,15 @@ function CaseResultContent({
       </div>
 
       <div className="relative z-10 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
-        <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
+        <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
           {/* Left Column - Patient Info, Image and Medical Record */}
-          <div className="2xl:col-span-1 mt-[30dvh] 2xl:mt-0 2xl:mb-0">
+          <div className="xl:col-span-1 mt-[30dvh] xl:mt-0 xl:mb-0">
             {/* Patient Header and Quote */}
             <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] xl:max-w-[360px] 2xl:-translate-x-6 min-[1920px]:-translate-x-10">{renderPatientHeader()}</div>
           </div>
 
           {/* Right Column - Guidelines and Background Image */}
-          <div className="lg:col-span-2 flex gap-8 flex-col lg:flex-row lg:items-start relative">
+          <div className="xl:col-span-2 flex gap-8 flex-col md:flex-row md:items-start relative z-10 justify-center md:justify-start max-w-[1020px] xl:max-w-full mx-auto xl:mx-0">
             {!showSglt2iReasoning && (
               <div className="w-full min-w-0 flex-1 basis-0 2xl:ml-[12px] flex flex-col items-stretch justify-start 2xl:block 2xl:mx-0 self-start min-[1920px]:max-w-[620px]">
                 <Image
