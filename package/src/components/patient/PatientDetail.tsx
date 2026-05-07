@@ -544,7 +544,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   const renderPatientHeader = () => {
     return (
       <div
-        className={`flex items-start ${
+        className={`flex xl:max-w-[320px] 2xl:max-w-[360px] items-start ${
           useStage3NarrowLayout
             ? 'justify-start'
             : isSplitHeroDesktop
@@ -649,7 +649,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
 
-      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] 2xl:max-w-[1800px] patient-shell-fullwidth'}`}>
+      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] 2xl:max-w-[1700px] patient-shell-fullwidth'}`}>
 
         <div
           className={`relative z-20 ${
@@ -890,12 +890,11 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
         {isSplitHeroDesktop && (
           <div
-            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[50vw] 2xl:w-[56vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{
               opacity: imageOpacity,
-              width: '50vw',
-              minWidth: '50vw',
-              maxWidth: '50vw',
+            
+             
             }}
           >
             <Image

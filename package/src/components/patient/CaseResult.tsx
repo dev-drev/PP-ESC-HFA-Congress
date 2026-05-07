@@ -196,7 +196,7 @@ function CaseResultContent({
           {/* Left Column - Patient Info, Image and Medical Record */}
           <div className="xl:col-span-1 mt-[30dvh] xl:mt-0 xl:mb-0">
             {/* Patient Header and Quote */}
-            <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] 2xl:max-w-[300px] 2xl:-translate-x-6">{renderPatientHeader()}</div>
+            <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] xl:max-w-[360px] 2xl:-translate-x-6">{renderPatientHeader()}</div>
           </div>
 
           {/* Right Column - Guidelines and Background Image */}
@@ -265,7 +265,7 @@ function CaseResultContent({
           </div>
 
           <div
-          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen 2xl:w-[43vw] xl:w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen 2xl:w-[40vw] xl:w-[44vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
             <div className="absolute inset-y-0 right-0 z-[2] hidden w-[30%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
