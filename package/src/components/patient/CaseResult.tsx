@@ -165,15 +165,15 @@ function CaseResultContent({
 
   const renderPatientHeader = () => {
     return (
-      <div className="flex justify-between items-start mb-6 xl:max-w-[250px] xl:ml-4 xl:mt-2 2xl:max-w-[300px]  ">
+      <div className="flex justify-between items-start mb-6 xl:max-w-[250px] xl:ml-0 xl:mt-2 2xl:ml-2 2xl:mt-2 2xl:max-w-[300px]  ">
         <div className="flex gap-6 items-center">
           <div className="lg:pl-[0px]">
-            <h1 className="text-[32px] md:text-4xl font-semibold text-white 2xl:text-5xl min-[1920px]:text-[3.4rem] mb-3 text-shadow-md">
+            <h1 className="text-[32px] font-semibold text-white lg:text-5xl min-[1920px]:text-[3.4rem] mb-3 text-shadow-md">
               {patient.name}, {patientAge}
             </h1>
             <AnimatePresence mode="wait">
               <motion.div key={`quote-${quote.substring(0, 15)}`} transition={{ duration: 0.3 }}>
-                <div className="text-white text-md  md:text-lg 2xl:text-lg min-[1920px]:text-xl relative max-w-md mt-1 text-balance text-shadow-md">"{quote}"</div>
+                <div className="text-white text-md 2xl:text-lg min-[1920px]:text-xl relative max-w-md mt-1 text-balance text-shadow-md">"{quote}"</div>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -199,7 +199,7 @@ function CaseResultContent({
           {/* Left Column - Patient Info, Image and Medical Record */}
           <div className="xl:col-span-1 mt-[30dvh] xl:mt-0 xl:mb-0">
             {/* Patient Header and Quote */}
-            <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] xl:max-w-[360px] 2xl:-translate-x-6 min-[1920px]:-translate-x-10">{renderPatientHeader()}</div>
+            <div className="mb-6 pl-4 2xl:pl-0 relative z-30 w-full flex justify-start xl:-translate-x-6 2xl:-translate-x-8 min-[1920px]:-translate-x-12">{renderPatientHeader()}</div>
           </div>
 
           {/* Right Column - Guidelines and Background Image */}
