@@ -42,6 +42,7 @@ function CaseResultContent({
   const [showSglt2iReasoning] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<'medical' | 'sglt2i' | null>('medical');
   const [backgroundOpacity, setBackgroundOpacity] = useState(1);
+  const [isSmartphone, setIsSmartphone] = useState(false);
   const patientAge = age || (year - (2025 - patient.age));
   const router = useRouter();
   const pathname = usePathname();
@@ -50,6 +51,7 @@ function CaseResultContent({
 
   useEffect(() => {
     const handleScroll = () => {
+      setIsSmartphone(window.innerWidth < 768);
       const isMobile = window.innerWidth < 1536;
 
       if (!isMobile) {
@@ -80,6 +82,10 @@ function CaseResultContent({
       window.removeEventListener('resize', handleScroll);
     };
   }, []);
+
+  const isJoanaCenteredMobileBackground =
+    backgroundImage.includes('/backgrounds/03A') ||
+    backgroundImage.includes('/backgrounds/03C');
 
   const actions = endActions || [
     {
@@ -275,7 +281,9 @@ function CaseResultContent({
               width={1200}
               height={1600}
               className={`relative z-0 h-full w-full object-cover ${
-                backgroundImage.includes('/backgrounds/03B')
+                isJoanaCenteredMobileBackground && isSmartphone
+                  ? 'object-center'
+                  : backgroundImage.includes('/backgrounds/03B')
                   ? 'object-center-top'
                   : 'object-right-top'
               }`}
