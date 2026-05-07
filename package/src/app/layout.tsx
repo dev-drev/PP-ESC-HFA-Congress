@@ -31,7 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preload" href="/background-1.jpg" as="image" title="Background" />
+        <link
+          rel="preload"
+          href="/background-1.jpg"
+          as="image"
+          title="Background"
+        />
         {/* Instatag (IT) - Adobe Analytics event tracking; digitalData must be defined before the snippet */}
         <script
           dangerouslySetInnerHTML={{
@@ -72,20 +77,25 @@ export default function RootLayout({
                   alt="Spanish QR"
                   width={80}
                   height={80}
-                  className="w-20 h-20 md:w-16 md:h-16 object-contain shrink-0 mx-auto md:mx-0"
+                  className="w-20 h-20 md:w-25 md:h-25 object-contain shrink-0 mx-auto md:mx-0"
                 />
                 <div className="text-white opacity-90">
                   <p className="text-xs md:text-[10px] font-bold leading-tight mb-1 md:mb-1">
                     PC-ES-118210-032026
                   </p>
                   <p className="text-[10px] md:text-[9px] leading-tight">
-                    Scan the QR code to access the Jardiance Summary of Product Characteristics.
+                    Scan the QR code to access the Jardiance Summary of Product
+                    Characteristics.
                   </p>
                   <p className="text-[10px] md:text-[9px] leading-tight mt-1">
-                    <b>PRESENTATION &amp; PRICE:</b> Jardiance 10 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 49.31. Jardiance 25 mg, pack of 30 film-coated tablets: RRP+VAT: EUR 51.52.
+                    <b>PRESENTATION &amp; PRICE:</b> Jardiance 10 mg, pack of 30
+                    film-coated tablets: RRP+VAT: EUR 49.31. Jardiance 25 mg,
+                    pack of 30 film-coated tablets: RRP+VAT: EUR 51.52.
                   </p>
                   <p className="text-[10px] md:text-[9px] leading-tight mt-1">
-                    <b>CONDITIONS OF PRESCRIPTION AND DISPENSING:</b> Medication subject to medical prescription. Reimbursable by the Spanish National Health System. Reduced contribution.
+                    <b>CONDITIONS OF PRESCRIPTION AND DISPENSING:</b> Medication
+                    subject to medical prescription. Reimbursable by the Spanish
+                    National Health System. Reduced contribution.
                   </p>
                 </div>
               </div>
@@ -94,7 +104,7 @@ export default function RootLayout({
         </div>
         <HomepageButton />
         <Image
-                  quality={100}
+          quality={100}
           src="/logo-white.svg"
           alt="Logo"
           width={120}
@@ -105,5 +115,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
