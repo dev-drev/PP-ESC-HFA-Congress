@@ -14,7 +14,7 @@ export default function JoanaOptimizeCasePage() {
         year={2036}
         age={67}
         quote="Some days are better than others, but I’m learning to live with my both heart and kidney issues"
-        backgroundImage="/backgrounds/03B.jpg"
+        backgroundImage="/backgrounds/03B.png"
         showClinicalReasoning={false}
         currentStepImage="/next-steps/joana/final/step9.png"
         sglt2iAccordionTitle="The earlier, the better."

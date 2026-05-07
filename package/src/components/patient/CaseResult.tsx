@@ -276,7 +276,9 @@ function CaseResultContent({
               quality={100}
               width={1200}
               height={1600}
-              className="relative z-0 h-full w-full object-cover object-top 2xl:object-right-top"
+              className={`relative z-0 h-full w-full object-cover object-top ${
+                patient.name === 'Joana' ? 'xl:object-center-top' : ''
+              }`}
               priority
             />
           </div>
