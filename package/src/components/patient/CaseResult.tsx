@@ -265,7 +265,7 @@ function CaseResultContent({
           </div>
 
           <div
-          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[43vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
             <div className="absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
@@ -277,7 +277,7 @@ function CaseResultContent({
               quality={100}
               width={1200}
               height={1600}
-              className="relative z-0 h-full w-full object-cover object-top xl:object-right-top"
+              className="relative z-0 h-full w-full object-cover object-right-top"
               priority
             />
           </div>
