@@ -46,6 +46,8 @@ function CaseResultContent({
   const patientAge = age || (year - (2025 - patient.age));
   const router = useRouter();
   const pathname = usePathname();
+  const isJoanaCase =
+    patient?.name?.toLowerCase() === "joana" || pathname.includes("joana");
 
   const getAp1Path = () => `/patient/${patient.id}`;
 
@@ -269,7 +271,11 @@ function CaseResultContent({
           </div>
 
           <div
-            className="left-0  top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[40vw] 2xl:w-[48vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className={`left-0  top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen ${
+              isJoanaCase
+                ? "xl:w-[52vw] 2xl:w-[52vw]"
+                : "xl:w-[40vw] 2xl:w-[49vw]"
+            } overflow-hidden transition-opacity duration-300 pointer-events-none`}
             style={{ opacity: backgroundOpacity }}
           >
             <div className="absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
