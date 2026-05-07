@@ -192,10 +192,9 @@ function CaseResultContent({
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="min-h-screen relative z-10 pb-40 bg-[#056368]"
     >
-
       <div className="relative z-30 mx-auto flex w-full max-w-[1700px] min-[1920px]:max-w-[2200px] justify-center px-4 2xl:px-8">
         <TimelineComponent activeYear={year} patientName={patient.name} />
       </div>
@@ -205,7 +204,9 @@ function CaseResultContent({
           {/* Left Column - Patient Info, Image and Medical Record */}
           <div className="xl:col-span-1 mt-[30dvh] xl:mt-0 xl:mb-0">
             {/* Patient Header and Quote */}
-            <div className="mb-6 pl-4 2xl:pl-0 relative z-30 w-full flex justify-start xl:-translate-x-6 2xl:-translate-x-8 min-[1920px]:-translate-x-12">{renderPatientHeader()}</div>
+            <div className="mb-6 pl-4 2xl:pl-0 relative z-30 w-full flex justify-start xl:-translate-x-6 2xl:-translate-x-8 min-[1920px]:-translate-x-12">
+              {renderPatientHeader()}
+            </div>
           </div>
 
           {/* Right Column - Guidelines and Background Image */}
@@ -222,7 +223,7 @@ function CaseResultContent({
                   className="mb-6 overflow-hidden w-full h-auto"
                 />
                 <ActionSelector
-                  actions={actions.map(a => ({ id: a.id, text: a.text }))}
+                  actions={actions.map((a) => ({ id: a.id, text: a.text }))}
                   onSelect={handleActionSelect}
                   isEndCase={true}
                 />
@@ -231,35 +232,35 @@ function CaseResultContent({
 
             {/* Guidelines and SGLT2i Accordions */}
             <div className="flex min-w-0 w-full max-w-[clamp(18rem,38vw,31.25rem)] 2xl:max-w-[500px] min-[1920px]:max-w-[620px] flex-1 basis-0 flex-col items-stretch justify-start 2xl:mx-0 patient-panel-full self-start">
-               {/* Medical Record */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-6 2xl:mt-0"
-            >
-              <MedicalRecordContent
-                patient={patient}
-                defaultOpen={openAccordion === 'medical'}
-                onToggle={(isOpen) => {
-                  setOpenAccordion(isOpen ? 'medical' : null);
-                }}
-              />
-            </motion.div>
+              {/* Medical Record */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="mb-6 2xl:mt-0"
+              >
+                <MedicalRecordContent
+                  patient={patient}
+                  defaultOpen={openAccordion === "medical"}
+                  onToggle={(isOpen) => {
+                    setOpenAccordion(isOpen ? "medical" : null);
+                  }}
+                />
+              </motion.div>
               {sglt2iAccordionTitle !== undefined && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className={`h-fit ${openAccordion === 'sglt2i' ? 'pb-10' : ''}`}
+                  className={`h-fit ${openAccordion === "sglt2i" ? "pb-10" : ""}`}
                 >
                   <DynamicSglt2iAccordion
                     patientId={patient.id}
                     patientName={patient.name}
                     title={sglt2iAccordionTitle}
-                    isOpen={openAccordion === 'sglt2i'}
+                    isOpen={openAccordion === "sglt2i"}
                     onToggle={(isOpen) => {
-                      setOpenAccordion(isOpen ? 'sglt2i' : null);
+                      setOpenAccordion(isOpen ? "sglt2i" : null);
                     }}
                   />
                 </motion.div>
@@ -268,7 +269,7 @@ function CaseResultContent({
           </div>
 
           <div
-          className="left-0  top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className="left-0  top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[40vw] 2xl:w-[48vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
             <div className="absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
@@ -282,10 +283,10 @@ function CaseResultContent({
               height={1600}
               className={`relative z-0 h-full w-full object-cover ${
                 isJoanaCenteredMobileBackground && isSmartphone
-                  ? 'object-center'
-                  : backgroundImage.includes('/backgrounds/03B')
-                  ? 'object-center-top'
-                  : 'object-right-top'
+                  ? "object-center"
+                  : backgroundImage.includes("/backgrounds/03B")
+                    ? "object-center-top"
+                    : "object-right-top"
               }`}
               priority
             />
