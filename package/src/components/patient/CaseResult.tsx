@@ -265,10 +265,10 @@ function CaseResultContent({
           </div>
 
           <div
-          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[clamp(38rem,42vw,56vw)] overflow-hidden transition-opacity duration-300 pointer-events-none"
+          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[44vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
-            <div className="absolute inset-y-0 right-0 z-[2] hidden w-[30%] min-w-[8rem] max-w-[30%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
+            <div className="absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
             <div className="absolute inset-y-0 left-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-r from-[#056368]/68 via-[#056368]/30 to-transparent xl:block"></div>
             <Image
               src={backgroundImage}
