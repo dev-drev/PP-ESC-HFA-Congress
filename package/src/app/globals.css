@@ -41,7 +41,6 @@ body {
 @media (max-width: 1023px) {
 
   .patient-shell-fullwidth {
-    max-width: none !important;
     
     width: 100% !important;
     margin-left: 0 !important;

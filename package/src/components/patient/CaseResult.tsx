@@ -191,12 +191,12 @@ function CaseResultContent({
         <TimelineComponent activeYear={year} patientName={patient.name} />
 
 
-      <div className="mx-auto px-4">
+      <div className="mx-auto px-4 ">
         <div className="grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px]">
           {/* Left Column - Patient Info, Image and Medical Record */}
           <div className="2xl:col-span-1 mt-[30dvh] 2xl:mt-0 2xl:mb-0">
             {/* Patient Header and Quote */}
-            <div className="mb-6  mx-auto px-4 2xl:px-0 max-w-[992px] 2xl:max-w-full">{renderPatientHeader()}</div>
+            <div className="mb-6  mx-auto 2xl:mx-0 px-4 2xl:px-0 max-w-[992px] 2xl:max-w-[300px] 2xl:-translate-x-6">{renderPatientHeader()}</div>
 
            
           </div>
@@ -267,17 +267,17 @@ function CaseResultContent({
           </div>
 
           <div
-            className="w-full left-0 2xl:left-[-220px] top-0 z-[-1] fixed max-h-full transition-opacity duration-300"
+          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen 2xl:w-[40vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
-            <div className="absolute top-[20dvh] 2xl:top-0 2xl:left-[800px] h-full bg-gradient-to-t 2xl:bg-gradient-to-l from-[#056368] to-[transparent] w-full 2xl:w-[300px]"></div>
+            <div className="absolute inset-y-0 right-0 z-[2] hidden w-[30%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
             <Image
               src={backgroundImage}
               alt="Background"
               title="Background"
-              width={1100}
-              height={1200}
-              className="object-cover object-center h-screen md:h-auto lg:max-2xl:w-full"
+              width={1200}
+              height={1600}
+              className="relative z-0 h-full w-full object-cover object-top 2xl:object-right-top"
               priority
             />
           </div>

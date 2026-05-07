@@ -648,7 +648,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
 
-      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] patient-shell-fullwidth'}`}>
+      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] 2xl:max-w-[1800px] patient-shell-fullwidth'}`}>
 
         <div
           className={`relative z-20 ${
@@ -889,7 +889,12 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         {isSplitHeroDesktop && (
           <div
             className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
-            style={{ opacity: imageOpacity }}
+            style={{
+              opacity: imageOpacity,
+              width: '50vw',
+              minWidth: '50vw',
+              maxWidth: '50vw',
+            }}
           >
             <Image
               src={splitHeroImageSrc!}
@@ -897,7 +902,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               title={`${patient.name} — hero`}
               width={1200}
               height={1600}
-              className="relative z-0 h-full w-full object-cover object-left-bottom max-md:object-[center_bottom] tablet-joana-image-cover lg:object-left-bottom xl:object-[56%_100%] 2xl:object-[0%_100%]"
+              className="relative z-0 h-full w-full object-cover object-top 2xl:object-right-top"
               priority
             />
             {/* Leggero fade in basso sulla foto (step 1 / 2, desktop) */}
