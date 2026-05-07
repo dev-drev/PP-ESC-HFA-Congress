@@ -261,14 +261,8 @@ function CaseResultContent({
             </div>
           </div>
 
-          <div className="hidden xl:block text-left mt-[10px] col-span-full">
-            <p className="text-white/60 text-sm">
-              Not an actual patient. Visuals created with the help of AI.
-            </p>
-          </div>
-
           <div
-          className="left-0 min-[2200px]:left-[calc((100vw-2200px)/2)] top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[50vw] min-[2200px]:w-[1100px] overflow-hidden transition-opacity duration-300 pointer-events-none"
+          className="left-0  top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
             <div className="absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>

@@ -544,7 +544,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   const renderPatientHeader = () => {
     return (
       <div
-        className={`flex xl:max-w-[250px] xl:ml-4 xl:mt-2 2xl:max-w-[300px] items-start ${
+        className={`flex xl:max-w-[250px] xl:ml-0 xl:mt-2 2xl:max-w-[300px] items-start ${
           useStage3NarrowLayout
             ? 'justify-start'
             : isSplitHeroDesktop
@@ -631,13 +631,6 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
               className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[34%] bg-gradient-to-t from-[#056368]/55 via-[#056368]/14 to-transparent"
             />
             <div className="absolute inset-0 z-[2] bg-gradient-to-b from-black/50 via-black/15 to-[#056368]" aria-hidden />
-            {isSmartphone && !useStage3NarrowLayout && (
-              <div className="absolute inset-x-0 bottom-36 z-20 px-4 pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-8">
-                <p className="text-left text-white/60 text-xs drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)]">
-                  Not an actual patient. Visuals created with the help of AI.
-                </p>
-              </div>
-            )}
           </div>
         )}
 
@@ -649,12 +642,12 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
 
-      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2200px] 2xl:max-w-[2200px] patient-shell-fullwidth'}`}>
+      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2200px] 2xl:max-w-[2000px] patient-shell-fullwidth'}`}>
 
         <div
           className={`relative z-20 ${
             useStage3NarrowLayout
-              ? 'grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2200px]'
+              ? 'grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]'
               : `grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 ${
                   isSplitHeroDesktop ? 'lg:min-h-[var(--joana-ap1-hero-height)]' : ''
                 }`
@@ -680,19 +673,6 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
                 } ${isSplitHeroStacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}
               >
                 {renderPatientHeader()}
-              </div>
-              <div
-                className={`pl-4 2xl:pl-0 relative z-30 w-full mt-2 ${
-                  useStage3NarrowLayout
-                    ? 'flex justify-start'
-                    : isSplitHeroDesktop
-                    ? 'flex justify-start lg:-translate-x-2 xl:-translate-x-2 2xl:-translate-x-0 xl:mt-[550px]'
-                    : 'flex justify-center 2xl:justify-start'
-                } ${isSplitHeroStacked ? 'drop-shadow-[0_2px_12px_rgba(0,0,0,0.75)]' : ''}`}
-              >
-                <p className="text-white/60 text-sm">
-                  Not an actual patient. Visuals created with the help of AI.
-                </p>
               </div>
                 {showInlinePatientPhoto && <div
                   className={currentPatientData.name === 'Linda' ? '' : currentPatientData.name === 'Joana' ? '' : '2xl:w-[448px]'}
@@ -890,7 +870,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
         {isSplitHeroDesktop && (
           <div
-            className="tablet-joana-fullbleed fixed left-0 min-[2200px]:left-[calc((100vw-2200px)/2)] top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[50vw] min-[2200px]:w-[1100px] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className="tablet-joana-fullbleed fixed left-0  top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[50vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{
               opacity: imageOpacity,
             
