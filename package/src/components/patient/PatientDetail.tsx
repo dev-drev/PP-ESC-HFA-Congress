@@ -544,7 +544,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
   const renderPatientHeader = () => {
     return (
       <div
-        className={`flex xl:max-w-[320px] 2xl:max-w-[360px] items-start ${
+        className={`flex xl:max-w-[250px] xl:ml-4 xl:mt-2 2xl:max-w-[300px] items-start ${
           useStage3NarrowLayout
             ? 'justify-start'
             : isSplitHeroDesktop
@@ -642,19 +642,19 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
 
         <div
-          className={`relative z-30 mx-auto flex w-full max-w-[1700px] min-[1920px]:max-w-[2000px] justify-center px-4 2xl:px-8 ${
+          className={`relative z-30 mx-auto flex w-full max-w-[1700px] min-[1920px]:max-w-[2200px] justify-center px-4 2xl:px-8 ${
             useStage3NarrowLayout ? '' : 'patient-shell-fullwidth'
           } ${isSplitHeroStacked ? 'drop-shadow-[0_6px_28px_rgba(0,0,0,0.35)]' : ''}`}
         >
           <TimelineComponent activeYear={currentPatientData.timelineYear} patientName={patient.name} />
         </div>
 
-      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px] 2xl:max-w-[2000px] patient-shell-fullwidth'}`}>
+      <div className={`relative z-10 ${useStage3NarrowLayout ? 'mx-auto px-4' : 'mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2200px] 2xl:max-w-[2200px] patient-shell-fullwidth'}`}>
 
         <div
           className={`relative z-20 ${
             useStage3NarrowLayout
-              ? 'grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]'
+              ? 'grid grid-cols-1 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2200px]'
               : `grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-3 gap-6 ${
                   isSplitHeroDesktop ? 'lg:min-h-[var(--joana-ap1-hero-height)]' : ''
                 }`
@@ -890,7 +890,7 @@ export default function PatientDetail({ patient }: PatientDetailProps) {
         )}
         {isSplitHeroDesktop && (
           <div
-            className="tablet-joana-fullbleed fixed left-0 top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[50vw] 2xl:w-[56vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+            className="tablet-joana-fullbleed fixed left-0 min-[2200px]:left-[calc((100vw-2200px)/2)] top-0 z-0 h-[var(--joana-ap1-hero-height)] w-[50vw] min-[2200px]:w-[1100px] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{
               opacity: imageOpacity,
             

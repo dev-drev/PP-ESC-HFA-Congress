@@ -160,9 +160,12 @@ function CaseResultContent({
     }
   };
 
+  
+
+
   const renderPatientHeader = () => {
     return (
-      <div className="flex justify-between items-start mb-6">
+      <div className="flex justify-between items-start mb-6 xl:max-w-[250px] xl:ml-4 xl:mt-2 2xl:max-w-[300px]  ">
         <div className="flex gap-6 items-center">
           <div className="lg:pl-[0px]">
             <h1 className="text-[32px] md:text-4xl font-semibold text-white 2xl:text-5xl min-[1920px]:text-[3.4rem] mb-3 text-shadow-md">
@@ -187,12 +190,12 @@ function CaseResultContent({
       className="min-h-screen relative z-10 pb-40 bg-[#056368]"
     >
 
-      <div className="relative z-30 mx-auto flex w-full max-w-[1700px] min-[1920px]:max-w-[2000px] justify-center px-4 2xl:px-8">
+      <div className="relative z-30 mx-auto flex w-full max-w-[1700px] min-[1920px]:max-w-[2200px] justify-center px-4 2xl:px-8">
         <TimelineComponent activeYear={year} patientName={patient.name} />
       </div>
 
-      <div className="relative z-10 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
-        <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2000px]">
+      <div className="relative z-10 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2200px]">
+        <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 gap-6 mx-auto px-4 2xl:px-8 max-w-[1700px] min-[1920px]:max-w-[2200px]">
           {/* Left Column - Patient Info, Image and Medical Record */}
           <div className="xl:col-span-1 mt-[30dvh] xl:mt-0 xl:mb-0">
             {/* Patient Header and Quote */}
@@ -265,7 +268,7 @@ function CaseResultContent({
           </div>
 
           <div
-          className="left-0 top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[43vw] overflow-hidden transition-opacity duration-300 pointer-events-none"
+          className="left-0 min-[2200px]:left-[calc((100vw-2200px)/2)] top-0 z-[-1] fixed h-[var(--joana-ap1-hero-height)] w-screen xl:w-[50vw] min-[2200px]:w-[1100px] overflow-hidden transition-opacity duration-300 pointer-events-none"
             style={{ opacity: backgroundOpacity }}
           >
             <div className="absolute inset-y-0 right-0 z-[2] hidden w-[40%] min-w-[8rem] max-w-[52%] bg-gradient-to-l from-[#056368] via-[#056368]/50 to-transparent md:via-[#056368]/45 xl:block"></div>
