@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import SessionSyncProvider from '@/components/SessionSyncProvider'
 import ConditionalReferencesButton from '@/components/ConditionalReferencesButton'
+import ConditionalAiDisclaimer from '@/components/ConditionalAiDisclaimer'
 import HomepageButton from '@/components/HomepageButton'
 import ImagePreloader from '@/components/ImagePreloader'
 
@@ -58,13 +59,7 @@ export default function RootLayout({
             {children}
           </SessionSyncProvider>
         </Suspense>
-        <div className="relative z-20 w-full px-12 xl:px-0 py-7">
-          <div className="mx-auto w-full max-w-[1700px] 2xl:px-8">
-            <p className="text-white/75 text-sm text-left">
-              Not an actual patient. Visuals created with the help of AI.
-            </p>
-          </div>
-        </div>
+        <ConditionalAiDisclaimer />
         {/* In flusso a fine pagina (non fixed), così non copre contenuti su schermi bassi */}
         <div className="relative z-10 w-full bg-[#056368] shadow-[0_-6px_24px_rgba(0,0,0,0.12)]">
           <ConditionalReferencesButton />
