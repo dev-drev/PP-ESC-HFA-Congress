@@ -4,8 +4,9 @@ import { usePathname } from 'next/navigation'
 
 export default function ConditionalAiDisclaimer() {
   const pathname = usePathname()
+  const isInitialScreen = pathname === '/' || pathname === '/patients'
 
-  if (pathname === '/') {
+  if (isInitialScreen) {
     return null
   }
 
@@ -17,5 +18,5 @@ export default function ConditionalAiDisclaimer() {
         </p>
       </div>
     </div>
-  );
+  )
 }
