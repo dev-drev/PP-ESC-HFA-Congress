@@ -85,9 +85,7 @@ function CaseResultContent({
     };
   }, []);
 
-  const isJoanaCenteredMobileBackground =
-    backgroundImage.includes('/backgrounds/03A') ||
-    backgroundImage.includes('/backgrounds/03C');
+  const isJoanaBg = backgroundImage.includes('/backgrounds/03')
 
   const actions = endActions || [
     {
@@ -288,11 +286,13 @@ function CaseResultContent({
               width={1200}
               height={1600}
               className={`relative z-0 h-full w-full object-cover ${
-                isJoanaCenteredMobileBackground && isSmartphone
-                  ? "object-center"
-                  : backgroundImage.includes("/backgrounds/03B")
-                    ? "object-center-top"
-                    : "object-right-top"
+                isJoanaBg && isSmartphone
+                  ? backgroundImage.includes('/backgrounds/03B')
+                    ? 'object-top xl:object-center-top'
+                    : 'object-top xl:object-right-top'
+                  : backgroundImage.includes('/backgrounds/03B')
+                    ? 'object-center-top'
+                    : 'object-right-top'
               }`}
               priority
             />
